@@ -401,3 +401,31 @@ INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (195,'NUKU ALOFA',6610
 INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (196,'FUNAFUTI',6230000,196);
 INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (197,'PORT VILA',6690000,197);
 --Ciudades 0 - 197
+
+--Transportes
+
+INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (0 ,'Bolivariano 1',50000);
+INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (1 ,'Bolivariano 2',100000);
+
+INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (2 ,'Avianca 1',50000);
+INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (3 ,'Avianca 2',100000);
+
+INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (4 ,'AA 1',50000);
+INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (5 ,'AA 2',100000);
+--Transportes 0 - 5
+
+--Hospedaje
+
+
+INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (0 'Hilton 1',200000)
+INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (1,'Hilton 2',500000)
+
+INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (2 ,'Dann 1',200000)
+INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (3 ,'Dann 2',500000)
+--Hospedaje 0 - 3
+
+-- Espectaculo
+
+INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (0 ,'Tu boleta Partido',70000);
+
+
