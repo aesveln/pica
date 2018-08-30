@@ -426,6 +426,60 @@ INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (3 ,'Dann 2',500000)
 
 -- Espectaculo
 
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (0 ,'Tu boleta Partido',70000);
+INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (0 ,'Tu boleta Partido 1',70000);
+INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (1 ,'Tu boleta Partido 2',20000);
+INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (2 ,'Tu boleta Partido 3',30000);
+INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (3 ,'Tu boleta Partido 4',100000);
+INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (4 ,'Tu boleta Partido 5',10000);
 
 
+
+--Productos
+
+--creacion y execucion de procedimiento
+truncate table ADMPRO.PRODUCT
+DROP PROCEDURE ADMPRO.LlenarProductos
+
+CREATE PROCEDURE ADMPRO.LlenarProductos      
+@inicio int = NULL,
+@fin int = NULL
+AS   
+DECLARE @intFlag INT
+SET @intFlag = @inicio
+WHILE (@intFlag < @fin)
+BEGIN
+declare @DateStart	Date = '2018-01-01'
+declare @DateEnd	Date = '2019-12-31'
+declare @SpecDate Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
+declare @ArrivalDate Date = DateAdd(Day, - ROUND(((10 - 1 -1) * RAND() + 1), 0) ,@SpecDate)
+declare @DeptDate Date = DateAdd(Day, ROUND(((10 - 1 -1) * RAND() + 1), 0), @SpecDate)
+INSERT INTO "ADMPRO"."PRODUCT" (Id,name,spectacle_date,arrival_date,departure_date,transport_type,spectacle_type,lodging_type,description,code,image_ref,source_city,target_city) VALUES 
+(@intFlag , CONCAT('Producto No.', @intFlag , ' de toures'),@SpecDate,@ArrivalDate,
+@DeptDate,ROUND(((5 - 0 -1) * RAND() + 0), 0),ROUND(((4 - 0 -1) * RAND() + 0), 0),ROUND(((3 - 0 -1) * RAND() + 0), 0),CONCAT('Descripcion producto No.', @intFlag , ' de toures'),
+CONCAT('10010', @intFlag ),CONCAT('/FotosProductos/', ROUND(((715 - 1 -1) * RAND() + 1), 0) ,'.jpeg'),
+ROUND(((197 - 0 -1) * RAND() + 0), 0),
+ROUND(((197 - 0 -1) * RAND() + 0), 0))
+SET @intFlag = @intFlag + 1
+END
+GO
+
+
+exec ADMPRO.LlenarProductos @inicio = 300001 , @fin = 400000
+GO
+
+
+
+
+select count(*) from ADMPRO.PRODUCT
+
+
+
+DROP PROCEDURE ADMPRO.UpdateIpImagen
+
+CREATE PROCEDURE ADMPRO.UpdateIpImagen      
+AS   
+UPDATE ADMPRO.PRODUCT
+SET image_ref = REPLACE(image_ref, 'localhost', '127.0.0.1')
+GO
+exec ADMPRO.UpdateIpImagen
+GO
