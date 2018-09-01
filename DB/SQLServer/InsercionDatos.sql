@@ -464,7 +464,7 @@ END
 GO
 
 
-exec ADMPRO.LlenarProductos @inicio = 300001 , @fin = 400000
+exec ADMPRO.LlenarProductos @inicio = 700001 , @fin = 800000
 GO
 
 
