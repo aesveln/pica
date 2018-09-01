@@ -2,7 +2,7 @@ CREATE OR REPLACE PROCEDURE llenarUsuarios
 is
   i integer := 0;
   BEGIN
-    FOR i IN 0..1000 LOOP
+    FOR i IN 0..17000 LOOP
      insert into ADMCYO.CUSTOMER
          ("Id", "first_name", "last_name", "phone_number","email", "password",
           "creditcard_type", "creditcard_number", "status", "category")
