@@ -7,22 +7,20 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(schema = "ADMPRO",name = "CITY")
+@Table(schema = "ADMPRO", name = "COUNTRY")
 @Getter
 @Setter
-public class City {
+public class Country {
+
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
     private String name;
-    private String cost;
-    private long country;
 
-    public City(String name, String cost, long country) {
+
+    public Country(String name) {
         this.name = name;
-        this.cost = cost;
-        this.country = country;
     }
 }
