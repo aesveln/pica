@@ -401,86 +401,53 @@ INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (195,'NUKU ALOFA',195);
 INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (196,'FUNAFUTI',196);
 INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (197,'PORT VILA',197);
 
---Ciudades 0 - 197
-
---Transportes
-
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (0 ,'Bolivariano 1',50000);
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (1 ,'Bolivariano 2',100000);
-
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (2 ,'Avianca 1',50000);
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (3 ,'Avianca 2',100000);
-
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (4 ,'AA 1',50000);
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (5 ,'AA 2',100000);
---Transportes 0 - 5
-
---Hospedaje
-
-
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (0 'Hilton 1',200000)
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (1,'Hilton 2',500000)
-
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (2 ,'Dann 1',200000)
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (3 ,'Dann 2',500000)
---Hospedaje 0 - 3
-
--- Espectaculo
-
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (0 ,'Tu boleta Partido 1',70000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (1 ,'Tu boleta Partido 2',20000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (2 ,'Tu boleta Partido 3',30000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (3 ,'Tu boleta Partido 4',100000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (4 ,'Tu boleta Partido 5',10000);
-
-
-
 --Productos
 
---creacion y execucion de procedimiento
-truncate table ADMPRO.PRODUCT
-DROP PROCEDURE ADMPRO.LlenarProductos
+CREATE OR ALTER PROCEDURE ADMPRO.LlenarProductosReservas
+    @inicio int = NULL,
+    @fin    int = NULL
+AS
+  DECLARE @intFlag INT
+  SET @intFlag = @inicio
+  WHILE (@intFlag <= @fin)
+    BEGIN
+      declare @DateStart Date = '2018-09-01';
+      declare @DateEnd Date = '2019-05-31';
+      declare @diasEstancia INT = ROUND(((10 - 1 - 1) * RAND() + 1), 0);
+      declare @ArrivalDate Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
+      declare @DeptDate Date = DateAdd(Day, @diasEstancia, @ArrivalDate)
+      declare @ciudad int = FLOOR(RAND()*(197-0+1))+0;
+      declare @randEmpresa int = FLOOR(RAND()*(2-1+1))+1; -- Reservas 1 -> Dan y 2 -> hilton
+      declare @nombreEmpresa varchar(50) = CASE @randEmpresa
+                WHEN 1 THEN 'DANN CARLTON HOTEL'
+                WHEN 2 THEN 'HILTON HOTELS'
+              END;
+      declare @costoNoche int = round(FLOOR(RAND()*(250000-180000+1))+180000,-4);
+      declare @imagenRef varchar(200) = CONCAT('/FotosProductos/', FLOOR(RAND()*(715-1+1))+1 ,'.jpeg');
+      declare @nombreCiudadPais varchar(100) = (select concat (CITY.name ,' - ',country.name) from admpro.CITY inner JOIN ADMPRO.COUNTRY on CITY.country = COUNTRY.Id where city.Id = @ciudad);
 
-CREATE PROCEDURE ADMPRO.LlenarProductos      
-@inicio int = NULL,
-@fin int = NULL
-AS   
-DECLARE @intFlag INT
-SET @intFlag = @inicio
-WHILE (@intFlag < @fin)
-BEGIN
-declare @DateStart	Date = '2018-01-01'
-declare @DateEnd	Date = '2019-12-31'
-declare @SpecDate Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
-declare @ArrivalDate Date = DateAdd(Day, - ROUND(((10 - 1 -1) * RAND() + 1), 0) ,@SpecDate)
-declare @DeptDate Date = DateAdd(Day, ROUND(((10 - 1 -1) * RAND() + 1), 0), @SpecDate)
-INSERT INTO "ADMPRO"."PRODUCT" (Id,name,spectacle_date,arrival_date,departure_date,transport_type,spectacle_type,lodging_type,description,code,image_ref,source_city,target_city) VALUES 
-(@intFlag , CONCAT('Producto No.', @intFlag , ' de toures'),@SpecDate,@ArrivalDate,
-@DeptDate,ROUND(((5 - 0 -1) * RAND() + 0), 0),ROUND(((4 - 0 -1) * RAND() + 0), 0),ROUND(((3 - 0 -1) * RAND() + 0), 0),CONCAT('Descripcion producto No.', @intFlag , ' de toures'),
-CONCAT('10010', @intFlag ),CONCAT('/FotosProductos/', ROUND(((715 - 1 -1) * RAND() + 1), 0) ,'.jpeg'),
-ROUND(((197 - 0 -1) * RAND() + 0), 0),
-ROUND(((197 - 0 -1) * RAND() + 0), 0))
-SET @intFlag = @intFlag + 1
-END
-GO
+      INSERT INTO LODGING ("Id", "arrival_date", "departure_date", "city", "nom_emp")
+      VALUES (@intFlag,
+              @ArrivalDate,
+              @DeptDate,
+              @ciudad,
+              @nombreEmpresa)
 
-
-exec ADMPRO.LlenarProductos @inicio = 700001 , @fin = 800000
-GO
+        INSERT INTO PRODUCT ("Id", "cod", "name", "description", "cost", "image_ref", "transport_type", "spectacle_type", "lodging_type", "product_type")
+        VALUES (@intFlag,
+                concat('22',@randEmpresa,@intFlag), --Las reservan arrancan en 22, transporte en 55 y espectaculo en 77 ++ el rand de empresa
+                concat('Reserva ',@nombreEmpresa,' ',@nombreCiudadPais),
+                concat('Reserva ',@nombreEmpresa,' ',@nombreCiudadPais,
+                       ' entre ',@ArrivalDate,' - ',@DeptDate, ' - ' , @diasEstancia , ' días.'),
+                @costoNoche * @diasEstancia,
+                @imagenRef,
+                null,
+                null,
+                @intFlag,
+                'L')
 
 
 
 
-select count(*) from ADMPRO.PRODUCT
-
-
-
-DROP PROCEDURE ADMPRO.UpdateIpImagen
-
-CREATE PROCEDURE ADMPRO.UpdateIpImagen      
-AS   
-UPDATE ADMPRO.PRODUCT
-SET image_ref = REPLACE(image_ref, 'localhost', '127.0.0.1')
-GO
-exec ADMPRO.UpdateIpImagen
-GO
+      SET @intFlag = @intFlag + 1
+    END
