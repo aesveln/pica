@@ -15,6 +15,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -30,30 +31,32 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "sqlserverEntityManager",
         transactionManagerRef = "sqlserverTransactionManager",
-        basePackages = "co.com.toures.b2c.touresb2cjava.dao.sqlserver"
+        basePackages = "co.com.toures.b2c.touresb2cjava.dao.admpro"
 )
 public class SqlServerConf {
 
-
+    @Primary
     @Bean
-    @ConfigurationProperties(prefix = "spring.sqlserver.datasource")
+    @ConfigurationProperties(prefix = "spring.admpro.datasource")
     public DataSource sqlserverDataSource() {
         return DataSourceBuilder
                 .create()
                 .build();
     }
 
+    @Primary
     @Bean(name = "sqlserverEntityManager")
     public LocalContainerEntityManagerFactoryBean sqlserverEntityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(sqlserverDataSource())
                 .properties(hibernateProperties())
-                .packages("co.com.toures.b2c.touresb2cjava.entity.sqlserver")
+                .packages("co.com.toures.b2c.touresb2cjava.entity.admpro")
                 .persistenceUnit("sqlserverPU")
                 .build();
     }
 
-     @Bean(name = "sqlserverTransactionManager")
+    @Primary
+    @Bean(name = "sqlserverTransactionManager")
     public PlatformTransactionManager sqlserverTransactionManager(@Qualifier("sqlserverEntityManager") EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
     }

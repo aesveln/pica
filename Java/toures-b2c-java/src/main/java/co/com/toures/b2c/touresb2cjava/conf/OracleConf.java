@@ -15,7 +15,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -31,29 +30,29 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "oracleEntityManager",
         transactionManagerRef = "oracleTransactionManager",
-        basePackages = "co.com.toures.b2c.touresb2cjava.dao.oracle"
+        basePackages = "co.com.toures.b2c.touresb2cjava.dao.admcyo"
 )
 public class OracleConf {
 
-    @Primary
+
     @Bean (name = "oracleDataSource")
-    @ConfigurationProperties(prefix = "spring.oracle.datasource")
+    @ConfigurationProperties(prefix = "spring.admcyo.datasource")
     public DataSource oracleDataSource() {
         return DataSourceBuilder
                 .create()
                 .build();
     }
-    @Primary
+
     @Bean(name = "oracleEntityManager")
     public LocalContainerEntityManagerFactoryBean oracleEntityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(oracleDataSource())
                 .properties(hibernateProperties())
-                .packages("co.com.toures.b2c.touresb2cjava.entity.oracle")
+                .packages("co.com.toures.b2c.touresb2cjava.entity.admcyo")
                 .persistenceUnit("oraclePU")
                 .build();
     }
-    @Primary
+
     @Bean(name = "oracleTransactionManager")
     public PlatformTransactionManager oracleTransactionManager(@Qualifier("oracleEntityManager") EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);

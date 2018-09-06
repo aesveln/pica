@@ -451,3 +451,120 @@ AS
 
       SET @intFlag = @intFlag + 1
     END
+
+
+CREATE OR ALTER PROCEDURE ADMPRO.LlenarProductosTransporte
+    @inicio int = NULL,
+    @fin    int = NULL
+AS
+  DECLARE @intFlag INT
+  SET @intFlag = @inicio
+  WHILE (@intFlag <= @fin)
+    BEGIN
+      declare @DateStart Date = '2018-09-01';
+      declare @DateEnd Date = '2019-05-31';
+      declare @diasEstancia INT = ROUND(((10 - 1 - 1) * RAND() + 1), 0);
+      declare @ArrivalDate Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
+      declare @DeptDate Date = DateAdd(Day, @diasEstancia, @ArrivalDate)
+      declare @ciudadOrigen int = FLOOR(RAND()*(197-0+1))+0;
+      declare @ciudadDestino int = FLOOR(RAND()*(197-0+1))+0;
+      declare @randEmpresa int = FLOOR(RAND()*(3-1+1))+1; -- Reservas 1 -> Bolivariano , 2 -> AVianca y 3 -> Americam
+      declare @nombreEmpresa varchar(50) = CASE @randEmpresa
+                WHEN 1 THEN 'Bolivariano'
+                WHEN 2 THEN 'Avianca'
+                WHEN 3 THEN 'American Airlines'
+              END;
+      declare @tipoTransporte varchar(2) = case @randEmpresa
+                when 1 then 'TR'
+                when 2 then 'AE'
+                when 3 then 'AE'
+              end;
+            declare @tipoTr varchar(10) = case @randEmpresa
+                when 1 then 'Bus'
+                when 2 then 'Vuelo'
+                when 3 then 'Vuelo'
+              end;
+
+
+      declare @costoTr int = round(FLOOR(RAND()*(2000000-500000+1))+500000,-4);
+      declare @imagenRef varchar(200) = CONCAT('/FotosProductos/', FLOOR(RAND()*(715-1+1))+1 ,'.jpeg');
+      declare @nombreCiudadPaisOrigen varchar(100) = (select concat (CITY.name ,' - ',country.name) from admpro.CITY inner JOIN ADMPRO.COUNTRY on CITY.country = COUNTRY.Id where city.Id = @ciudadOrigen);
+      declare @nombreCiudadPaisDestino varchar(100) = (select concat (CITY.name ,' - ',country.name) from admpro.CITY inner JOIN ADMPRO.COUNTRY on CITY.country = COUNTRY.Id where city.Id = @ciudadDestino);
+
+
+      INSERT INTO TRANSPORT ("Id", "source_city", "target_city", "depart_date", "return_date", "nom_emp", "tipo_trans")
+      VALUES (@intFlag,
+              @ciudadOrigen,
+              @ciudadDestino,
+              @ArrivalDate,
+              @DeptDate,
+              @nombreEmpresa,
+              @tipoTransporte)
+
+        INSERT INTO PRODUCT ("Id", "cod", "name", "description", "cost", "image_ref", "transport_type", "spectacle_type", "lodging_type", "product_type")
+        VALUES (@intFlag,
+                concat('55',@randEmpresa,@intFlag), --Las reservan arrancan en 22, transporte en 55 y espectaculo en 77 ++ el rand de empresa
+                concat(@tipoTr,' ',@nombreEmpresa,' desde ',@nombreCiudadPaisOrigen , ' a ', @nombreCiudadPaisDestino),
+                concat(@tipoTr,' ',@nombreEmpresa,' desde ',@nombreCiudadPaisOrigen , ' a ', @nombreCiudadPaisDestino,
+                       ' con fecha de partida ',@ArrivalDate,' y regreso ',@DeptDate),
+                @costoTr ,
+                @imagenRef,
+                @intFlag,
+                null,
+                null,
+                'T')
+
+
+
+
+      SET @intFlag = @intFlag + 1
+    END
+
+
+CREATE OR ALTER PROCEDURE ADMPRO.LlenarProductosEspectaculos
+    @inicio int = NULL,
+    @fin    int = NULL
+AS
+  DECLARE @intFlag INT
+  SET @intFlag = @inicio
+  WHILE (@intFlag <= @fin)
+    BEGIN
+      declare @DateStart Date = '2018-09-01';
+      declare @DateEnd Date = '2019-05-31';
+
+      declare @diaEspectaculo Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
+      declare @ciudadEspectaculo int = FLOOR(RAND()*(197-0+1))+0;
+      declare @nombreCiudadPais varchar(100) = (select CITY.name
+                                                from admpro.CITY inner JOIN ADMPRO.COUNTRY on CITY.country = COUNTRY.Id where city.Id = @ciudadEspectaculo);
+            declare @nombreCiudadPaisVisitante varchar(100) = (select CITY.name
+                                                from admpro.CITY inner JOIN ADMPRO.COUNTRY on CITY.country = COUNTRY.Id where city.Id = FLOOR(RAND()*(197-0+1))+0);
+      declare @costoTr int = round(FLOOR(RAND()*(500000-50000+1))+50000,-4);
+       declare @imagenRef varchar(200) = CONCAT('/FotosProductos/', FLOOR(RAND()*(715-1+1))+1 ,'.jpeg');
+
+        INSERT INTO SPECTACLE ("Id", "type", "spectacle_date", "city", "nom_emp")
+        VALUES (@intFlag,
+                'Futbol',
+                @diaEspectaculo,
+                @ciudadEspectaculo,
+                'Tu Boleta')
+
+        INSERT INTO PRODUCT ("Id", "cod", "name", "description", "cost", "image_ref", "transport_type", "spectacle_type", "lodging_type", "product_type")
+        VALUES (@intFlag,
+                concat('77','1',@intFlag), --Las reservan arrancan en 22, transporte en 55 y espectaculo en 77 ++ el rand de empresa
+                concat('Tu Boleta',' -  Partido entre ',@nombreCiudadPais , ' VS ', @nombreCiudadPaisVisitante),
+                concat('Tu Boleta',' -  Partido entre ',@nombreCiudadPais , ' VS ', @nombreCiudadPaisVisitante, ' el ',@diaEspectaculo),
+                @costoTr ,
+                @imagenRef,
+                null,
+                @intFlag,
+                null,
+                'S')
+
+
+
+
+      SET @intFlag = @intFlag + 1
+    END
+
+
+
