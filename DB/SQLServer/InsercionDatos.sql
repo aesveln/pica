@@ -202,284 +202,252 @@ INSERT INTO "ADMPRO"."COUNTRY" (Id,name) VALUES (197,'VANUATU');
 
 --Ciudades
 
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (0,'LUANDA',8170000,0);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (1,'ARGEL',5730000,1);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (2,'PORTO-NOVO',3260000,2);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (3,'GABERONES',8170000,3);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (4,'UAGADUGÚ',7820000,4);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (5,'BUYUMBURA',7650000,5);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (6,'PRAIA',4890000,6);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (7,'YAUNDÉ',7750000,7);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (8,'YAMENA',5310000,8);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (9,'MORONI',640000,9);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (10,'YAMUSUKRO',1040000,10);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (11,'EL CAIRO',2290000,11);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (12,'ASMARA',3590000,12);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (13,'ADÍS ABEBA',350000,13);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (14,'LIBREVILLE',4990000,14);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (15,'BANJUL',1670000,15);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (16,'ACCRA',30000,16);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (17,'CONAKRY',1280000,17);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (18,'MALABO',6160000,18);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (19,'BISSAU',9340000,19);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (20,'NAIROBI',1320000,20);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (21,'MASERU',1750000,21);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (22,'MONROVIA',3670000,22);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (23,'TRÍPOLI',2430000,23);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (24,'ANTANANARIVO',3820000,24);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (25,'LILONGÜE',1530000,25);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (26,'BAMAKO',2960000,26);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (27,'RABAT',9770000,27);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (28,'PORT LOUIS',3250000,28);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (29,'NUAKCHOT',410000,29);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (30,'MAPUTO',9450000,30);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (31,'WINDHOEK',5670000,31);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (32,'NIAMEY',870000,32);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (33,'ABUYA',5000000,33);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (34,'BANGUI',5890000,34);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (35,'BRAZZAVILLE',1940000,35);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (36,'KINSHASA',4990000,36);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (37,'EL AAIÚN',530000,37);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (38,'KIGALI',4910000,38);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (39,'SANTO TOMÉ',1500000,39);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (40,'DAKAR',6980000,40);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (41,'VICTORIA',5510000,41);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (42,'FREETOWN',4240000,42);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (43,'MOGADISCIO',3980000,43);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (44,'MBABANE',6820000,44);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (45,'CIUDAD DEL CABO',3680000,45);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (46,'JARTUM',7600000,46);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (47,'YUBA',7640000,47);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (48,'DODOMA',9340000,48);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (49,'LOMÉ',5580000,49);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (50,'TÚNEZ',5440000,50);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (51,'KAMPALA',7350000,51);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (52,'YIBUTI',4980000,52);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (53,'LUSAKA',5630000,53);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (54,'HARARE',2880000,54);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (55,'SAINT JOHN',1790000,55);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (56,'BUENOS AIRES',6100000,56);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (57,'NASSAU',9280000,57);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (58,'BRIDGETOWN',6330000,58);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (59,'BELMOPÁN',5110000,59);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (60,'SUCRE, LA PAZ',7630000,60);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (61,'BRASILIA',3460000,61);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (62,'OTTAWA',2660000,62);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (63,'SANTIAGO DE CHILE',3310000,63);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (64,'BOGOTÁ',5530000,64);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (65,'SAN JOSÉ',1430000,65);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (66,'LA HABANA',4090000,66);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (67,'ROSEAU',3610000,67);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (68,'QUITO',6840000,68);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (69,'SAN SALVADOR',3190000,69);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (70,'WASHINGTON D. C.',6690000,70);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (71,'SAINT GEORGE',5230000,71);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (72,'CIUDAD DE GUATEMALA',3910000,72);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (73,'GEORGETOWN',760000,73);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (74,'PUERTO PRÍNCIPE',9160000,74);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (75,'TEGUCIGALPA',2200000,75);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (76,'KINGSTON',3890000,76);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (77,'MÉXICO D. F.',5790000,77);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (78,'MANAGUA',9510000,78);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (79,'CIUDAD DE PANAMÁ',190000,79);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (80,'ASUNCIÓN',6650000,80);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (81,'LIMA',660000,81);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (82,'SAN JUAN',6590000,82);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (83,'SANTO DOMINGO',8310000,83);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (84,'BASSETERRE',6470000,84);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (85,'KINGSTOWN',9030000,85);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (86,'CASTRIES',970000,86);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (87,'PARAMARIBO',1930000,87);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (88,'PUERTO ESPAÑA',750000,88);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (89,'MONTEVIDEO',6020000,89);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (90,'CARACAS',50000,90);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (91,'KABUL',1560000,91);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (92,'RIAD',5310000,92);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (93,'DACA',7690000,93);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (94,'MANAMÁ',2140000,94);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (95,'BANDAR SERI BEGAWAN',6190000,95);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (96,'TIMBU',6150000,96);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (97,'PNON PEHN',3910000,97);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (98,'DOHA',7020000,98);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (99,'PEKÍN',7510000,99);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (100,'NICOSIA',6000000,100);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (101,'PYONGYANG',2120000,101);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (102,'SEÚL',4760000,102);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (103,'ABU DABI',7430000,103);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (104,'MANILA',7080000,104);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (105,'NUEVA DELHI',9210000,105);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (106,'YAKARTA',9460000,106);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (107,'TEHERÁN',4420000,107);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (108,'BAGDAD',9610000,108);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (109,'JERUSALÉN',8440000,109);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (110,'TOKIO',7640000,110);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (111,'AMMÁN',8360000,111);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (112,'ASTANÁ',8840000,112);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (113,'BISKEK',6050000,113);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (114,'CIUDAD DE KUWAIT',7490000,114);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (115,'VIENTIÁN',3310000,115);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (116,'BEIRUT',3760000,116);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (117,'KUALA LUMPUR',60000,117);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (118,'MALÉ',5350000,118);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (119,'ULAN BATOR',6100000,119);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (120,'NAYPYIDAW',9620000,120);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (121,'KATMANDÚ',270000,121);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (122,'MASCATE',5280000,122);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (123,'ISLAMABAD',830000,123);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (124,'RAMALA',3080000,124);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (125,'SINGAPUR',5610000,125);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (126,'DAMASCO',670000,126);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (127,'COLOMBO',6790000,127);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (128,'BANGKOK',70000,128);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (129,'TAIPEH',8370000,129);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (130,'DUSAMBÉ',1360000,130);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (131,'DILI',4490000,131);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (132,'ASJABAD',7580000,132);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (133,'ANKARA',6510000,133);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (134,'TASHKENT',9580000,134);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (135,'HANOI',5430000,135);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (136,'SANÁ',300000,136);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (137,'TIRANA',4790000,137);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (138,'BERLÍN',1140000,138);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (139,'ANDORRA LA VIEJA',5320000,139);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (140,'EREVÁN',1960000,140);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (141,'VIENA',1420000,141);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (142,'BAKÚ',7440000,142);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (143,'BRUSELAS',6310000,143);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (144,'MINSK',8000000,144);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (145,'SARAJEVO',8190000,145);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (146,'SOFÍA',1560000,146);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (147,'ZAGREB',3540000,147);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (148,'COPENHAGUE',5560000,148);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (149,'BRATISLAVA',890000,149);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (150,'LUBLIJANA',3660000,150);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (151,'MADRID',1830000,151);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (152,'TALLÍN',8730000,152);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (153,'HELSINKI',1730000,153);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (154,'PARÍS',7480000,154);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (155,'TIFLIS',9890000,155);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (156,'ATENAS',780000,156);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (157,'BUDAPEST',8730000,157);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (158,'DUBLÍN',5610000,158);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (159,'REIKIAVIK',9330000,159);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (160,'ROMA',6290000,160);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (161,'RIGA',4390000,161);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (162,'VADUZ',5880000,162);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (163,'VILNA',4970000,163);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (164,'LUXEMBURGO',8330000,164);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (165,'LA VALETA',1710000,165);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (166,'CHISINAU',8590000,166);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (167,'MÓNACO',540000,167);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (168,'PODGORICA',1920000,168);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (169,'OSLO',5150000,169);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (170,'AMSTERDAM',360000,170);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (171,'VARSOVIA',7430000,171);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (172,'LISBOA',340000,172);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (173,'LONDRES',1940000,173);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (174,'PRAGA',660000,174);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (175,'SKOPJE',2970000,175);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (176,'BUCAREST',9570000,176);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (177,'MOSCÚ',8670000,177);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (178,'CIUDAD DE SAN MARINO',2730000,178);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (179,'BELGRADO',5830000,179);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (180,'ESTOCOLMO',4190000,180);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (181,'BERNA',4060000,181);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (182,'KIEV',4510000,182);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (183,'CIUDAD DEL VATICANO',9980000,183);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (184,'CANBERRA',3840000,184);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (185,'SUVA',1810000,185);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (186,'MAJURO',1040000,186);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (187,'HONIARA',6010000,187);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (188,'TARAWA',6100000,188);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (189,'PALIKIR',9350000,189);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (190,'YAREN',3300000,190);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (191,'WELLINGTON',3950000,191);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (192,'MELEKEOK',6360000,192);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (193,'PORT MORESBY',1890000,193);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (194,'APIA',1940000,194);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (195,'NUKU ALOFA',6610000,195);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (196,'FUNAFUTI',6230000,196);
-INSERT INTO "ADMPRO"."CITY" (Id,name,cost,country) VALUES (197,'PORT VILA',6690000,197);
---Ciudades 0 - 197
-
---Transportes
-
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (0 ,'Bolivariano 1',50000);
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (1 ,'Bolivariano 2',100000);
-
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (2 ,'Avianca 1',50000);
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (3 ,'Avianca 2',100000);
-
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (4 ,'AA 1',50000);
-INSERT INTO "ADMPRO"."TRANSPORT" (Id,name,cost) VALUES (5 ,'AA 2',100000);
---Transportes 0 - 5
-
---Hospedaje
-
-
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (0 'Hilton 1',200000)
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (1,'Hilton 2',500000)
-
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (2 ,'Dann 1',200000)
-INSERT INTO "ADMPRO"."LODGING" (Id,name,cost) VALUES (3 ,'Dann 2',500000)
---Hospedaje 0 - 3
-
--- Espectaculo
-
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (0 ,'Tu boleta Partido 1',70000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (1 ,'Tu boleta Partido 2',20000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (2 ,'Tu boleta Partido 3',30000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (3 ,'Tu boleta Partido 4',100000);
-INSERT INTO "ADMPRO"."SPECTACLE" (Id,name,cost) VALUES (4 ,'Tu boleta Partido 5',10000);
-
-
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (0,'LUANDA',0);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (1,'ARGEL',1);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (2,'PORTO-NOVO',2);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (3,'GABERONES',3);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (4,'UAGADUGÚ',4);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (5,'BUYUMBURA',5);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (6,'PRAIA',6);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (7,'YAUNDÉ',7);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (8,'YAMENA',8);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (9,'MORONI',9);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (10,'YAMUSUKRO',10);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (11,'EL CAIRO',11);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (12,'ASMARA',12);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (13,'ADÍS ABEBA',13);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (14,'LIBREVILLE',14);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (15,'BANJUL',15);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (16,'ACCRA',16);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (17,'CONAKRY',17);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (18,'MALABO',18);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (19,'BISSAU',19);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (20,'NAIROBI',20);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (21,'MASERU',21);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (22,'MONROVIA',22);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (23,'TRÍPOLI',23);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (24,'ANTANANARIVO',24);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (25,'LILONGÜE',25);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (26,'BAMAKO',26);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (27,'RABAT',27);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (28,'PORT LOUIS',28);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (29,'NUAKCHOT',29);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (30,'MAPUTO',30);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (31,'WINDHOEK',31);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (32,'NIAMEY',32);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (33,'ABUYA',33);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (34,'BANGUI',34);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (35,'BRAZZAVILLE',35);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (36,'KINSHASA',36);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (37,'EL AAIÚN',37);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (38,'KIGALI',38);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (39,'SANTO TOMÉ',39);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (40,'DAKAR',40);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (41,'VICTORIA',41);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (42,'FREETOWN',42);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (43,'MOGADISCIO',43);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (44,'MBABANE',44);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (45,'CIUDAD DEL CABO',45);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (46,'JARTUM',46);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (47,'YUBA',47);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (48,'DODOMA',48);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (49,'LOMÉ',49);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (50,'TÚNEZ',50);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (51,'KAMPALA',51);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (52,'YIBUTI',52);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (53,'LUSAKA',53);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (54,'HARARE',54);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (55,'SAINT JOHN',55);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (56,'BUENOS AIRES',56);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (57,'NASSAU',57);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (58,'BRIDGETOWN',58);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (59,'BELMOPÁN',59);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (60,'SUCRE, LA PAZ',60);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (61,'BRASILIA',61);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (62,'OTTAWA',62);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (63,'SANTIAGO DE CHILE',63);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (64,'BOGOTÁ',64);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (65,'SAN JOSÉ',65);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (66,'LA HABANA',66);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (67,'ROSEAU',67);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (68,'QUITO',68);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (69,'SAN SALVADOR',69);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (70,'WASHINGTON D. C.',70);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (71,'SAINT GEORGE',71);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (72,'CIUDAD DE GUATEMALA',72);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (73,'GEORGETOWN',73);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (74,'PUERTO PRÍNCIPE',74);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (75,'TEGUCIGALPA',75);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (76,'KINGSTON',76);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (77,'MÉXICO D. F.',77);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (78,'MANAGUA',78);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (79,'CIUDAD DE PANAMÁ',79);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (80,'ASUNCIÓN',80);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (81,'LIMA',81);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (82,'SAN JUAN',82);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (83,'SANTO DOMINGO',83);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (84,'BASSETERRE',84);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (85,'KINGSTOWN',85);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (86,'CASTRIES',86);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (87,'PARAMARIBO',87);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (88,'PUERTO ESPAÑA',88);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (89,'MONTEVIDEO',89);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (90,'CARACAS',90);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (91,'KABUL',91);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (92,'RIAD',92);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (93,'DACA',93);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (94,'MANAMÁ',94);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (95,'BANDAR SERI BEGAWAN',95);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (96,'TIMBU',96);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (97,'PNON PEHN',97);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (98,'DOHA',98);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (99,'PEKÍN',99);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (100,'NICOSIA',100);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (101,'PYONGYANG',101);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (102,'SEÚL',102);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (103,'ABU DABI',103);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (104,'MANILA',104);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (105,'NUEVA DELHI',105);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (106,'YAKARTA',106);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (107,'TEHERÁN',107);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (108,'BAGDAD',108);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (109,'JERUSALÉN',109);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (110,'TOKIO',110);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (111,'AMMÁN',111);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (112,'ASTANÁ',112);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (113,'BISKEK',113);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (114,'CIUDAD DE KUWAIT',114);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (115,'VIENTIÁN',115);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (116,'BEIRUT',116);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (117,'KUALA LUMPUR',117);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (118,'MALÉ',118);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (119,'ULAN BATOR',119);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (120,'NAYPYIDAW',120);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (121,'KATMANDÚ',121);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (122,'MASCATE',122);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (123,'ISLAMABAD',123);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (124,'RAMALA',124);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (125,'SINGAPUR',125);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (126,'DAMASCO',126);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (127,'COLOMBO',127);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (128,'BANGKOK',128);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (129,'TAIPEH',129);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (130,'DUSAMBÉ',130);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (131,'DILI',131);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (132,'ASJABAD',132);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (133,'ANKARA',133);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (134,'TASHKENT',134);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (135,'HANOI',135);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (136,'SANÁ',136);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (137,'TIRANA',137);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (138,'BERLÍN',138);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (139,'ANDORRA LA VIEJA',139);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (140,'EREVÁN',140);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (141,'VIENA',141);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (142,'BAKÚ',142);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (143,'BRUSELAS',143);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (144,'MINSK',144);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (145,'SARAJEVO',145);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (146,'SOFÍA',146);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (147,'ZAGREB',147);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (148,'COPENHAGUE',148);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (149,'BRATISLAVA',149);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (150,'LUBLIJANA',150);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (151,'MADRID',151);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (152,'TALLÍN',152);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (153,'HELSINKI',153);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (154,'PARÍS',154);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (155,'TIFLIS',155);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (156,'ATENAS',156);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (157,'BUDAPEST',157);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (158,'DUBLÍN',158);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (159,'REIKIAVIK',159);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (160,'ROMA',160);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (161,'RIGA',161);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (162,'VADUZ',162);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (163,'VILNA',163);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (164,'LUXEMBURGO',164);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (165,'LA VALETA',165);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (166,'CHISINAU',166);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (167,'MÓNACO',167);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (168,'PODGORICA',168);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (169,'OSLO',169);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (170,'AMSTERDAM',170);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (171,'VARSOVIA',171);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (172,'LISBOA',172);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (173,'LONDRES',173);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (174,'PRAGA',174);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (175,'SKOPJE',175);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (176,'BUCAREST',176);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (177,'MOSCÚ',177);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (178,'CIUDAD DE SAN MARINO',178);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (179,'BELGRADO',179);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (180,'ESTOCOLMO',180);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (181,'BERNA',181);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (182,'KIEV',182);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (183,'CIUDAD DEL VATICANO',183);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (184,'CANBERRA',184);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (185,'SUVA',185);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (186,'MAJURO',186);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (187,'HONIARA',187);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (188,'TARAWA',188);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (189,'PALIKIR',189);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (190,'YAREN',190);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (191,'WELLINGTON',191);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (192,'MELEKEOK',192);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (193,'PORT MORESBY',193);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (194,'APIA',194);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (195,'NUKU ALOFA',195);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (196,'FUNAFUTI',196);
+INSERT INTO "ADMPRO"."CITY" (Id,name,country) VALUES (197,'PORT VILA',197);
 
 --Productos
 
---creacion y execucion de procedimiento
-truncate table ADMPRO.PRODUCT
-DROP PROCEDURE ADMPRO.LlenarProductos
+CREATE OR ALTER PROCEDURE ADMPRO.LlenarProductosReservas
+    @inicio int = NULL,
+    @fin    int = NULL
+AS
+  DECLARE @intFlag INT
+  SET @intFlag = @inicio
+  WHILE (@intFlag <= @fin)
+    BEGIN
+      declare @DateStart Date = '2018-09-01';
+      declare @DateEnd Date = '2019-05-31';
+      declare @diasEstancia INT = ROUND(((10 - 1 - 1) * RAND() + 1), 0);
+      declare @ArrivalDate Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
+      declare @DeptDate Date = DateAdd(Day, @diasEstancia, @ArrivalDate)
+      declare @ciudad int = FLOOR(RAND()*(197-0+1))+0;
+      declare @randEmpresa int = FLOOR(RAND()*(2-1+1))+1; -- Reservas 1 -> Dan y 2 -> hilton
+      declare @nombreEmpresa varchar(50) = CASE @randEmpresa
+                WHEN 1 THEN 'DANN CARLTON HOTEL'
+                WHEN 2 THEN 'HILTON HOTELS'
+              END;
+      declare @costoNoche int = round(FLOOR(RAND()*(250000-180000+1))+180000,-4);
+      declare @imagenRef varchar(200) = CONCAT('/FotosProductos/', FLOOR(RAND()*(715-1+1))+1 ,'.jpeg');
+      declare @nombreCiudadPais varchar(100) = (select concat (CITY.name ,' - ',country.name) from admpro.CITY inner JOIN ADMPRO.COUNTRY on CITY.country = COUNTRY.Id where city.Id = @ciudad);
 
-CREATE PROCEDURE ADMPRO.LlenarProductos      
-@inicio int = NULL,
-@fin int = NULL
-AS   
-DECLARE @intFlag INT
-SET @intFlag = @inicio
-WHILE (@intFlag < @fin)
-BEGIN
-declare @DateStart	Date = '2018-01-01'
-declare @DateEnd	Date = '2019-12-31'
-declare @SpecDate Date = DateAdd(Day, Rand() * DateDiff(Day, @DateStart, @DateEnd), @DateStart)
-declare @ArrivalDate Date = DateAdd(Day, - ROUND(((10 - 1 -1) * RAND() + 1), 0) ,@SpecDate)
-declare @DeptDate Date = DateAdd(Day, ROUND(((10 - 1 -1) * RAND() + 1), 0), @SpecDate)
-INSERT INTO "ADMPRO"."PRODUCT" (Id,name,spectacle_date,arrival_date,departure_date,transport_type,spectacle_type,lodging_type,description,code,image_ref,source_city,target_city) VALUES 
-(@intFlag , CONCAT('Producto No.', @intFlag , ' de toures'),@SpecDate,@ArrivalDate,
-@DeptDate,ROUND(((5 - 0 -1) * RAND() + 0), 0),ROUND(((4 - 0 -1) * RAND() + 0), 0),ROUND(((3 - 0 -1) * RAND() + 0), 0),CONCAT('Descripcion producto No.', @intFlag , ' de toures'),
-CONCAT('10010', @intFlag ),CONCAT('/FotosProductos/', ROUND(((715 - 1 -1) * RAND() + 1), 0) ,'.jpeg'),
-ROUND(((197 - 0 -1) * RAND() + 0), 0),
-ROUND(((197 - 0 -1) * RAND() + 0), 0))
-SET @intFlag = @intFlag + 1
-END
-GO
+      INSERT INTO LODGING ("Id", "arrival_date", "departure_date", "city", "nom_emp")
+      VALUES (@intFlag,
+              @ArrivalDate,
+              @DeptDate,
+              @ciudad,
+              @nombreEmpresa)
 
-
-exec ADMPRO.LlenarProductos @inicio = 700001 , @fin = 800000
-GO
+        INSERT INTO PRODUCT ("Id", "cod", "name", "description", "cost", "image_ref", "transport_type", "spectacle_type", "lodging_type", "product_type")
+        VALUES (@intFlag,
+                concat('22',@randEmpresa,@intFlag), --Las reservan arrancan en 22, transporte en 55 y espectaculo en 77 ++ el rand de empresa
+                concat('Reserva ',@nombreEmpresa,' ',@nombreCiudadPais),
+                concat('Reserva ',@nombreEmpresa,' ',@nombreCiudadPais,
+                       ' entre ',@ArrivalDate,' - ',@DeptDate, ' - ' , @diasEstancia , ' días.'),
+                @costoNoche * @diasEstancia,
+                @imagenRef,
+                null,
+                null,
+                @intFlag,
+                'L')
 
 
 
 
-select count(*) from ADMPRO.PRODUCT
-
-
-
-DROP PROCEDURE ADMPRO.UpdateIpImagen
-
-CREATE PROCEDURE ADMPRO.UpdateIpImagen      
-AS   
-UPDATE ADMPRO.PRODUCT
-SET image_ref = REPLACE(image_ref, 'localhost', '127.0.0.1')
-GO
-exec ADMPRO.UpdateIpImagen
-GO
+      SET @intFlag = @intFlag + 1
+    END
