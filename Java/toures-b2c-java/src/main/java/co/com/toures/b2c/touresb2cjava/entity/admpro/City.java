@@ -1,7 +1,6 @@
 package co.com.toures.b2c.touresb2cjava.entity.admpro;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
