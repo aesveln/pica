@@ -1,0 +1,70 @@
+  .botonF1{
+    width:45px;
+    height:45px;
+    border-radius:100%;
+    background:#F44336;
+    right:0px;
+    top: 0px;
+    position: relative;
+    border:none;
+    outline:none;
+    color:#FFF;
+    font-size:20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition:.3s;  
+  }
+  span{
+    transition:.5s;  
+  }
+  .botonF1:hover span{
+    transform:rotate(360deg);
+  }
+  .botonF1:active{
+    transform:scale(1.1);
+  }
+  .btn{
+    width:40px;
+    height:40px;
+    border-radius:100%;
+    border:none;
+    color:#FFF;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-size:20px;
+    outline:none;
+    position:absolute;
+    right:5px;
+    top: 0px;
+    transform:scale(0);
+  }
+  .animacionVer{
+    transform:scale(1);
+  }
+  .pagination {
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    right: 0px;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+  
+  .pagination a.active {
+    background-color: rgb(57, 89, 160);
+    color: white;
+    border: 1px solid  rgb(57, 89, 160);
+    border-radius: 5px;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+  .center {
+    text-align: center;
+  }
+  

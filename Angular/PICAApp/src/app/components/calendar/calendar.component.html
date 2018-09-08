@@ -1,0 +1,92 @@
+
+    <div class="container">
+        <div>
+            <div class="assignaments-title">
+                Asignaciones
+            </div>
+        <div class="cards-itmes-calendar">
+                <ul class="list-group">
+                        <li class="list-group-item ">
+                              <div class="card-body-calendar">
+                                      <div>
+                                              <div *ngIf="calendarOptions">
+                                                  <ng-fullcalendar class="calendar-card"
+                                                  #ucCalendar [options]="calendarOptions" 
+                                                  (eventResize)="updateEvent($event.detail)" 
+                                                  (dayClick)="dayClick($event.detail)" 
+                                                  (clickButton)="clickButton($event.detail)" 
+                                                  [(eventsModel)]="events"
+                                                  >
+                                                  </ng-fullcalendar>
+                                              </div>
+                                      </div>
+                              </div>
+                        </li>
+                </ul>
+        </div>
+    </div> 
+    <div class="title-day-selected" *ngIf="dateSelected != null">
+           <h6>{{dateSelected}}</h6>
+    </div>
+    <br>
+    <div class="cards-itmes" *ngIf="dateSelected != null">
+            <ul class="list-group">
+                    <li class="list-group-item" *ngFor = "let card of infoCards">
+                            <div class="card-body">
+                                    <div align="center" >
+                                            <div class="profile-content center-block" align="left" >
+                                                   <div class="logo-card">
+                                                        <h5>{{card.startDateTimeLocal}}</h5>
+                                                        <div class="icon-card">
+                                                                <img src= {{card.image}}>
+                                                        </div>
+                                                   </div>
+                                                   <div class="simple-information">
+                                                        <h4>
+                                                                {{card.site}}
+                                                        </h4>
+                                                        <small>
+                                                            <i class="glyphicon glyphicon-map-marker">
+                                                            </i>
+                                                            <cite title="San Francisco, USA">&nbsp;&nbsp;{{card.location}}
+                                                            </cite>
+                                                        </small>
+                                                        <div class="state-card" 
+                                                             [style.color] = "card.status == 'Aprobado' ? 'Green' : card.status == 'Pendiente' ? 'rgb(123, 106, 85)' : card.status == 'Rechazado' ? 'rgb(173, 2, 2)' : card.status == 'En curso' ? 'rgb(57, 89, 160)' : ''"
+                                                             [style.border-color] = "card.status == 'Aprobado' ? 'Green' : card.status == 'Pendiente' ? 'rgb(123, 106, 85)' : card.status == 'Rechazado' ? 'rgb(173, 2, 2)' : card.status == 'En curso' ? 'rgb(57, 89, 160)' : ''"
+                                                        >
+                                                            {{card.status}}
+                                                        </div>
+                                                        <div class="schedule-card">
+                                                                <i class="glyphicon glyphicon-list-alt">
+                                                                </i>
+                                                                <span> 
+                                                                {{card.typeCard}}
+                                                                </span>
+                                                        </div>
+                                                        <div *ngIf="card.place != null" class="schedule-card">
+                                                                <i class="glyphicon glyphicon-flag">
+                                                                </i>
+                                                                <span> 
+                                                                {{card.place}}
+                                                                </span>
+                                                        </div>
+                                                        <div *ngIf="card.place === null">
+                                                                <p></p>
+                                                        </div>
+                                                        <div class="timeline-card">
+                                                             <i class="glyphicon glyphicon-time">
+                                                             </i>
+                                                             {{card.startDateTimeLocal}} - {{card.endDateTimeLocal}}
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                         </div>
+                    </li>
+            </ul>
+    </div>
+  <br><br><br>
+</div>
+  
+    

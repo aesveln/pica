@@ -1,0 +1,72 @@
+<div *ngIf="router.url !== '/login'" class="_navbar-icon-menu">
+  <ul class="_navbar-icon-menu-ul">
+    <li>
+        <a>
+                <img class="icon-more" src ="../assets/icons/more.svg" (click)="activeMenuMore()">
+        </a>
+    </li>
+    <li>
+        <a routerLink="/profile" ng-click="" >
+            <img routerLink="/profile" class="icon-profile" src ="../assets/icons/profile_men_menu.svg">
+            <h6 class="label-menu">Perfil</h6>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/home">
+            <div class="center">
+                <button routerLink="/home" class="btn-radius-circular"></button>
+            </div>
+            <h6 class="label-home">Inicio</h6>
+        </a>
+        
+    </li>
+    <li>
+        <a routerLink="/notifications">
+            <img class="icon-notification" routerLink="/notifications" class="icon-notification" src ="../assets/icons/notificationActive.svg">
+        </a>
+    </li>
+    <li *ngIf="showAdminClaim" (click)="activeMenuAdmin()" class="list-menu-admin">
+        <a>
+            <h6 class="label-menu">Administración</h6>
+        </a>
+       
+    </li>
+    <li>
+        <a routerLink="/full-calendar">
+            <img routerLink="/full-calendar" class="icon-calendar" src ="../assets/icons/calendar.svg">
+            <h6 class="label-menu">Calendario</h6>
+        </a>
+    </li>
+  </ul>
+</div>
+<div *ngIf="router.url !== '/login'" class="_navbar-icon-menu-more-admin-container" 
+         [style.visibility]="(showMoreSubmenu == true) ? 'visible' : 'hidden' "
+         >
+
+         <div class="_navbar-icon-menu-admin-container"
+         [style.visibility]="(showAdminSubmenu == true) ? 'visible' : 'hidden' ">
+         <button *ngIf="hidenTitleAdmin" class="_navbar-separator-button">Administración</button>
+         <ul class="_navbar-icon-menu-admin-ul">
+                     <li class="_navbar-separator"><a>Cuentas</a>
+                         <ul>  
+                                 <li><a routerLink="/users">&#9678; Usuarios</a></li>
+                                 <li><a routerLink="/roles">&#9678; Perfiles</a></li>
+                         </ul>
+                     </li>
+                 </ul>
+         </div> 
+
+        <div class="_navbar-icon-menu-more-container"
+        [style.visibility]="(showMoreSubmenu == true) ? 'visible' : 'hidden' "
+        >
+                <ul class="_navbar-icon-menu-more-ul">
+                        <li class="_navbar-separator-single"><a>Noticias</a></li>
+                        <li><a>Contactenos</a>
+                        <li><a routerLink="/qualification">&#9678; Valoración</a></li>
+                        <li><a>Mis mensajes</a></li>
+                        <li class="_navbar-quite"><a routerLink="/login">Salir</a></li>
+                    </ul>
+        </div>
+        
+</div>
+

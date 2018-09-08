@@ -1,0 +1,129 @@
+<div class="container">
+		<ul class="list-group">
+				<li class="list-group-item ">
+						<div class="profile-userpic">
+								<div align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+									<input id="profile-image-upload" class="hidden" type="file">
+									
+								</div>
+								<div class="profile-usertitle">
+										<div class="profile-usertitle-name">
+											Jon Doe
+										</div>
+										<div class="profile-usertitle-job">
+											Cliente Gold
+										</div>
+								</div>
+								<div class="list-group">
+										<div class="profile-userbuttons">
+												<button type="button" class="btn btn-success btn-sm">Llamar a Soporte</button>
+												<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-sm">Registrar Tarjeta</button>
+										</div>
+								</div>
+								<div class="profile-usermenu ">
+										<ul class="nav">
+												<li class="active">
+														<a routerLink="/profile">
+														<i class="glyphicon glyphicon-home"></i>
+														Mi perfil </a>
+													</li>
+											<li>
+												<a routerLink="/notifications">
+												<i class="glyphicon glyphicon-ok"></i>
+												Mis Ordenes </a>
+											</li>
+										</ul>
+							   </div>
+					  </div>
+				</li>
+				<br>
+				<li class="list-group-item ">
+						<div class="card-body">
+								<div align="center" >
+										<div class="profile-content center-block" align="left" >
+												<h4>
+												    Jon Andreu Doe Jonsson
+												</h4>
+												<small><i class="glyphicon glyphicon-map-marker">
+													</i><cite title="San Francisco, USA">&nbsp;&nbsp;Bogotá, Colombia </cite></small>
+												<p>
+														<i class="glyphicon glyphicon-envelope"></i> JonDoe@cinecolombia.com
+														<br />
+														<i class="glyphicon glyphicon-gift"></i> June 02, 1988</p>
+												<!-- Split button -->
+										</div>
+						</div>
+						</div>
+				</li>
+                <br>
+				<li class="list-group-item ">
+						<div class="card-body">
+								<div align="center" >
+									<div class="profile-content center-block" align="left" >
+										<div class="logo-card">
+											 <div class="icon-card">
+													 <img src= "../../../assets/images/amx.PNG">
+											 </div>
+										</div>
+										<div class="simple-information">
+												<a><h5> Nombre de tarjeta</h5></a>
+												<a><h6> xxxx-xxxx-xxx-789</h6></a>
+												
+											 <div class="schedule-card">
+													 <i class="glyphicon glyphicon-flag"></i>
+													 <span> 
+														Activa
+													 </span>
+											 </div>
+										</div>
+									</div>
+								</div>
+						</div>
+				</li>
+		</ul>
+		<br>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog modal-sm">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h4 class="modal-title">Crear Tarjeta</h4>
+			</div>
+			<div class="modal-body">
+				<label>Tipo de tarjeta:</label>
+				<select class="form-control">
+						<option selected>Seleccionar...</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+				</select>
+				<p></p>
+				<label>Número de Tarjeta:</label>
+				<input class="form-control"/>
+				<p></p>
+				<label>Código de Seguridad:</label>
+				<input class="form-control"/>
+				<p></p>
+				<label>Fecha de expedición:</label>
+				<p></p>
+					<select class="form-control col-md-2">
+						<option selected>Seleccionar...</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+					Mes
+    				<p></p>
+					<input class="form-control col-md-2"/>
+					Año
+			</div>
+			<div class="modal-footer">
+                  <div class="col-md-1">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Agregar</button>
+				  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+<br><br><br>
