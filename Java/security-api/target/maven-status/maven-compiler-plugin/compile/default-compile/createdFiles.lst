@@ -1,0 +1,9 @@
+com\security\app\controllers\UserController.class
+com\security\app\infraestructure\JwtApplication.class
+com\security\app\models\UserRegisterRequest.class
+com\security\app\infraestructure\SwaggerConfig.class
+com\security\app\dao\UserDAO.class
+com\security\app\app.class
+com\security\app\models\UserInfo.class
+com\security\app\services\UserService.class
+com\security\app\models\UserRequest.class
