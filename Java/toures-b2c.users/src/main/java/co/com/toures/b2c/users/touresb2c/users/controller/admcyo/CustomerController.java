@@ -1,4 +1,4 @@
-package co.com.toures.b2c.users.touresb2c.users.service;
+package co.com.toures.b2c.users.touresb2c.users.controller.admcyo;
 
 
 import co.com.toures.b2c.users.touresb2c.users.dao.admcyo.CustomerRepository;
@@ -17,7 +17,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/users/{id}")
     public Customer findById(@PathVariable(value = "id") BigDecimal idCity) {
 
         return customerRepository.findById(idCity).orElse(null);
