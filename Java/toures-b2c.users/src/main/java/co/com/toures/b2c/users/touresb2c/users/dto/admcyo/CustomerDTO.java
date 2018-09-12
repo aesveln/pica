@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 
 
-public class Customer {
+public class CustomerDTO {
 
     private BigDecimal idCustomer;
     private String documentType;

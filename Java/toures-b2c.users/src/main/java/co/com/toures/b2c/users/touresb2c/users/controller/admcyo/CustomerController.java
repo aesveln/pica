@@ -1,26 +1,34 @@
 package co.com.toures.b2c.users.touresb2c.users.controller.admcyo;
 
 
-import co.com.toures.b2c.users.touresb2c.users.dao.admcyo.CustomerRepository;
-import co.com.toures.b2c.users.touresb2c.users.entity.admcyo.Customer;
+import co.com.toures.b2c.users.touresb2c.users.dto.admcyo.CustomerDTO;
+import co.com.toures.b2c.users.touresb2c.users.model.admcyo.CustomerRequest;
+import co.com.toures.b2c.users.touresb2c.users.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.ResourceAccessException;
 
-import java.math.BigDecimal;
+import javax.ws.rs.core.Response;
 
 @RestController
 public class CustomerController {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerService customerService;
 
-    @GetMapping("/users/{id}")
-    public Customer findById(@PathVariable(value = "id") BigDecimal idCity) {
+//    @GetMapping("/users/{id}")
+//    public CustomerDTO findById(@PathVariable(value = "id") BigDecimal idCity) {
+//
+//        return customerRepository.findById(idCity).orElse(null);
+//    }
 
-        return customerRepository.findById(idCity).orElse(null);
+    @RequestMapping(method = RequestMethod.POST, value =  "/api/users/login")
+    public CustomerDTO ValidateUser(@RequestBody CustomerRequest userRequest) {
+
+        return customerService.getUserInfoById(userRequest);
+
     }
 
 
