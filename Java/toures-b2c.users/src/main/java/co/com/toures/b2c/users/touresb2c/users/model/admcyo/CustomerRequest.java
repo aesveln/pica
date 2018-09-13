@@ -6,15 +6,14 @@ public class CustomerRequest {
 
 
     private BigDecimal id;
-    private String userName;
-
+    private String correo;
 
     public CustomerRequest() {
     }
 
-    public CustomerRequest(BigDecimal id, String userName) {
+    public CustomerRequest(BigDecimal id, String correo) {
         this.id = id;
-        this.userName = userName;
+        this.correo = correo;
     }
 
     public BigDecimal getId() {
@@ -25,11 +24,11 @@ public class CustomerRequest {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 }
