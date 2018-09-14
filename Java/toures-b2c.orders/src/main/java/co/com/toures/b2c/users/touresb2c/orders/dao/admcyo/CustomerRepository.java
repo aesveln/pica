@@ -1,7 +1,8 @@
-package co.com.toures.b2c.users.touresb2c.users.dao.admcyo;
+package co.com.toures.b2c.users.touresb2c.orders.dao.admcyo;
 
-import co.com.toures.b2c.users.touresb2c.users.entity.admcyo.Customer;
 import org.springframework.data.repository.CrudRepository;
+
+import co.com.toures.b2c.users.touresb2c.orders.entity.admcyo.Customer;
 
 import java.math.BigDecimal;
 

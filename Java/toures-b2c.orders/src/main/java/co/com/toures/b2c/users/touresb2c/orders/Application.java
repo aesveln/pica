@@ -1,4 +1,4 @@
-package co.com.toures.b2c.users.touresb2c.users;
+package co.com.toures.b2c.users.touresb2c.orders;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

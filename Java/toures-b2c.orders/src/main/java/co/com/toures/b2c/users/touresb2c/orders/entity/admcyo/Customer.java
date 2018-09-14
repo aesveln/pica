@@ -1,5 +1,5 @@
 
-package co.com.toures.b2c.users.touresb2c.users.entity.admcyo;
+package co.com.toures.b2c.users.touresb2c.orders.entity.admcyo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

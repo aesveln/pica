@@ -1,4 +1,4 @@
-package co.com.toures.b2c.users.touresb2c.users.conf;
+package co.com.toures.b2c.users.touresb2c.orders.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

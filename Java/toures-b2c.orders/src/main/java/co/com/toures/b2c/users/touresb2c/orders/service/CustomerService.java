@@ -1,9 +1,10 @@
-package co.com.toures.b2c.users.touresb2c.users.service;
+package co.com.toures.b2c.users.touresb2c.orders.service;
 
-import co.com.toures.b2c.users.touresb2c.users.dao.admcyo.CustomerRepository;
-import co.com.toures.b2c.users.touresb2c.users.dto.admcyo.CustomerDTO;
-import co.com.toures.b2c.users.touresb2c.users.entity.admcyo.Customer;
-import co.com.toures.b2c.users.touresb2c.users.model.admcyo.CustomerRequest;
+import co.com.toures.b2c.users.touresb2c.orders.dao.admcyo.CustomerRepository;
+import co.com.toures.b2c.users.touresb2c.orders.dto.admcyo.CustomerDTO;
+import co.com.toures.b2c.users.touresb2c.orders.entity.admcyo.Customer;
+import co.com.toures.b2c.users.touresb2c.orders.model.admcyo.CustomerRequest;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

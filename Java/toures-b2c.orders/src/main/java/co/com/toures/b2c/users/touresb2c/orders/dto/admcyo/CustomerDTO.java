@@ -1,5 +1,5 @@
 
-package co.com.toures.b2c.users.touresb2c.users.dto.admcyo;
+package co.com.toures.b2c.users.touresb2c.orders.dto.admcyo;
 
 import java.math.BigDecimal;
 
