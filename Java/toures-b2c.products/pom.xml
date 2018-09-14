@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>co.com.toures.b2c.users</groupId>
-    <artifactId>toures-b2c.users</artifactId>
+    <groupId>co.com.toures.b2c.products</groupId>
+    <artifactId>toures-b2c.products</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>toures-b2c.users</name>
-    <description>Demo project for Spring Boot</description>
+    <name>toures-b2c.products</name>
+    <description>Servicio productos</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -46,14 +46,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>14</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/ojdbc6.jar</systemPath> <!-- must match file name -->
-        </dependency>
-
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
@@ -71,14 +63,17 @@
             <version>2.9.2</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>7.0.0.jre8</version><!--$NO-MVN-MAN-VER$-->
+        </dependency>
 
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>2.2.0</version>
         </dependency>
-
 
     </dependencies>
 
