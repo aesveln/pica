@@ -28,5 +28,17 @@ public class ProductController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value =  "/api/products/getProductsByType")
+    public ProductResponse findAllProductsByType(@RequestBody ProductRequest productRequest) {
+
+        ProductResponse productResponse = new ProductResponse();
+
+        productResponse.setProductos(productService.findAllSpectacleProducts(productRequest));
+
+
+        return productResponse;
+
+    }
+
 
 }

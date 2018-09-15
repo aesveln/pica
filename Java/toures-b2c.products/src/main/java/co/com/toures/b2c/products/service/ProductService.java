@@ -12,6 +12,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;
@@ -36,7 +37,35 @@ public class ProductService {
             @Override
             public ProductDTO apply(Product entity) {
                 ProductDTO dto = new ProductDTO();
-                dto = modelMapper.map(entity,ProductDTO.class);
+                dto = modelMapper.map(entity, ProductDTO.class);
+
+                return dto;
+            }
+        });
+
+        return productosDTO;
+
+    }
+
+
+    public Page<ProductDTO> findAllSpectacleProducts(ProductRequest productRequest) {
+
+        Pageable pageable;
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
+
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
+        } else {
+            String sortBy = ("S.").concat(productRequest.getSortBy());
+            Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
+        }
+        Page<Product> productos = productRepository.findAllSpectacleProducts(pageable);
+
+        Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
+            @Override
+            public ProductDTO apply(Product entity) {
+                ProductDTO dto = new ProductDTO();
+                dto = modelMapper.map(entity, ProductDTO.class);
 
                 return dto;
             }
