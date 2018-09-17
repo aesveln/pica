@@ -5,7 +5,7 @@
 
     <groupId>co.com.toures.b2c.products</groupId>
     <artifactId>toures-b2c.products</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>toures-b2c.products</name>

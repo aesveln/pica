@@ -1,0 +1,13 @@
+version: '3'
+services:
+  toures-b2c.users:
+    build: "toures-b2c.users/."
+    container_name: toures-b2c.users
+    ports:
+      - "8080:8080"
+      
+  toures-b2c.products:
+    build: "toures-b2c.products/."
+    container_name: toures-b2c.products
+    ports:
+      - "8081:8080"

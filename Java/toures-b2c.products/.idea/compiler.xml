@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="toures-b2c.users" />
+        <module name="toures-b2c.products" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="toures-b2c.users" target="1.8" />
+      <module name="toures-b2c.products" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

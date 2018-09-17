@@ -51,8 +51,10 @@ public class ProductService {
     public Page<ProductDTO> findAllSpectacleProducts(ProductRequest productRequest) {
 
         Pageable pageable;
-        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
 
+
+
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
             pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
         } else {
             String sortBy = ("S.").concat(productRequest.getSortBy());
@@ -76,4 +78,57 @@ public class ProductService {
     }
 
 
+    public Page<ProductDTO> findAllTransportProducts(ProductRequest productRequest) {
+
+        Pageable pageable;
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
+
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
+        } else {
+            String sortBy = ("T.").concat(productRequest.getSortBy());
+            Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
+        }
+        Page<Product> productos = productRepository.findAllTransportProducts(pageable);
+
+        Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
+            @Override
+            public ProductDTO apply(Product entity) {
+                ProductDTO dto = new ProductDTO();
+                dto = modelMapper.map(entity, ProductDTO.class);
+
+                return dto;
+            }
+        });
+
+        return productosDTO;
+
+    }
+
+    public Page<ProductDTO> findAllLodgingProducts(ProductRequest productRequest) {
+
+        Pageable pageable;
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
+
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
+        } else {
+            String sortBy = ("L.").concat(productRequest.getSortBy());
+            Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
+        }
+        Page<Product> productos = productRepository.findAllLodgingProducts(pageable);
+
+        Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
+            @Override
+            public ProductDTO apply(Product entity) {
+                ProductDTO dto = new ProductDTO();
+                dto = modelMapper.map(entity, ProductDTO.class);
+
+                return dto;
+            }
+        });
+
+        return productosDTO;
+
+    }
 }

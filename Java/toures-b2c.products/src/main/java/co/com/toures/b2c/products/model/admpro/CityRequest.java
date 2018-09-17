@@ -1,36 +1,18 @@
 package co.com.toures.b2c.products.model.admpro;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.ws.rs.DefaultValue;
+public class CityRequest {
 
-public class ProductRequest {
-
-    private String tipoProducto;
-    @NotNull
-    @NotBlank
     private int pageSize;
-    @NotNull
-    @NotBlank
     private int pageNumber;
     private String sortBy;
 
-    public ProductRequest() {
+    public CityRequest() {
     }
 
-    public ProductRequest(String tipoProducto, int pageSize, int pageNumber, String sortBy) {
-        this.tipoProducto = tipoProducto;
+    public CityRequest(int pageSize, int pageNumber, String sortBy) {
         this.pageSize = pageSize;
         this.pageNumber = pageNumber;
         this.sortBy = sortBy;
-    }
-
-    public String getTipoProducto() {
-        return tipoProducto;
-    }
-
-    public void setTipoProducto(String tipoProducto) {
-        this.tipoProducto = tipoProducto;
     }
 
     public int getPageSize() {

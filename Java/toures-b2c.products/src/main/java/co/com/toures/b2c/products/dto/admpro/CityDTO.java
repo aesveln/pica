@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class CityDTO {
 
-    @JsonIgnore
     private int id;
     private String name;
 //    private CountryDTO country;
