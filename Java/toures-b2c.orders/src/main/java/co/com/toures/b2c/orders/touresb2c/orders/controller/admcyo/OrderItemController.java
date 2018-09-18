@@ -22,7 +22,7 @@ public class OrderItemController {
     ModelMapper modelMapper = new ModelMapper();
     
     
-    @GetMapping("/orders/{id}")
+    @RequestMapping(method = RequestMethod.GET, value =  "/api/orders/getinfo")
 	public OrderItemResponse getOrdersInfo(@RequestBody OrderItemRequest requestOrder)
 	{
     	OrderItemDTO order = orderItemService.getOrderItemInfoById(requestOrder);
