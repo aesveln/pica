@@ -77,5 +77,34 @@ public class ProductController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/api/products/findAllSpectacleByDate")
+    @ApiOperation("Return all spectacle products by date")
+    public ResponseEntity<ProductResponse> findAllSpectacleByDate(@RequestBody ProductRequest productRequest) {
+        try {
+            ProductResponse productResponse = new ProductResponse();
+            productResponse.setProductos(productService.findAllSpectacleByDate(productRequest));
+
+            return ResponseEntity.ok(productResponse);
+        } catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.badRequest().body(null);
+        }
+
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/api/products/findAllTransporByRangeDate")
+    @ApiOperation("Return all transport products by range date")
+    public ResponseEntity<ProductResponse> findAllTransporByRangeDate(@RequestBody ProductRequest productRequest) {
+        try {
+            ProductResponse productResponse = new ProductResponse();
+            productResponse.setProductos(productService.findAllTransporByRangeDate(productRequest));
+
+            return ResponseEntity.ok(productResponse);
+        } catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.badRequest().body(null);
+        }
+
+    }
 
 }

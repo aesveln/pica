@@ -1,12 +1,15 @@
 package co.com.toures.b2c.products.model.admpro;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.ws.rs.DefaultValue;
+import java.util.Date;
+
 
 public class ProductRequest {
 
-    private String tipoProducto;
+
     @NotNull
     @NotBlank
     private int pageSize;
@@ -15,23 +18,14 @@ public class ProductRequest {
     private int pageNumber;
     private String sortBy;
 
+    private String spectacleDate;
+    private String depart_date;
+    private String return_date;
+
+
     public ProductRequest() {
     }
-
-    public ProductRequest(String tipoProducto, int pageSize, int pageNumber, String sortBy) {
-        this.tipoProducto = tipoProducto;
-        this.pageSize = pageSize;
-        this.pageNumber = pageNumber;
-        this.sortBy = sortBy;
-    }
-
-    public String getTipoProducto() {
-        return tipoProducto;
-    }
-
-    public void setTipoProducto(String tipoProducto) {
-        this.tipoProducto = tipoProducto;
-    }
+    
 
     public int getPageSize() {
         return pageSize;
@@ -55,5 +49,29 @@ public class ProductRequest {
 
     public void setSortBy(String sortBy) {
         this.sortBy = sortBy;
+    }
+
+    public String getSpectacleDate() {
+        return spectacleDate;
+    }
+
+    public void setSpectacleDate(String spectacleDate) {
+        this.spectacleDate = spectacleDate;
+    }
+
+    public String getDepart_date() {
+        return depart_date;
+    }
+
+    public void setDepart_date(String depart_date) {
+        this.depart_date = depart_date;
+    }
+
+    public String getReturn_date() {
+        return return_date;
+    }
+
+    public void setReturn_date(String return_date) {
+        this.return_date = return_date;
     }
 }

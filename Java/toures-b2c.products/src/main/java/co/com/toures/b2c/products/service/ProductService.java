@@ -15,6 +15,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.function.Function;
 
 @Service
@@ -51,7 +54,6 @@ public class ProductService {
     public Page<ProductDTO> findAllSpectacleProducts(ProductRequest productRequest) {
 
         Pageable pageable;
-
 
 
         if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
@@ -130,5 +132,65 @@ public class ProductService {
 
         return productosDTO;
 
+    }
+
+    public Page<ProductDTO> findAllSpectacleByDate(ProductRequest productRequest) throws ParseException {
+
+
+        Pageable pageable;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date spectacleDate = dateFormat.parse(productRequest.getSpectacleDate());
+
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
+        } else {
+            String sortBy = ("S.").concat(productRequest.getSortBy());
+            Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
+        }
+        Page<Product> productos = productRepository.findAllSpectacleByDate(pageable, new java.sql.Date(spectacleDate.getTime()));
+
+        Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
+            @Override
+            public ProductDTO apply(Product entity) {
+                ProductDTO dto = new ProductDTO();
+                dto = modelMapper.map(entity, ProductDTO.class);
+
+                return dto;
+            }
+        });
+
+        return productosDTO;
+    }
+
+
+    public Page<ProductDTO> findAllTransporByRangeDate(ProductRequest productRequest) throws ParseException {
+
+
+        Pageable pageable;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date depart_date = dateFormat.parse(productRequest.getDepart_date());
+        Date return_date = dateFormat.parse(productRequest.getReturn_date());
+
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
+        } else {
+            String sortBy = ("S.").concat(productRequest.getSortBy());
+            Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
+        }
+        Page<Product> productos = productRepository.findAllTransporByRangeDate(pageable, new java.sql.Date(depart_date.getTime()),new java.sql.Date(return_date.getTime()));
+
+        Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
+            @Override
+            public ProductDTO apply(Product entity) {
+                ProductDTO dto = new ProductDTO();
+                dto = modelMapper.map(entity, ProductDTO.class);
+
+                return dto;
+            }
+        });
+
+        return productosDTO;
     }
 }
