@@ -39,4 +39,9 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
             nativeQuery = true)
     Page<Product> findAllTransporByRangeDate(Pageable pageable, @Param("depart_date") Date depart_date,@Param("return_date") Date return_date);
 
+    @Query(value = "SELECT * FROM ADMPRO.PRODUCT P INNER JOIN ADMPRO.LODGING L ON P.lodging_type = L.Id WHERE L.arrival_date = :arrivalDate AND L.departure_date = :departureDate",
+            nativeQuery = true)
+    Page<Product> findAllLodgingByRangeDate(Pageable pageable, @Param("arrivalDate") Date arrivalDate,@Param("departureDate") Date departureDate);
+
+
 }

@@ -193,4 +193,34 @@ public class ProductService {
 
         return productosDTO;
     }
+
+    public Page<ProductDTO> findAllLodgingByRangeDate(ProductRequest productRequest) throws ParseException {
+
+
+        Pageable pageable;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date arrivalDate = dateFormat.parse(productRequest.getArrivalDate());
+        Date departureDate = dateFormat.parse(productRequest.getDepartureDate());
+
+        if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize());
+        } else {
+            String sortBy = ("L.").concat(productRequest.getSortBy());
+            Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
+            pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
+        }
+        Page<Product> productos = productRepository.findAllLodgingByRangeDate(pageable, new java.sql.Date(arrivalDate.getTime()),new java.sql.Date(departureDate.getTime()));
+
+        Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
+            @Override
+            public ProductDTO apply(Product entity) {
+                ProductDTO dto = new ProductDTO();
+                dto = modelMapper.map(entity, ProductDTO.class);
+
+                return dto;
+            }
+        });
+
+        return productosDTO;
+    }
 }

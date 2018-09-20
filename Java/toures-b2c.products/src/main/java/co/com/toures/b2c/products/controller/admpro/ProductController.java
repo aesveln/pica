@@ -107,4 +107,19 @@ public class ProductController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/api/products/findAllLodgingByRangeDate")
+    @ApiOperation("Return all lodging products by range date")
+    public ResponseEntity<ProductResponse> findAllLodgingByRangeDate(@RequestBody ProductRequest productRequest) {
+        try {
+            ProductResponse productResponse = new ProductResponse();
+            productResponse.setProductos(productService.findAllLodgingByRangeDate(productRequest));
+
+            return ResponseEntity.ok(productResponse);
+        } catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.badRequest().body(null);
+        }
+
+    }
+
 }

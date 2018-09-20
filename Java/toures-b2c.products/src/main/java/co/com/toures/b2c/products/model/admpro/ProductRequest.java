@@ -22,10 +22,13 @@ public class ProductRequest {
     private String depart_date;
     private String return_date;
 
+    private String arrivalDate;
+    private String departureDate;
+
 
     public ProductRequest() {
     }
-    
+
 
     public int getPageSize() {
         return pageSize;
@@ -73,5 +76,21 @@ public class ProductRequest {
 
     public void setReturn_date(String return_date) {
         this.return_date = return_date;
+    }
+
+    public String getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(String arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+
+    public String getDepartureDate() {
+        return departureDate;
+    }
+
+    public void setDepartureDate(String departureDate) {
+        this.departureDate = departureDate;
     }
 }
