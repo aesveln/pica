@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "oracleEntityManager",
         transactionManagerRef = "oracleTransactionManager",
-        basePackages = "co.com.toures.b2c.users.dao.admcyo"
+        basePackages = "co.com.toures.b2c.orders.dao.admcyo"
 )
 public class OracleConf {
 
@@ -47,7 +47,7 @@ public class OracleConf {
         return builder
                 .dataSource(oracleDataSource())
                 .properties(hibernateProperties())
-                .packages("co.com.toures.b2c.users.entity.admcyo")
+                .packages("co.com.toures.b2c.orders.entity.admcyo")
                 .persistenceUnit("oraclePU")
                 .build();
     }

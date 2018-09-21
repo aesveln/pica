@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7cf9139-d854-41fd-b53f-d156c4fb7a00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/target/classes/hibernate.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/conf/OracleConf.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/conf/OracleConf.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -487,12 +479,12 @@
       <workItem from="1537416006109" duration="1807000" />
       <workItem from="1537486691359" duration="26000" />
       <workItem from="1537486777239" duration="3282000" />
-      <workItem from="1537535175545" duration="128000" />
+      <workItem from="1537535175545" duration="292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64397000" />
+    <option name="totallyTimeSpent" value="64561000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
