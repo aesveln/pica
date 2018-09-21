@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: co.com.toures.b2c.users.touresb2c.users.ApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.409 s - in co.com.toures.b2c.users.touresb2c.users.ApplicationTests
