@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.com.toures.b2c.orders.dao.admcyo.SalesOrderRepository;
 import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.entity.admcyo.SalesOrder;
 import co.com.toures.b2c.orders.model.admcyo.SalesOrderRequest;
 
+@Service
 public class SalesOrderService {
 	
 	@Autowired

@@ -8,4 +8,3 @@ public interface OrderItemRepository extends CrudRepository<OrderItem, Integer>{
 
 	OrderItem findById(int id);
 }
-
