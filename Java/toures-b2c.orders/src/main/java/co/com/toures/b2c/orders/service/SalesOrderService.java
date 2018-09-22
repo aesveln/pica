@@ -1,5 +1,7 @@
 package co.com.toures.b2c.orders.service;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,9 +52,25 @@ public class SalesOrderService {
 		return salesDTOList;
 	}
 	
-	public void cancelSales(SalesOrderRequest saleRequest)
+	public int  cancelSales(int saleRequest)
 	{
-		salesRepository.cancelSaleOrder(saleRequest.getId().intValue());
+		return salesRepository.cancelSaleOrder(saleRequest);
+		
+	}
+	
+	public List<SalesOrderDTO> ordenesClientes(int idcliente)
+	{
+		List<SalesOrder> sales =  salesRepository.ordenesCliente(idcliente);
+		
+		List<SalesOrderDTO> salesDTOList = new ArrayList<SalesOrderDTO>();
+		
+		for(SalesOrder s: sales)
+		{
+			SalesOrderDTO salesDTO = modelmapper.map(s, SalesOrderDTO.class);
+			salesDTOList.add(salesDTO);
+		}
+		
+		return salesDTOList;
 	}
 
 }
