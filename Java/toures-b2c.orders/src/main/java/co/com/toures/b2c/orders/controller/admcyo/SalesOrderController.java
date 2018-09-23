@@ -1,5 +1,7 @@
 package co.com.toures.b2c.orders.controller.admcyo;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
@@ -50,10 +52,31 @@ public class SalesOrderController {
 		 RestTemplate restTemplate = new RestTemplate();
 		 int salecancel;
 		 String ret="";
+		 File bolivariano = new File("CanceladasBolivariano.txt");
+		 File hilton = new File("CanceladasHilton.txt");
 		 
 		 try
 		 {
-			 //POST METHOD
+			 
+			 if(!bolivariano.exists())
+			 {
+				 bolivariano.createNewFile();
+			 }
+			 
+			 if(!hilton.exists())
+			 {
+				 hilton.createNewFile();
+			 }
+			 
+			 PrintWriter pw = new PrintWriter (bolivariano);
+			 pw.println("Se cancela reserva del cliente: "+idsales);
+			 pw.close();
+			 
+			 PrintWriter pw2 = new PrintWriter (hilton);
+			 pw2.println("Se cancela reserva del cliente: "+idsales);
+			 pw2.close();
+			 
+			//POST METHOD
 			 String resultHoteles = restTemplate.postForObject(URL_HOTELES, idsales ,String.class);
 			 String resultEvento = restTemplate.postForObject(URL_EVENTO, idsales ,String.class);
 			 salecancel = salesService.cancelSales(idsales);
