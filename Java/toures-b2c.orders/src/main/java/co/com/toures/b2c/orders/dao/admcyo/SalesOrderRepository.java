@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -14,12 +16,13 @@ import co.com.toures.b2c.orders.entity.admcyo.SalesOrder;
 
 public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer> {
 
-	List<SalesOrder> findBystatusOrder(String status);
+	
+	List<SalesOrder> findBystatusOrder(String status, Pageable pageable);
 	
 	@Query(value="select * from sales_order where status_order not in ('CERR','RECH','CONC') ",
 			 nativeQuery = true)
 	
-	List<SalesOrder> findOpenSales();
+	List<SalesOrder> findOpenSales(Pageable pageable);
 	
 	@Transactional
 	@Modifying
@@ -27,7 +30,7 @@ public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer
 	int cancelSaleOrder (int idSale);
 	
 	@Query(value="select * from sales_order where customer_id = ?", nativeQuery = true)
-	List<SalesOrder> ordenesCliente (int idCliente);
+	List<SalesOrder> ordenesCliente (int idCliente, Pageable pageable);
 	
 	
 	

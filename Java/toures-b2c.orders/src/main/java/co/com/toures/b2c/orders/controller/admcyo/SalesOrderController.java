@@ -6,8 +6,11 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 
+import javax.xml.ws.Endpoint;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 
 import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.model.admcyo.SalesOrderRequest;
+import co.com.toures.b2c.orders.model.admcyo.SalesOrderResponse;
 import co.com.toures.b2c.orders.service.SalesOrderService;
 
 //import prueba3.wsdl.GetCountryRequest;
@@ -31,13 +35,18 @@ public class SalesOrderController {
 	
 	ModelMapper modelMapper = new ModelMapper();
 	
+	
 	static final String URL_HOTELES = "http://localhost:8087/HotelDann";
 	static final String URL_EVENTO = "http://localhost:8087/TuBoleta";
 	
 	@GetMapping("/salesorder/{status}")
-	public List<SalesOrderDTO> getSalesByStatus (@PathVariable(value = "status") String status)
+	public SalesOrderResponse getSalesByStatus (@PathVariable(value = "status") String status)
 	{
-		return salesService.findSalesByStatus(status);
+		SalesOrderResponse response = new SalesOrderResponse();
+		
+		response.setSales( salesService.findSalesByStatus(status));
+		
+		return response;
 	}
 	
 	@GetMapping("/salesorderOpen")
@@ -79,6 +88,7 @@ public class SalesOrderController {
 			//POST METHOD
 			 String resultHoteles = restTemplate.postForObject(URL_HOTELES, idsales ,String.class);
 			 String resultEvento = restTemplate.postForObject(URL_EVENTO, idsales ,String.class);
+			
 			 salecancel = salesService.cancelSales(idsales);
 			
 				 ret = "Orden cancelada";
