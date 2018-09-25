@@ -23,6 +23,7 @@ import { CoWorkerComponent } from './components/co-worker/co-worker.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
+import { ProductService} from './services/product/product.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { CatalogComponent } from './components/catalog/catalog.component';
     FullCalendarModule
   ],
   providers: [
-    EventSesrvice
+    EventSesrvice,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
