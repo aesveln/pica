@@ -100,8 +100,8 @@
          	<plugin>
 		    <groupId>org.jvnet.jaxb2.maven2</groupId>
 		    <artifactId>maven-jaxb2-plugin</artifactId>
- 		    <version>0.13.2</version> 
-<!-- 			<version>0.8.1</version> -->
+<!--  		    <version>0.13.1</version>  -->
+			<version>0.8.1</version>
 		    <executions>
 		        <execution>
 		            <goals>
@@ -110,12 +110,13 @@
 		        </execution>
 		    </executions>
 		    <configuration>
-		        <generatePackage>co.com.toures.b2c.orders.soap</generatePackage>
-		        <generateDirectory>${basedir}/src/main/java</generateDirectory>
-		        <schemaDirectory>${basedir}/src/main/resources/wsdl</schemaDirectory>
-		        <schemaIncludes>
-		            <include>*.wsdl</include>
-		        </schemaIncludes>
+		       <schemaLanguage>WSDL</schemaLanguage>
+        <generatePackage>co.com.toures.b2c.orders.wsdl</generatePackage>
+        <schemas>
+            <schema>
+                <url>http://localhost:8088/mockServiceAmerican?WSDL</url>
+            </schema>
+        </schemas>
 		    </configuration>
 		</plugin>
           </plugins>

@@ -22,6 +22,7 @@ import org.springframework.web.client.RestTemplate;
 import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.model.admcyo.SalesOrderRequest;
 import co.com.toures.b2c.orders.model.admcyo.SalesOrderResponse;
+import co.com.toures.b2c.orders.service.SalesOrderClient;
 import co.com.toures.b2c.orders.service.SalesOrderService;
 
 //import prueba3.wsdl.GetCountryRequest;
@@ -89,6 +90,8 @@ public class SalesOrderController {
 			 String resultHoteles = restTemplate.postForObject(URL_HOTELES, idsales ,String.class);
 			 String resultEvento = restTemplate.postForObject(URL_EVENTO, idsales ,String.class);
 			
+			 //Servicios SOAP
+			 String respSOAPAmerican = salesService.getRespuestaServicioAvianca(idsales);
 			 salecancel = salesService.cancelSales(idsales);
 			
 				 ret = "Orden cancelada";
