@@ -15,7 +15,7 @@ public class SpectacleDTO {
     private String nomEmp;
     @JsonIgnore
     private List<ProductDTO> productList;
-//    private CityDTO city;
+    private CityDTO city;
 
     public SpectacleDTO() {
     }
@@ -26,7 +26,7 @@ public class SpectacleDTO {
         this.spectacleDate = spectacleDate;
         this.nomEmp = nomEmp;
         this.productList = productList;
-//        this.city = city;
+        this.city = city;
     }
 
     public Integer getId() {
@@ -69,11 +69,11 @@ public class SpectacleDTO {
         this.productList = productList;
     }
 //
-//    public CityDTO getCity() {
-//        return city;
-//    }
-//
-//    public void setCity(CityDTO city) {
-//        this.city = city;
-//    }
+    public CityDTO getCity() {
+        return city;
+    }
+
+    public void setCity(CityDTO city) {
+        this.city = city;
+    }
 }

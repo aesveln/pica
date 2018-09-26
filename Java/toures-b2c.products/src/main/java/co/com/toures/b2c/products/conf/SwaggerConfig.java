@@ -33,5 +33,7 @@ public class SwaggerConfig {
                 .description("Products API reference for developers")
                 .termsOfServiceUrl("http://b2c@eaes.com")
                 .licenseUrl("javainuse@gmail.com").version("1.0").build();
+
     }
+
 }
