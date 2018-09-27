@@ -8,6 +8,7 @@ import java.util.function.Function;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +24,8 @@ public class SalesOrderService {
 	
 	@Autowired
 	SalesOrderRepository salesRepository;
+	@Autowired
+	SalesOrderClient salesSoap = new SalesOrderClient();
 	
 	ModelMapper modelmapper = new ModelMapper();
 	
@@ -80,6 +83,12 @@ public class SalesOrderService {
 		}
 		
 		return salesDTOList;
+	}
+	
+	
+	public String getRespuestaServicioAvianca (int id)
+	{
+		return salesSoap.getRespuestaServicio(id);
 	}
 
 }
