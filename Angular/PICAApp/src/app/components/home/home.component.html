@@ -86,13 +86,12 @@
                 </thead>
             </table>
       </div>
-      <input type="text" id="myInput" (keyup)="typeSearch($event)"  placeholder="Busqueda por nombre o codigo..." title="Busqueda">
+      <input type="text" #TextSearch ngModel name="TextSearch" id="myInput" (keyup)="typeSearch($event,TextSearch.value)"  placeholder="Busqueda por nombre o codigo..." title="Busqueda">
 </li>
+<br />
 <br />
 <li class="list-group-item" *ngIf="viewCatalog">
     <div class="card-body">        
-
-        <div>
             <div class="col-md-12">
                 <span><strong>Catalogo:</strong></span>
             </div>
@@ -165,20 +164,18 @@
             </div>
             <br/>
             <hr>
-            <div>
                 <ul>
                   <li class="list-group-item" *ngFor="let prod of listsProd">
-                    <div class="w3-container ">
                     <div class="w3-card-4" style="width:100%;">
                       <header class="w3-container w3-blue">
-                        <h4>{{prod.name}}</h4>
+                        <h6>{{prod.name}}</h6>
                       </header>
                   
                       <div class="w3-container">
                         <table>
                             <tr>
                               <td><img src="http://35.235.105.138:8181{{prod.imageRef}}" style="height:100px; width:120px;"/></td>
-                              <td>{{prod.description}}</td>
+                              <td><h6>{{prod.description}}</h6></td>
                             </tr>
                       </table>
                       </div>
@@ -190,19 +187,15 @@
                             </tr>
                             <tr style="text-align:left;">
                                 <td>Codigo: {{prod.cod}}</td>
-                              </tr>
-                          <tr style="text-align:right;">
-                              <td><a (click)="addProducto(prod)" class="glyphicon glyphicon-plus" style="color:white;" >Agregar</a></td>
+                                <td style="left: 0px;"><a (click)="addProducto(prod)" class="glyphicon glyphicon-plus" style="color:white;" >Agregar</a></td>
                             </tr>
                       </table>
                       <p></p>
                       </footer>
                     </div>
-                  </div>
                 </li>
                 <br/>
               </ul>
-            </div>
             <div class="center">
                 <div class="pagination">
                     <a href="#">❮</a>
@@ -211,8 +204,6 @@
                     <a href="#">❯</a>
                 </div>
             </div>
-        </div>
-        
 
         <!-- <app-catalog #child1></app-catalog> -->
     </div>

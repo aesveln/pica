@@ -55,7 +55,6 @@ export class ProductService {
         }
         count++;
       }
-      debugger;
       localStorage.setItem('ShoppingCar',JSON.stringify(this.subject.value));
     }
   }
@@ -77,7 +76,6 @@ export class ProductService {
         }
         count++;
       }
-      debugger;
       localStorage.setItem('ShoppingCar',JSON.stringify(this.subject.value));
   }
 

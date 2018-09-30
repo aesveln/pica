@@ -29,7 +29,6 @@ export class CatalogComponent implements OnInit {
   }
 
   DrawData(data){
-    debugger;
     console.log('llegamos al componente hijo');
     console.log(data);
   }

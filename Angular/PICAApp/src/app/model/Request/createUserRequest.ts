@@ -1,4 +1,4 @@
-export class CreateUserRequest {
+export class updateUserRequest {
     documentNumber: string;
     documentType: string;
     email: string;
@@ -6,4 +6,5 @@ export class CreateUserRequest {
     lastName: string;
     pass: string;
     phoneNumber: string;
+
 }

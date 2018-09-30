@@ -9,6 +9,13 @@ import { DtoProduct } from '../../model/Dto/Products/DtoProduct';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { JWT } from '../../model/JWT';
 import { UserInfo } from '../../model/userInfo';
+import { WelcomeService } from '../../services/home/welcome.service';
+import { ElasticRequest } from '../../model/Request/ElasticSearch/elasticRequest';
+import { debug } from 'util';
+import { Query_string } from '../../model/Request/ElasticSearch/query_string';
+import { Query } from '../../model/Request/ElasticSearch/query';
+import { ElasticResponse } from '../../model/Response/elasticResponse';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-home',
@@ -32,12 +39,19 @@ export class HomeComponent implements OnInit {
   jwt:JWT;
   shopping:Array<Producto> = [];
   carrito: Array<Producto> = [];
+  elastiSer: ElasticRequest;
+  query_strings:Query_string;
+  query:Query;
+
+  elasticResponse:ElasticResponse;
+
   private subscription: Subscription;
   private total: any;
   isLogged = false;
   constructor(
     private productService: ProductService,
-    private router:Router
+    private router:Router,
+    private welcomeService: WelcomeService
   ) {
     this.items = [
       {name:  '../../../assets/images/img_mountains_wide.jpg'}
@@ -45,15 +59,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
+    
     this.jwt =  JSON.parse(localStorage.getItem('userToken'));
-    console.log(this.jwt.token);
-    this.getDecodedAccessToken(this.jwt.token)
-    if(this.jwt.token == null){
-      this.router.navigate(['/login']);
-    }
-    if(this.jwt.token != "null")
+    
+    // if(this.jwt == null){
+    //   this.router.navigate(['/login']);
+    // }
+    if(this.jwt != null && this.jwt.token != "null")
     {
+      console.log(this.jwt.token);
+      this.getDecodedAccessToken(this.jwt.token)
       this.isLogged = true;
     }
     else{
@@ -61,10 +76,38 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  typeSearch(event: any) {
+  typeSearch(event: any, textSearch) {
     if (event.target.value.length > 0) {
       this.viewCatalog = true;
-    } else {
+      this.elastiSer =new ElasticRequest();
+      this.query_strings = new Query_string();
+      this.query = new Query();
+
+      this.elastiSer.query = this.query;
+      this.elastiSer.from = 0;
+      this.elastiSer.size = 10;
+      this.query.query_string = this.query_strings;
+      this.query_strings.query = '*'+textSearch+'*';
+      this.query_strings.fields = ["cod","name","description"]
+      this.listsProd = new Array<DtoProduct>();
+      this.welcomeService.elasticSearch(this.elastiSer).subscribe(data => {
+        this.elasticResponse = data;
+        let count = 0;
+        for (let variableHits of this.elasticResponse.hits.hits) {
+          console.log(variableHits);
+          let dtProducts = new DtoProduct();
+          dtProducts.cod = variableHits._source.cod;
+          dtProducts.cost = variableHits._source.cost;
+          dtProducts.id = variableHits._id;
+          dtProducts.imageRef = variableHits._source.image_ref;
+          dtProducts.name = variableHits._source.name; 
+          dtProducts.description = variableHits._source.description; 
+          this.listsProd[count] = dtProducts;
+          count++;
+        }
+        },error => alert(error));
+
+    } else if(event.target.value.length < 1) {
       this.viewCatalog = false;
     }
   }
@@ -91,7 +134,6 @@ export class HomeComponent implements OnInit {
   }
   
   CreateOrden(carrito){
-    debugger;
     var key = localStorage.getItem('userToken');
     
     if(key == null){
@@ -144,7 +186,6 @@ export class HomeComponent implements OnInit {
       getDecodedAccessToken(token: string): any {
         
         this.user = new UserInfo();
-        debugger;
         const helper = new JwtHelperService();
         this.user = helper.decodeToken(token);
         // Other functions

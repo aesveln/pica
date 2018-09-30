@@ -23,11 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   LoginOn(userName, password) {
-
     if(userName != "" && password != "")
     {
       this.jwt = new JWT();
-      debugger;
       this.loginService.userAuthentication(userName, password)
         .subscribe(
           (data) => {
