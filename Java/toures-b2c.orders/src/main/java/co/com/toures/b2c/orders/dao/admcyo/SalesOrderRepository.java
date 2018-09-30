@@ -12,6 +12,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.com.toures.b2c.orders.entity.admcyo.OrderItem;
 import co.com.toures.b2c.orders.entity.admcyo.SalesOrder;
 
 public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer> {
@@ -19,10 +20,10 @@ public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer
 	
 	List<SalesOrder> findBystatusOrder(String status, Pageable pageable);
 	
-	@Query(value="select * from sales_order where status_order not in ('CERR','RECH','CONC') ",
+	@Query(value="select ID_SALES,  TO_DATE(order_date,'DD.MM.YYYY') orderdate, PRICE, STATUS_ORDER, COMMENTS, CUSTOMER_ID from sales_order where status_order not in ('CERR','RECH','CONC') and customer_id = ? ",
 			 nativeQuery = true)
 	
-	List<SalesOrder> findOpenSales(Pageable pageable);
+	List<SalesOrder> findOpenSales(int idCliente, Pageable pageable);
 	
 	@Transactional
 	@Modifying
@@ -31,6 +32,11 @@ public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer
 	
 	@Query(value="select * from sales_order where customer_id = ?", nativeQuery = true)
 	List<SalesOrder> ordenesCliente (int idCliente, Pageable pageable);
+	
+	@Transactional
+	@Modifying
+	@Query(value="insert into sales_order (ORDER_DATE, price, STATUS_ORDER, comments, customer_id) values (get date(), ? , 'RESE', ? , ?)", nativeQuery = true)
+	void createSaleOrder (long price, String comments, int customerid);
 	
 	
 	

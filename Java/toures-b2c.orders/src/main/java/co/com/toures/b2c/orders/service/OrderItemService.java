@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import co.com.toures.b2c.orders.dao.admcyo.OrderItemRepository;
 import co.com.toures.b2c.orders.dto.admcyo.OrderItemDTO;
 import co.com.toures.b2c.orders.entity.admcyo.OrderItem;
+import co.com.toures.b2c.orders.model.admcyo.OrderItemRequest;
 
 @Service
 public class OrderItemService {
@@ -23,5 +24,11 @@ public class OrderItemService {
 		OrderItemDTO orderReturn = modelMapper.map(order, OrderItemDTO.class);
 		
 		return orderReturn;
+	}
+	
+	public void crearOrden (int productcod, String productname, long price, int quantity )
+	{
+		
+		orderItemRepository.crearOrden(productcod, productname, price, quantity);
 	}
 }

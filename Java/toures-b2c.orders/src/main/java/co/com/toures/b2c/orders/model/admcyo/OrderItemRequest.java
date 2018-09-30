@@ -6,6 +6,11 @@ public class OrderItemRequest {
 	
 	private BigDecimal id;
 	private BigDecimal order_id;
+	private int product_cod;
+	private String product_name;
+	private long price;
+	private int quantity;
+	private int idsale;
 	
 	public OrderItemRequest()
 	{
@@ -34,5 +39,46 @@ public class OrderItemRequest {
 		this.order_id = order_id;
 	}
 
+	public int getProduct_cod() {
+		return product_cod;
+	}
+
+	public void setProduct_cod(int product_cod) {
+		this.product_cod = product_cod;
+	}
+
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
+
+	public long getPrice() {
+		return price;
+	}
+
+	public void setPrice(long price) {
+		this.price = price;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public int getIdsale() {
+		return idsale;
+	}
+
+	public void setIdsale(int idsale) {
+		this.idsale = idsale;
+	}
+
+	
 	
 }
