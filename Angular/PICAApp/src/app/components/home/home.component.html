@@ -165,35 +165,37 @@
             <br/>
             <hr>
                 <ul>
-                  <li class="list-group-item" *ngFor="let prod of listsProd">
-                    <div class="w3-card-4" style="width:100%;">
-                      <header class="w3-container w3-blue">
-                        <h6>{{prod.name}}</h6>
-                      </header>
+                      <li class="list-group-item col-md-4" style="height: 280px; position: relative;" *ngFor="let prod of listsProd" >
+                          <!-- <div class="w3-card-4" style="width:100%;"> -->
+                            <header class="w3-container w3-blue">
+                              <h6>{{prod.name}}</h6>
+                            </header>
+                        
+                            <div class="w3-container">
+                              <table>
+                                  <tr>
+                                    <td><img src="http://35.235.105.138:8181{{prod.imageRef}}" style="height:100px; width:120px; right: 0px;"/></td>
+                                    <td><h6>&nbsp;</h6></td>
+                                    <td><h6>{{prod.description}}</h6></td>
+                                  </tr>
+                            </table>
+                            </div>
+                        
+                            <footer class="w3-container w3-blue">
+                              <table style="width:100%;">
+                                <tr style="text-align:left;">
+                                    <td>Precio: {{prod.cost}}</td>
+                                  </tr>
+                                  <tr style="text-align:left;">
+                                      <td>Codigo: {{prod.cod}}</td>
+                                      <td style="left: 0px;"><a (click)="addProducto(prod)" class="glyphicon glyphicon-plus" style="color:white;" >Agregar</a></td>
+                                  </tr>
+                            </table>
+                            <p></p>
+                            </footer>
+                          <!-- </div> -->
+                      </li>
                   
-                      <div class="w3-container">
-                        <table>
-                            <tr>
-                              <td><img src="http://35.235.105.138:8181{{prod.imageRef}}" style="height:100px; width:120px;"/></td>
-                              <td><h6>{{prod.description}}</h6></td>
-                            </tr>
-                      </table>
-                      </div>
-                  
-                      <footer class="w3-container w3-blue">
-                        <table style="width:100%;">
-                          <tr style="text-align:left;">
-                              <td>Precio: {{prod.cost}}</td>
-                            </tr>
-                            <tr style="text-align:left;">
-                                <td>Codigo: {{prod.cod}}</td>
-                                <td style="left: 0px;"><a (click)="addProducto(prod)" class="glyphicon glyphicon-plus" style="color:white;" >Agregar</a></td>
-                            </tr>
-                      </table>
-                      <p></p>
-                      </footer>
-                    </div>
-                </li>
                 <br/>
               </ul>
             <div class="center">
@@ -210,7 +212,5 @@
 </li>
 </ul>
 <br>
-<br>
 </div>
-<br>
 <br>
