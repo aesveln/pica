@@ -24,6 +24,7 @@ import { RolesComponent } from './components/roles/roles.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { ProductService} from './services/product/product.service';
+import { LoginService } from './services/login/login.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ProductService} from './services/product/product.service';
   ],
   providers: [
     EventSesrvice,
-    ProductService
+    ProductService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

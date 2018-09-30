@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit {
   showAdminSubmenu: boolean;
   showAdminClaim: boolean;
   hidenTitleAdmin: boolean;
+  isLogged = false;
 
   constructor(public router: Router) {}
 
@@ -50,5 +51,12 @@ export class MenuComponent implements OnInit {
       this.showMoreSubmenu = false;
       this.showAdminSubmenu = false;
     }
+  }
+
+  quiteApp()
+  {
+    localStorage.removeItem('userToken');
+    this.router.navigate(['/home']);
+    location.reload();
   }
 }

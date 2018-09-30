@@ -22,6 +22,7 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@auth0/angular-jwt": "^2.0.0",
     "ag-grid": "^18.0.1",
     "ag-grid-angular": "^18.0.1",
     "angular-datatables": "^6.0.0",
@@ -40,12 +41,14 @@
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.6.1",
     "jquery": "^3.3.1",
+    "jwt-decode": "^2.2.0",
     "ng-fullcalendar": "^1.6.1",
     "ng2-carouselamos": "^3.2.0",
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.0.1",
     "qtip2": "^3.0.3",
     "rxjs": "^6.2.1",
+    "ts-md5": "^1.2.4",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

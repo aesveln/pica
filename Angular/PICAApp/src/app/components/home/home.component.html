@@ -1,13 +1,14 @@
 <div class="container">
 <ul class="list-group">
-  <li class="list-group-item ">
+  <li class="list-group-item " *ngIf="isLogged">
         <div class="card-body">
-            <div>
+            <div >
                     <div class="logo-login">
                        <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
                     </div>
                     <div class="welcome-user">
-                            <h5 class="card-title">BIENBENIDO Jon Doe</h5>
+                            <h5 class="card-title">BIENBENIDO</h5>
+                             {{user.firstName}} {{user.lastName}}
                             <h6><p class="card-text">Antes de iniciar......</p></h6>
                     </div>
             </div>
@@ -70,12 +71,7 @@
                       </button>
                   </td>
                   <td>
-                      <button class="botonF1" title="Buscar Paises" (click)="toggleChild()">
-                        <img src="../../../assets/images/countries.PNG"/>
-                      </button>
-                  </td>
-                  <td>
-                      <button class="botonF1" title="Buscar Hotel" (click)="toggleChild()">
+                      <button class="botonF1" title="Buscar Hospedaje" (click)="toggleChild()">
                         <img src="../../../assets/images/Hotel.PNG"/>
                       </button>
                   </td>
@@ -85,8 +81,7 @@
                   <tr>
                     <th style="text-align:center;" scope="col">Eventos</th>
                     <th style="text-align:center;" scope="col">Transporte</th>
-                    <th style="text-align:center;" scope="col">Paises</th>
-                    <th style="text-align:center;" scope="col">Hoteles</th>
+                    <th style="text-align:center;" scope="col">Hospedaje</th>
                   </tr>
                 </thead>
             </table>
@@ -96,7 +91,130 @@
 <br />
 <li class="list-group-item" *ngIf="viewCatalog">
     <div class="card-body">        
-        <app-catalog></app-catalog>
+
+        <div>
+            <div class="col-md-12">
+                <span><strong>Catalogo:</strong></span>
+            </div>
+            <div class="alert alert-success alert-dismissible" *ngIf="isAddComplete">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Exitoso!</strong> Producto agregado correctamente.
+            </div>
+            <div class="alert alert-danger alert-dismissible" *ngIf="isRemoveComplete">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+              </div>
+            <br/>
+            <div class="col-md-1">
+                <button class="botonF2" name="Carrito de compra" (click)="toggleChild()">
+                    <span><i class="glyphicon glyphicon-shopping-cart"></i></span>
+                </button>
+            </div>
+            <div >
+                <form method="post" class="form-horizontal" id="form1"  novalidate="novalidate">
+                <div class="alert alert-info col-md-4" style="max-height:220px; overflow-y: scroll; position: absolute; z-index: 1000; left: 75px;" *ngIf="showMePartially">
+                    <div>
+                        <span class="title margin-botton-10">
+                          Carrito <span class="subtitle">{{carrito.length}} producto(s)</span>
+                        </span>
+                      </div>
+                      
+                      <div *ngIf="carrito.length > 0; else carritovaciotmpl">
+                        <table class="margin-top-20">
+                          <thead>
+                            <tr>
+                              <td style="width:20%">Ctdad.</td>
+                              <td>Producto</td>
+                              <td>Precio</td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of carrito">
+                              <td  class="has-text-centered">
+                                  <span>{{item.quantity}}</span>
+                              </td>
+                              <td>{{item.titulo}}</td>
+                              <td *ngIf="">{{item.codigo}}</td>
+                              <td>{{item.precio}}</td>
+                              <td style="width:20px;">&nbsp;<a form="form2" (click)="addProducto(item.titulo,item.codigo,item.precio,item.quantity)" class="glyphicon glyphicon-plus" style="color:rgb(54, 81, 236);"> </a></td>
+                              <td style="width:20px;">&nbsp;<a form="form2" (click)="removeProducto(item.titulo,item.codigo,item.precio,item.quantity)" class="glyphicon glyphicon-minus" style="color:rgb(201, 50, 50);"> </a></td>
+                            </tr>      
+                          </tbody>
+                          <tfoot>
+                              <tr class="carrito-total">
+                                <td colspan="2"></td>
+                                <td>
+                                  Total: $ {{total}}
+                                </td>
+                              </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                      <button *ngIf="carrito.length > 0" id="submit-button" (click)="CreateOrden(carrito)" form="form1" type="submit" value="Submit" class="btn-danger">Comprar</button>
+
+                      <ng-template #carritovaciotmpl>
+                        <div class="margin-top-20">
+                          <strong>El carrito esta vacío.</strong>
+                        </div>
+                      </ng-template>
+                </div>
+                </form>
+                <!-- <app-shoppingcart [showMePartially]="showVar"></app-shoppingcart> -->
+            </div>
+            <br/>
+            <hr>
+            <div>
+                <ul>
+                  <li class="list-group-item" *ngFor="let prod of listsProd">
+                    <div class="w3-container ">
+                    <div class="w3-card-4" style="width:100%;">
+                      <header class="w3-container w3-blue">
+                        <h4>{{prod.name}}</h4>
+                      </header>
+                  
+                      <div class="w3-container">
+                        <table>
+                            <tr>
+                              <td><img src="http://35.235.105.138:8181{{prod.imageRef}}" style="height:100px; width:120px;"/></td>
+                              <td>{{prod.description}}</td>
+                            </tr>
+                      </table>
+                      </div>
+                  
+                      <footer class="w3-container w3-blue">
+                        <table style="width:100%;">
+                          <tr style="text-align:left;">
+                              <td>Precio: {{prod.cost}}</td>
+                            </tr>
+                            <tr style="text-align:left;">
+                                <td>Codigo: {{prod.cod}}</td>
+                              </tr>
+                          <tr style="text-align:right;">
+                              <td><a (click)="addProducto(prod)" class="glyphicon glyphicon-plus" style="color:white;" >Agregar</a></td>
+                            </tr>
+                      </table>
+                      <p></p>
+                      </footer>
+                    </div>
+                  </div>
+                </li>
+                <br/>
+              </ul>
+            </div>
+            <div class="center">
+                <div class="pagination">
+                    <a href="#">❮</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">❯</a>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- <app-catalog #child1></app-catalog> -->
     </div>
 </li>
 </ul>
