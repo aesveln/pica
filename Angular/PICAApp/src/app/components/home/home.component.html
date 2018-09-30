@@ -7,7 +7,7 @@
                        <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
                     </div>
                     <div class="welcome-user">
-                            <h5 class="card-title">BIENBENIDO</h5>
+                            <h5 class="card-title">BIENVENIDO</h5>
                              {{user.firstName}} {{user.lastName}}
                             <h6><p class="card-text">Antes de iniciar......</p></h6>
                     </div>
@@ -165,16 +165,16 @@
             <br/>
             <hr>
                 <ul>
-                      <li class="list-group-item col-md-4" style="height: 280px; position: relative;" *ngFor="let prod of listsProd" >
+                      <li class="list-group-item col-md-4" style="height: 250px; position: relative;" *ngFor="let prod of listsProd" >
                           <!-- <div class="w3-card-4" style="width:100%;"> -->
                             <header class="w3-container w3-blue">
                               <h6>{{prod.name}}</h6>
                             </header>
                         
-                            <div class="w3-container">
+                            <div class="w3-container" style="height: 130px;">
                               <table>
                                   <tr>
-                                    <td><img src="http://35.235.105.138:8181{{prod.imageRef}}" style="height:100px; width:120px; right: 0px;"/></td>
+                                    <td style="align-content: center;"><img src="http://35.235.105.138:8181{{prod.imageRef}}" style="height:100px; width:120px;"/></td>
                                     <td><h6>&nbsp;</h6></td>
                                     <td><h6>{{prod.description}}</h6></td>
                                   </tr>

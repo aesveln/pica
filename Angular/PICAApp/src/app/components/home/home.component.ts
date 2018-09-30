@@ -160,7 +160,7 @@ export class HomeComponent implements OnInit {
         this.product.arrivalDate = '';
         this.product.departureDate = '';
         this.product.pageNumber = 0;
-        this.product.pageSize = 10
+        this.product.pageSize = 9;
         this.product.return_date = '';
         this.product.sortBy = '';
         this.product.spectacleDate = '';
