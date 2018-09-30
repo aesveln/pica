@@ -8,16 +8,15 @@
 								</div>
 								<div class="profile-usertitle">
 										<div class="profile-usertitle-name">
-											Jon Doe
+										   {{user.firstName}} {{user.lastName}}
 										</div>
 										<div class="profile-usertitle-job">
-											Cliente Gold
+											Cliente {{user.catengory}}
 										</div>
 								</div>
 								<div class="list-group">
 										<div class="profile-userbuttons">
-												<button type="button" class="btn btn-success btn-sm">Llamar a Soporte</button>
-												<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-sm">Registrar Tarjeta</button>
+												<button type="button" data-toggle="modal" data-target="#myModalUser"class="btn btn-success btn-sm" (click)="openForm()">Editar Perfil</button>
 										</div>
 								</div>
 								<div class="profile-usermenu ">
@@ -42,14 +41,13 @@
 								<div align="center" >
 										<div class="profile-content center-block" align="left" >
 												<h4>
-												    Jon Andreu Doe Jonsson
+												{{user.firstName}} {{user.lastName}}
 												</h4>
 												<small><i class="glyphicon glyphicon-map-marker">
 													</i><cite title="San Francisco, USA">&nbsp;&nbsp;Bogotá, Colombia </cite></small>
 												<p>
-														<i class="glyphicon glyphicon-envelope"></i> JonDoe@cinecolombia.com
+														<i class="glyphicon glyphicon-envelope"></i> {{user.email}}
 														<br />
-														<i class="glyphicon glyphicon-gift"></i> June 02, 1988</p>
 												<!-- Split button -->
 										</div>
 						</div>
@@ -83,47 +81,64 @@
 		</ul>
 		<br>
 </div>
-<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog modal-sm">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <button type="button" class="close" data-dismiss="modal">&times;</button>
-			  <h4 class="modal-title">Crear Tarjeta</h4>
-			</div>
-			<div class="modal-body">
+	  <div class="modal fade" id="myModalUser" role="dialog">
+			<form method="post" class="form-horizontal" action=""  novalidate="novalidate">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Registro</h4>
+					</div>
+					<div class="modal-body">
+				<label>Id:</label>
+				<input #Id ngModel name="Id" class="form-control" type="text" [(ngModel)]="user.idCustomer"/>
+				<label>Nombre:</label>
+				<input #FirstName ngModel name="FirstName" class="form-control" type="text" [(ngModel)]="user.firstName"/>
+				<p></p>
+				<label>Apellido:</label>
+				<input #LastName ngModel name="LastName" class="form-control" type="text" [(ngModel)]="user.lastName"/>
+				<label>Tipo documento:</label>
+				<select #DocumentType ngModel name="DocumentType" class="form-control">
+				  <option value="">seleccione un tipo de documento....</option>
+				  <option value="CC">Cedula</option>
+				  <option value="PS">Pasaporte</option>
+				</select>
+				<label>N° Documento:</label>
+				<input #Document ngModel  name="Document" type="text" class="form-control" [(ngModel)]="user.documnetNumber"/>
+				<label>Telefono:</label>
+				<input #Phone ngModel name="Phone" type="text" class="form-control" [(ngModel)]="user.phoneNumber"/>
+				<label>Email:</label>
+				<input #Email ngModel name="Email" type="email" class="form-control" [(ngModel)]="user.email"/>
+				<p></p>
+				<label>Contraseña:</label>
+				<input #Password ngModel name="Password" type="password" class="form-control"/>
+				<p></p>
+				<label>Repetir Contraseña:</label>
+				<input #RePassword ngModel name="RePassword" type="password" class="form-control"/>
 				<label>Tipo de tarjeta:</label>
-				<select class="form-control">
+				<select #CardType ngModel name="CardType" class="form-control">
 						<option selected>Seleccionar...</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						<option value="AMX">Amx</option>
+						<option value="2">Visa</option>
+						<option value="3">Dine</option>
+						<option value="3">Mast</option>
 				</select>
 				<p></p>
 				<label>Número de Tarjeta:</label>
-				<input class="form-control"/>
-				<p></p>
-				<label>Código de Seguridad:</label>
-				<input class="form-control"/>
-				<p></p>
-				<label>Fecha de expedición:</label>
-				<p></p>
-					<select class="form-control col-md-2">
-						<option selected>Seleccionar...</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-					Mes
-    				<p></p>
-					<input class="form-control col-md-2"/>
-					Año
+				<input #NumberCard ngModel name="NumberCard" class="form-control"/>		
 			</div>
-			<div class="modal-footer">
-                  <div class="col-md-1">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Agregar</button>
+					
+					<div class="modal-footer">
+						  <div class="col-md-1">
+				  <button type="button" class="btn btn-default" 
+				  (click)="updateUser(Id.value,FirstName.value, LastName.value, DocumentType.value, Document.value, 
+				  Phone.value, Email.value, Password.value, RePassword.value,CardType.value, NumberCard.value )" 
+				  data-dismiss="modal">Actualizar</button>
+						  </div>
+					</div>
 				  </div>
 			</div>
-		  </div>
+			</form>
 		</div>
-	  </div>
+		
 <br><br><br>

@@ -1,12 +1,16 @@
-export class ProductoRequest {
+import { DtospectacleType } from "./DtospectacleType";
+import { DtoLodgingType } from "./DtoLodgingType";
+import { DtotransportType } from "./DtotransportType";
+
+export class DtoProduct {
     cod: string;
     cost: number;
     description: string;
     id: number;
     imageRef: string;
-    lodgingType: string;
+    lodgingType: DtoLodgingType;
     name: string;
     productType: string;
-    spectacleType: string;
-    transportType: string;
+    spectacleType: DtospectacleType;
+    transportType: DtotransportType;
 }
