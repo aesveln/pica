@@ -4,9 +4,14 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import co.com.toures.b2c.orders.dao.admcyo.SalesOrderRepository;
@@ -19,34 +24,40 @@ public class SalesOrderService {
 	
 	@Autowired
 	SalesOrderRepository salesRepository;
+	@Autowired
+	SalesOrderClient salesSoap = new SalesOrderClient();
 	
 	ModelMapper modelmapper = new ModelMapper();
 	
 	public List<SalesOrderDTO> findSalesByStatus (String status)
 	{
-		List<SalesOrder> sales = salesRepository.findBystatusOrder(status);
+		Pageable pageable = PageRequest.of(0, 10);
+		List<SalesOrder> sales = salesRepository.findBystatusOrder(status, pageable);
 		
 		List<SalesOrderDTO> salesDTOList = new ArrayList<SalesOrderDTO>();
 		
 		for(SalesOrder s: sales)
 		{
-			SalesOrderDTO salesDTO = modelmapper.map(s, SalesOrderDTO.class);
-			salesDTOList.add(salesDTO);
+			SalesOrderDTO dto = modelmapper.map(s, SalesOrderDTO.class);
+			salesDTOList.add(dto);
 		}
+		
 		
 		return salesDTOList;
 	}
 	
 	public List<SalesOrderDTO> findOpenSales ()
 	{
-		List<SalesOrder> sales =  salesRepository.findOpenSales();
+		Pageable pageable = PageRequest.of(0, 10);
+		List<SalesOrder> sales =  salesRepository.findOpenSales(pageable);
 		
 		List<SalesOrderDTO> salesDTOList = new ArrayList<SalesOrderDTO>();
 		
+		
 		for(SalesOrder s: sales)
 		{
-			SalesOrderDTO salesDTO = modelmapper.map(s, SalesOrderDTO.class);
-			salesDTOList.add(salesDTO);
+			SalesOrderDTO dto = modelmapper.map(s, SalesOrderDTO.class);
+			salesDTOList.add(dto);
 		}
 		
 		return salesDTOList;
@@ -60,7 +71,8 @@ public class SalesOrderService {
 	
 	public List<SalesOrderDTO> ordenesClientes(int idcliente)
 	{
-		List<SalesOrder> sales =  salesRepository.ordenesCliente(idcliente);
+		Pageable pageable = PageRequest.of(0, 10);
+		List<SalesOrder> sales =  salesRepository.ordenesCliente(idcliente, pageable);
 		
 		List<SalesOrderDTO> salesDTOList = new ArrayList<SalesOrderDTO>();
 		
@@ -71,6 +83,12 @@ public class SalesOrderService {
 		}
 		
 		return salesDTOList;
+	}
+	
+	
+	public String getRespuestaServicioAvianca (int id)
+	{
+		return salesSoap.getRespuestaServicio(id);
 	}
 
 }

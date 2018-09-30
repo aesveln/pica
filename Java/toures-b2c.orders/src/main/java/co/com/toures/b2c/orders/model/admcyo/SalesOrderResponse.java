@@ -4,80 +4,40 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import co.com.toures.b2c.orders.dto.admcyo.OrderItemDTO;
+import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 
 public class SalesOrderResponse {
 
-	private BigDecimal idSales;
-    private Date orderDate;
-    private Long price;
-    private String statusOrder;
-    private String comments;
-    private List<OrderItemDTO> orderItemList;
-    
+	
+    private Page<OrderItemDTO> orderItemList;
+    private List<SalesOrderDTO> sales;
+
+
     public SalesOrderResponse()
     {
     	
     }
 
-	public SalesOrderResponse(BigDecimal idSales, Date orderDate, Long price, String statusOrder, String comments,
-			List<OrderItemDTO> orderItemList) {
-		super();
-		this.idSales = idSales;
-		this.orderDate = orderDate;
-		this.price = price;
-		this.statusOrder = statusOrder;
-		this.comments = comments;
-		this.orderItemList = orderItemList;
-	}
-
-	public BigDecimal getIdSales() {
-		return idSales;
-	}
-
-	public void setIdSales(BigDecimal idSales) {
-		this.idSales = idSales;
-	}
-
-	public Date getOrderDate() {
-		return orderDate;
-	}
-
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
-	}
-
-	public Long getPrice() {
-		return price;
-	}
-
-	public void setPrice(Long price) {
-		this.price = price;
-	}
-
-	public String getStatusOrder() {
-		return statusOrder;
-	}
-
-	public void setStatusOrder(String statusOrder) {
-		this.statusOrder = statusOrder;
-	}
-
-	public String getComments() {
-		return comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
-
-	public List<OrderItemDTO> getOrderItemList() {
+	public Page<OrderItemDTO> getOrderItemList() {
 		return orderItemList;
 	}
 
-	public void setOrderItemList(List<OrderItemDTO> orderItemList) {
+	public void setOrderItemList(Page<OrderItemDTO> orderItemList) {
 		this.orderItemList = orderItemList;
 	}
+
+	public List<SalesOrderDTO> getSales() {
+		return sales;
+	}
+
+	public void setSales(List<SalesOrderDTO> sales) {
+		this.sales = sales;
+	}
     
+    
+
     
 }

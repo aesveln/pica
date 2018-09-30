@@ -28,8 +28,8 @@ public class Spectacle {
 //    @OneToMany(mappedBy = "spectacleType", fetch = FetchType.LAZY)
 //    @JsonIgnore
 //    private List<Product> productList;
-//    @JoinColumn(name = "city", referencedColumnName = "Id")
-//    @ManyToOne (fetch = FetchType.LAZY)
-//    private City city;
+    @JoinColumn(name = "city", referencedColumnName = "Id")
+    @ManyToOne (fetch = FetchType.LAZY)
+    private City city;
 
 }

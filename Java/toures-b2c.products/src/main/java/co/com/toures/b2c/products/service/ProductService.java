@@ -169,7 +169,7 @@ public class ProductService {
 
         Pageable pageable;
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Date depart_date = dateFormat.parse(productRequest.getDepart_date());
+        Date depart_date = dateFormat.parse(productRequest.getDepartureDate() );
         Date return_date = dateFormat.parse(productRequest.getReturn_date());
 
         if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {

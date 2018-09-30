@@ -19,7 +19,6 @@ public class ProductRequest {
     private String sortBy;
 
     private String spectacleDate;
-    private String depart_date;
     private String return_date;
 
     private String arrivalDate;
@@ -62,13 +61,6 @@ public class ProductRequest {
         this.spectacleDate = spectacleDate;
     }
 
-    public String getDepart_date() {
-        return depart_date;
-    }
-
-    public void setDepart_date(String depart_date) {
-        this.depart_date = depart_date;
-    }
 
     public String getReturn_date() {
         return return_date;
