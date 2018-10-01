@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit {
 
       this.elastiSer.query = this.query;
       this.elastiSer.from = 0;
-      this.elastiSer.size = 10;
+      this.elastiSer.size = 21;
       this.query.query_string = this.query_strings;
       this.query_strings.query = '*'+textSearch+'*';
       this.query_strings.fields = ["cod","name","description"]
@@ -160,7 +160,7 @@ export class HomeComponent implements OnInit {
         this.product.arrivalDate = '';
         this.product.departureDate = '';
         this.product.pageNumber = 0;
-        this.product.pageSize = 10
+        this.product.pageSize = 9;
         this.product.return_date = '';
         this.product.sortBy = '';
         this.product.spectacleDate = '';

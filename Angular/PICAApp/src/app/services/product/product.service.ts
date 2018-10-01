@@ -12,7 +12,7 @@ export class ProductService {
   productList:any;
   productListAux:any;
   private productos: Array<Producto> = [];
-  private readonly API_URL = 'http://192.168.1.103:8090/api/products';
+  private readonly API_URL = 'http://192.168.1.103:8081/api/products';
   private readonly _imageServer = '35.235.105.138:8181'
   private subject: BehaviorSubject<Producto[]> = new BehaviorSubject([]);
   private itemsCarrito: Producto[] = [];

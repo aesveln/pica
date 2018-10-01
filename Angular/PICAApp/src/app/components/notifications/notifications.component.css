@@ -30,7 +30,7 @@ ul.timeline > li:before {
 }
 @media (max-width: 1446px) and (min-width: 1024px) {
   .container {
-    width: 60%;
+    width: 90%;
     height: 100%;
     padding-top: 10px;
   }
@@ -94,7 +94,7 @@ ul.timeline > li:before {
 @media (max-width: 1446px) and (min-width: 1024px) {
   .container {
     padding-top: 120px;
-    width: 65%;
+    width: 80%;
   }
   table {
     width: 100%;
@@ -157,3 +157,7 @@ ul.timeline > li:before {
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
   
+.list-group-item:not(:last-child) {
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
