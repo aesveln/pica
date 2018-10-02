@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 
+import javax.ws.rs.PathParam;
 import javax.xml.ws.Endpoint;
 
 import org.modelmapper.ModelMapper;
@@ -24,6 +25,7 @@ import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.entity.admcyo.OrderItem;
 import co.com.toures.b2c.orders.model.admcyo.OrderItemRequest;
 import co.com.toures.b2c.orders.model.admcyo.OrderItemResponse;
+import co.com.toures.b2c.orders.model.admcyo.SaleOrderCancelResponse;
 import co.com.toures.b2c.orders.model.admcyo.SalesOrderRequest;
 import co.com.toures.b2c.orders.model.admcyo.SalesOrderResponse;
 import co.com.toures.b2c.orders.service.SalesOrderClient;
@@ -58,20 +60,22 @@ public class SalesOrderController {
 	}
 	
 	
-	@RequestMapping(method = RequestMethod.POST, value =  "/salesorder/salesorderOpen/", produces = "application/json")
+	@RequestMapping(method = RequestMethod.GET, value =  "/salesorder/salesorderOpen/{idcustomer}", produces = "application/json")
+	//@GetMapping("/salesorder/salesorderOpen/{idcustomer}")
 	@ApiOperation("Return all sales open")
-	public ResponseEntity <SalesOrderResponse> getSalesOpen (@RequestBody SalesOrderRequest saleRequest)
+	public ResponseEntity <SalesOrderResponse> getSalesOpen (@PathVariable (value="idcustomer") int idcustomer)
 	{
 		SalesOrderResponse response = new SalesOrderResponse();
-		response.setSales(salesService.findOpenSales(saleRequest.getIdcustomer().intValue()));
+		response.setSales(salesService.findOpenSales(idcustomer));
 		return ResponseEntity.ok(response);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value =  "/salesorder/cancelSaleOrder/", produces = "application/json")
+	@RequestMapping(method = RequestMethod.DELETE, value =  "/salesorder/cancelSaleOrder/{idsale}", produces = "application/json")
 	@ApiOperation("cancel a sale")
-	public String cancelSale  (@RequestBody SalesOrderRequest salerequest)
+	public ResponseEntity cancelSale  (@PathVariable (value="idsale") int idsale)
 	{
 		 RestTemplate restTemplate = new RestTemplate();
+		 SaleOrderCancelResponse salecancelrequest = new SaleOrderCancelResponse();
 		 int salecancel;
 		 String ret="";
 		 File bolivariano = new File("CanceladasBolivariano.txt");
@@ -91,30 +95,36 @@ public class SalesOrderController {
 			 }
 			 
 			 PrintWriter pw = new PrintWriter (bolivariano);
-			 pw.println("Se cancela reserva del cliente: "+ salerequest.getId() );
+			 pw.println("Se cancela reserva del cliente: "+ idsale );
 			 pw.close();
 			 
 			 PrintWriter pw2 = new PrintWriter (hilton);
-			 pw2.println("Se cancela reserva del cliente: "+ salerequest.getId());
+			 pw2.println("Se cancela reserva del cliente: "+ idsale);
 			 pw2.close();
 			 
 			//POST METHOD
-			 String resultHoteles = restTemplate.postForObject(URL_HOTELES, salerequest.getId() ,String.class);
-			 String resultEvento = restTemplate.postForObject(URL_EVENTO, salerequest.getId() ,String.class);
+			 String resultHoteles = restTemplate.postForObject(URL_HOTELES, idsale ,String.class);
+			 String resultEvento = restTemplate.postForObject(URL_EVENTO, idsale ,String.class);
 			
 			 //Servicios SOAP
-			 String respSOAPAmerican = salesService.getRespuestaServicioAvianca(salerequest.getId().intValue());
-			 salecancel = salesService.cancelSales(salerequest.getId().intValue());
+			 String respSOAPAmerican = salesService.getRespuestaServicioAvianca(idsale);
+			 salecancel = salesService.cancelSales(idsale);
 			
+			 if(salecancel== 0)
+			 {
+				 ret = "La orden no puede ser cancelada";
+			 }else {
 				 ret = "Orden cancelada";
+			 }
+				
 			
 		 }catch(Exception e)
 		 {
 			 ret="Error "+ e.getMessage();
 		 }
 		
-		 	 
-		 return ret;
+		 salecancelrequest.setRespuesta(ret);
+		 return ResponseEntity.ok(salecancelrequest);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value =  "/salesorder/salesCliente/", produces = "application/json")
@@ -127,15 +137,15 @@ public class SalesOrderController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value =  "/salesorder/detallesOrders", produces = "application/json")
-	@ApiOperation("Return all order items for a sale")
-	public  ResponseEntity <OrderItemResponse> getDetalleOrder (@RequestBody OrderItemRequest orderRequest)
-	{
-		OrderItemResponse response = new OrderItemResponse();
-		
-		response.setListOrdenes(salesService.detalleOrderItem(orderRequest.getIdsale()));
-		
-		return ResponseEntity.ok(response);
-		
-	}
+//	@RequestMapping(method = RequestMethod.POST, value =  "/salesorder/detallesOrders", produces = "application/json")
+//	@ApiOperation("Return all order items for a sale")
+//	public  ResponseEntity <OrderItemResponse> getDetalleOrder (@RequestBody OrderItemRequest orderRequest)
+//	{
+//		OrderItemResponse response = new OrderItemResponse();
+//		
+//		response.setListOrdenes(salesService.detalleOrderItem(orderRequest.getIdsale()));
+//		
+//		return ResponseEntity.ok(response);
+//		
+//	}
 }

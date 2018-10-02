@@ -20,14 +20,14 @@ public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer
 	
 	List<SalesOrder> findBystatusOrder(String status, Pageable pageable);
 	
-	@Query(value="select ID_SALES,  TO_DATE(order_date,'DD.MM.YYYY') orderdate, PRICE, STATUS_ORDER, COMMENTS, CUSTOMER_ID from sales_order where status_order not in ('CERR','RECH','CONC') and customer_id = ? ",
+	@Query(value="select * from sales_order where status_order not in ('CERR','RECH','CONC') and customer_id = ? ",
 			 nativeQuery = true)
 	
 	List<SalesOrder> findOpenSales(int idCliente, Pageable pageable);
 	
 	@Transactional
 	@Modifying
-	@Query(value="update sales_order set status_order='CONC' where id_sales = ?", nativeQuery = true)
+	@Query(value="update sales_order set status_order='CONC' where id_sales = ? ", nativeQuery = true)
 	int cancelSaleOrder (int idSale);
 	
 	@Query(value="select * from sales_order where customer_id = ?", nativeQuery = true)
@@ -35,8 +35,12 @@ public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer
 	
 	@Transactional
 	@Modifying
-	@Query(value="insert into sales_order (ORDER_DATE, price, STATUS_ORDER, comments, customer_id) values (get date(), ? , 'RESE', ? , ?)", nativeQuery = true)
-	void createSaleOrder (long price, String comments, int customerid);
+	@Query(value="insert into sales_order (id_sales, ORDER_DATE, price, STATUS_ORDER, comments, customer_id) values (?, ? , 'RESE', ? , ?)", nativeQuery = true)
+	void createSaleOrder (int idsale, long price, String comments, int customerid);
+	
+	@Query(value="select * from sales_order where id_sales = ? ", nativeQuery = true)
+	SalesOrder findSale(int idsale);
+	
 	
 	
 	

@@ -1,5 +1,7 @@
 package co.com.toures.b2c.orders.service;
 
+import java.math.BigDecimal;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,9 +28,17 @@ public class OrderItemService {
 		return orderReturn;
 	}
 	
-	public void crearOrden (int productcod, String productname, long price, int quantity )
+	public void crearOrden (int productcod, String productname, long price, int quantity, int idsale )
 	{
+		String error="";
+		try
+		{
+			orderItemRepository.crearOrden(productcod, productname, price, quantity, idsale);
+		}catch (Exception e)
+		{
+			error = e.getMessage();
+			
+		}
 		
-		orderItemRepository.crearOrden(productcod, productname, price, quantity);
 	}
 }

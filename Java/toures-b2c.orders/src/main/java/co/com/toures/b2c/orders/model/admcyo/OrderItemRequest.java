@@ -4,13 +4,12 @@ import java.math.BigDecimal;
 
 public class OrderItemRequest {
 	
-	private BigDecimal id;
-	private BigDecimal order_id;
+	private int order_id;
 	private int product_cod;
 	private String product_name;
 	private long price;
 	private int quantity;
-	private int idsale;
+	private int idcliente;
 	
 	public OrderItemRequest()
 	{
@@ -18,26 +17,9 @@ public class OrderItemRequest {
 	}
 
 	public OrderItemRequest(BigDecimal id, BigDecimal order_id) {
-		super();
-		this.id = id;
-		this.order_id = order_id;
+		
 	}
 
-	public BigDecimal getId() {
-		return id;
-	}
-
-	public void setId(BigDecimal id) {
-		this.id = id;
-	}
-
-	public BigDecimal getOrder_id() {
-		return order_id;
-	}
-
-	public void setOrder_id(BigDecimal order_id) {
-		this.order_id = order_id;
-	}
 
 	public int getProduct_cod() {
 		return product_cod;
@@ -71,12 +53,21 @@ public class OrderItemRequest {
 		this.quantity = quantity;
 	}
 
-	public int getIdsale() {
-		return idsale;
+	
+	public int getIdcliente() {
+		return idcliente;
 	}
 
-	public void setIdsale(int idsale) {
-		this.idsale = idsale;
+	public void setIdcliente(int idcliente) {
+		this.idcliente = idcliente;
+	}
+
+	public int getOrder_id() {
+		return order_id;
+	}
+
+	public void setOrder_id(int order_id) {
+		this.order_id = order_id;
 	}
 
 	

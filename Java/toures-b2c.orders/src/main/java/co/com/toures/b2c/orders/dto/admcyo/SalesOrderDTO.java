@@ -43,6 +43,14 @@ public class SalesOrderDTO {
 		this.customerId = customerId;
 		this.orderItemList = orderItemList;
 	}
+	public SalesOrderDTO(BigDecimal idSales, Date orderDate, Long price, String statusOrder, String comments) {
+		this.idSales = idSales;
+		this.orderDate = orderDate;
+		this.price = price;
+		this.statusOrder = statusOrder;
+		this.comments = comments;
+		
+	}
 	public BigDecimal getIdSales() {
 		return idSales;
 	}

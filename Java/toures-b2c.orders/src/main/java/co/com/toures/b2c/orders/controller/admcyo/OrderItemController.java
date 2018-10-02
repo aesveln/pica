@@ -1,6 +1,9 @@
 package co.com.toures.b2c.orders.controller.admcyo;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import co.com.toures.b2c.orders.dto.admcyo.OrderItemDTO;
+import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.model.admcyo.OrderItemRequest;
 import co.com.toures.b2c.orders.service.OrderItemService;
 import co.com.toures.b2c.orders.service.SalesOrderService;
@@ -39,10 +43,15 @@ public class OrderItemController {
 	{
 		String retorno ="";
 		String comment = "producto : "+ orderRequest.getProduct_name();
+		int idSaleCreada;
 		try {
-						
-			orderService.crearOrden(orderRequest.getProduct_cod(), orderRequest.getProduct_name(), orderRequest.getPrice(), orderRequest.getQuantity());
-			salesService.crearsaleOrder(orderRequest.getPrice(), comment, 23234); //arreglar
+			
+			orderService.crearOrden(orderRequest.getProduct_cod(), orderRequest.getProduct_name(), orderRequest.getPrice(), orderRequest.getQuantity(), orderRequest.getOrder_id() );
+			salesService.crearsaleOrder(orderRequest.getOrder_id(), orderRequest.getPrice(), comment, orderRequest.getIdcliente());
+			//SalesOrderDTO sale = salesService.findLastCreated(orderRequest.getPrice(), comment, orderRequest.getIdcliente());
+			
+			
+			 
 			retorno = "OK";
 		}catch(Exception e)
 		{

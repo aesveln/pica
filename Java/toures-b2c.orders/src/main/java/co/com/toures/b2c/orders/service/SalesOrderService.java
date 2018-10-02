@@ -3,7 +3,11 @@ package co.com.toures.b2c.orders.service;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
@@ -71,11 +75,14 @@ public class SalesOrderService {
 		
 			SalesOrderDTO dto = new SalesOrderDTO();
 					modelmapper.map(s, dto);
-			Date fecha = new java.util.Date(dto.getOrderDate().getTime());
-			dto.setOrderDate(fecha);
-			dto.getOrderItemList().removeAll(dto.getOrderItemList());
-			dto.setCustomerId(null);
-			salesDTOList.add(dto);
+			SalesOrderDTO dto2 = new SalesOrderDTO(dto.getIdSales(), dto.getOrderDate(), dto.getPrice(),dto.getStatusOrder(), dto.getComments());
+			
+			DateFormat df = new SimpleDateFormat("dd/MM/YYYY");
+
+			Date fecha = new Date(df.format(dto2.getOrderDate()));
+			dto2.setOrderDate(fecha);
+			
+			salesDTOList.add(dto2);
 		}
 		
 		
@@ -84,7 +91,17 @@ public class SalesOrderService {
 	
 	public int  cancelSales(int saleRequest)
 	{
-		return salesRepository.cancelSaleOrder(saleRequest);
+		SalesOrder sale = salesRepository.findSale(saleRequest);
+		SalesOrderDTO dto = new SalesOrderDTO();
+		modelmapper.map(sale, dto);
+		
+		if(dto.getStatusOrder().equals("RECH"))
+		{
+			return 0;
+		}else {
+			return salesRepository.cancelSaleOrder(dto.getIdSales().intValue());
+		}
+		
 		
 	}
 	
@@ -111,9 +128,17 @@ public class SalesOrderService {
 		return salesSoap.getRespuestaServicio(id);
 	}
 	
-	public void crearsaleOrder (long price, String comments, int customerid)
+	public void crearsaleOrder (int idsale, long price, String comments, int customerid)
 	{
-		salesRepository.createSaleOrder(price, comments, customerid);
+		String error ="";
+		try
+		{
+			salesRepository.createSaleOrder(idsale, price,  comments, customerid);	
+		}catch(Exception e)
+		{
+			error = e.getMessage();
+		}
+		
 	}
 	
 	public List<OrderItemDTO> detalleOrderItem (int idsales)
@@ -133,4 +158,6 @@ public class SalesOrderService {
 		return dtos;
 		
 	}
+	
+	
 }
