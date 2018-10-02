@@ -1,8 +1,8 @@
 
 package co.com.toures.b2c.users.dto.admcyo;
 
+import javax.persistence.Column;
 import java.math.BigDecimal;
-
 
 
 public class CustomerDTO {
@@ -16,6 +16,9 @@ public class CustomerDTO {
     private String email;
     private String statusCust;
     private String category;
+    private String pass;
+    private String creditcard_type;
+    private String creditcard_number;
 
     public BigDecimal getIdCustomer() {
         return idCustomer;
@@ -87,5 +90,29 @@ public class CustomerDTO {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getCreditcard_type() {
+        return creditcard_type;
+    }
+
+    public void setCreditcard_type(String creditcard_type) {
+        this.creditcard_type = creditcard_type;
+    }
+
+    public String getCreditcard_number() {
+        return creditcard_number;
+    }
+
+    public void setCreditcard_number(String creditcard_number) {
+        this.creditcard_number = creditcard_number;
     }
 }
