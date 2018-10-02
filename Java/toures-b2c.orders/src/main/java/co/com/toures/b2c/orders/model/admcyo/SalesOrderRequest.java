@@ -8,18 +8,20 @@ public class SalesOrderRequest {
 	private String status;
 	private String custDocumentNumber;
 	private String custDocumentType;
+	private BigDecimal idcustomer;
 	
 	public SalesOrderRequest ()
 	{
 		
 	}
 
-	public SalesOrderRequest(BigDecimal id, String status, String custDocumentNumber, String custDocumentType) {
+	public SalesOrderRequest(BigDecimal id, String status, String custDocumentNumber, String custDocumentType, BigDecimal idcustomer) {
 		super();
 		this.id = id;
 		this.status = status;
 		this.custDocumentNumber = custDocumentNumber;
 		this.custDocumentType = custDocumentType;
+		this.idcustomer = idcustomer;
 	}
 
 	public BigDecimal getId() {
@@ -52,6 +54,14 @@ public class SalesOrderRequest {
 
 	public void setCustDocumentType(String custDocumentType) {
 		this.custDocumentType = custDocumentType;
+	}
+
+	public BigDecimal getIdcustomer() {
+		return idcustomer;
+	}
+
+	public void setIdcustomer(BigDecimal idcustomer) {
+		this.idcustomer = idcustomer;
 	}
 
 	

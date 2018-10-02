@@ -31,4 +31,42 @@ public class OrderItem {
     @ManyToOne
     @JsonIgnore
     private SalesOrder orderId;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getProductCod() {
+		return productCod;
+	}
+	public void setProductCod(String productCod) {
+		this.productCod = productCod;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public Long getPrice() {
+		return price;
+	}
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+	public SalesOrder getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(SalesOrder orderId) {
+		this.orderId = orderId;
+	}
+    
+    
 }

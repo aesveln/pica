@@ -14,6 +14,21 @@ public class OrderItemDTO {
     private Integer quantity;
     private SalesOrder orderId;
     
+    
+	public OrderItemDTO() {
+		
+	}
+	
+	public OrderItemDTO(BigDecimal id, String productCod, String productName, Long price, Integer quantity,
+			SalesOrder orderId) {
+		
+		this.id = id;
+		this.productCod = productCod;
+		this.productName = productName;
+		this.price = price;
+		this.quantity = quantity;
+		this.orderId = orderId;
+	}
 	public BigDecimal getId() {
 		return id;
 	}
