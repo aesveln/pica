@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <context:property-placeholder location="classpath:integration-layer-configuration.properties"/>
+
+    <context:component-scan base-package="co.edu.javeriana.foundation.middleware.context"/>
+    <context:component-scan base-package="co.edu.javeriana.middleware.composition.controllers"/>
+
+
+    <!-- ================================================================= -->
+    <!-- CONNECTORS CONFIGURATION -->
+    <!-- ================================================================= -->
+
+    <!--<import resource="connectors/rabbitmq-connector-config.xml"/>-->
+    <import resource="connectors/soap-cxf-connector-config.xml"/>
+
+
+    <!-- ================================================================= -->
+    <!-- EXTERNAL ROUTES -->
+    <!-- ================================================================= -->
+
+
+    <import resource="routes-adaptadores/stratus-accounts-system.xml"/>
+    <import resource="routes-adaptadores/toolbox-cards-system.xml"/>
+    <import resource="routes-adaptadores/atp-cards-system.xml"/>
+    <import resource="routes-adaptadores/customer-info-system.xml"/>
+    <import resource="routes-adaptadores/wizard-loans-system.xml"/>
+    <import resource="routes-adaptadores/local-payment-system.xml"/>
+    <import resource="routes-adaptadores/ach-national-system.xml"/>
+    <import resource="routes-adaptadores/swift-international-system.xml"/>
+
+    <import resource="routes-integracion-composicion/composiciones.xml"/>
+    <import resource="routes-integracion-composicion/finantial-product.xml"/>
+    <import resource="routes-integracion-composicion/finantial-service.xml"/>
+
+
+    <import resource="routes-protocolo/protocolos.xml"/>
+
+
+    <!-- ================================================================= -->
+    <!-- MAIN CAMEL CONTEXT -->
+    <!-- ================================================================= -->
+
+    <camel:camelContext id="taller-camel-context">
+
+        <camel:routeContextRef ref="protocolos-taller-context"/>
+
+
+        <camel:routeContextRef ref="composiciones-taller-context"/>
+        <camel:routeContextRef ref="finantial-service-taller-context"/>
+        <camel:routeContextRef ref="finantial-product-taller-context"/>
+
+
+        <camel:routeContextRef ref="adaptadores-strauss-context"/>
+        <camel:routeContextRef ref="adaptadores-toolbox-cards-context"/>
+        <camel:routeContextRef ref="adaptadores-atp-cards-context"/>
+        <camel:routeContextRef ref="adaptadores-customer-info-context"/>
+        <camel:routeContextRef ref="adaptadores-wizard-loans-context"/>
+        <camel:routeContextRef ref="adaptadores-local-payment-context"/>
+        <camel:routeContextRef ref="adaptadores-swift-international-context"/>
+        <camel:routeContextRef ref="adaptadores-ach-national-context"/>
+
+    </camel:camelContext>
+
+</beans>

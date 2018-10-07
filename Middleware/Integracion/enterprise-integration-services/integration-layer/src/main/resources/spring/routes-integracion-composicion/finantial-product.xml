@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:il="http://aesveln.com.co/transfor/il/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- INTEGRATION AND COMPOSITION -->
+    <!-- ================================================================= -->
+
+    <bean id="BusinessRules" class="co.edu.javeriana.middleware.beans.BusinessRules"/>
+
+    <camel:routeContext id="finantial-product-taller-context">
+
+        <camel:route id="finantial-product-taller">
+            <camel:from uri="direct:finantial-product-taller"/>
+            <camel:log message="Esto llega al product ${body}"/>
+            <camel:choice>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:tipo = 'CHECKING_ACCOUNT'</camel:xpath>
+                    <camel:log message="CHECKING ACCOUNT"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:eventoProdutoEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoProdutoEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:adicionarCuentaCorrienteEvento
+                                </camel:xpath>
+                                <camel:log message="adicionarCuentaCorrienteEvento"/>
+                                <camel:to uri="bean:BusinessRules?method=validarMontoInicialCuentaCorriente"/>
+                                <camel:to uri="direct:adaptador-strauss-add"/>
+                            </camel:split>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:adicionarTarjeta
+                                </camel:xpath>
+                                <camel:log message="adicionarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-add"/>
+                                <camel:to uri="direct:adaptador-atp-cards-add"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarCuentaCorrienteEvento
+                                </camel:xpath>
+                                <camel:log message="cancelarCuentaCorrienteEvento"/>
+                                <camel:to uri="direct:adaptador-strauss-cancel"/>
+                            </camel:split>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarTarjeta
+                                </camel:xpath>
+                                <camel:log message="cancelarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-cancel"/>
+                                <camel:to uri="direct:adaptador-atp-cards-cancel"/>
+
+                            </camel:split>
+                        </camel:when>
+                    </camel:split>
+                </camel:when>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:tipo = 'SAVING_ACCOUNT'</camel:xpath>
+                    <camel:log message="SAVING ACCOUNT"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:eventoProdutoEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoProdutoEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:adicionarCuentaAhorrosEvento
+                                </camel:xpath>
+                                <camel:log message="adicionarCuentaAhorrosEvento ${body}"/>
+                                <camel:to uri="bean:BusinessRules?method=validarMontoInicialCuentaAhorro"/>
+                                <camel:to uri="direct:adaptador-strauss-add"/>
+                            </camel:split>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:adicionarTarjeta
+                                </camel:xpath>
+                                <camel:log message="adicionarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-add"/>
+                                <camel:to uri="direct:adaptador-atp-cards-add"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarCuentaAhorrosEvento
+                                </camel:xpath>
+                                <camel:log message="cancelarCuentaAhorrosEvento"/>
+                                <camel:to uri="direct:adaptador-strauss-cancel"/>
+                            </camel:split>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarTarjeta
+                                </camel:xpath>
+                                <camel:log message="cancelarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-cancel"/>
+                                <camel:to uri="direct:adaptador-atp-cards-cancel"/>
+
+                            </camel:split>
+                        </camel:when>
+                    </camel:split>
+
+                </camel:when>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:tipo = 'ATM_CARD'</camel:xpath>
+                    <camel:log message="ATM CARD"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:eventoProdutoEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoProdutoEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:adicionarTarjeta
+                                </camel:xpath>
+                                <camel:log message="adicionarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-add"/>
+                                <camel:to uri="direct:adaptador-atp-cards-add"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="cancelDomainEvent"/>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarTarjeta
+                                </camel:xpath>
+                                <camel:log message="cancelarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-cancel"/>
+                                <camel:to uri="direct:adaptador-atp-cards-cancel"/>
+
+                            </camel:split>
+                        </camel:when>
+                    </camel:split>
+                </camel:when>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:tipo = 'CREDIT_CARD'</camel:xpath>
+                    <camel:log message="CREDIT CARD"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:eventoProdutoEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoProdutoEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:adicionarTarjeta
+                                </camel:xpath>
+                                <camel:log message="adicionarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-add"/>
+                                <camel:to uri="direct:adaptador-atp-cards-add"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarTarjeta
+                                </camel:xpath>
+                                <camel:log message="cancelarTarjeta"/>
+                                <camel:to uri="direct:adaptador-toolbox-cards-cancel"/>
+                                <camel:to uri="direct:adaptador-atp-cards-cancel"/>
+
+                            </camel:split>
+                        </camel:when>
+                    </camel:split>
+                </camel:when>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:tipo = 'PERSONAL_LOAN'</camel:xpath>
+                    <camel:log message="PERSONAL LOAN"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero/il:eventoProdutoEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoProdutoEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>//il:eventoProdutoEmpresarial/il:adicionarPrestamo
+                                </camel:xpath>
+                                <camel:log message="adicionarPrestamo"/>
+                                <camel:to uri="direct:adaptador-wizard-loans-add"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoProdutoEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+
+                            <camel:split>
+                                <camel:xpath>/il:eventoProdutoEmpresarial/il:cancelarPrestamo
+                                </camel:xpath>
+                                <camel:log message="cancelarPrestamo"/>
+                                <camel:to uri="direct:adaptador-wizard-loans-cancel"/>
+
+                            </camel:split>
+                        </camel:when>
+                    </camel:split>
+                </camel:when>
+            </camel:choice>
+        </camel:route>
+    </camel:routeContext>
+</beans>

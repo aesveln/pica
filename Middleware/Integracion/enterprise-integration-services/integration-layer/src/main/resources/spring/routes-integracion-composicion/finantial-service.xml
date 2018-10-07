@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:il="http://aesveln.com.co/transfor/il/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- INTEGRATION AND COMPOSITION -->
+    <!-- ================================================================= -->
+
+    <camel:routeContext id="finantial-service-taller-context">
+
+        <camel:route id="finantial-service-taller">
+            <camel:from uri="direct:finantial-service-taller"/>
+
+            <camel:choice>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero/il:tipo = 'DOMESTIC_PAYMENT'
+                    </camel:xpath>
+                    <camel:log message="DOMESTIC_PAYMENT"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero/il:eventoServicioEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoServicioEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoServicioEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoServicioEmpresarial/il:ejecutarPagoDomestico
+                                </camel:xpath>
+                                <camel:log message="ejecutarPagoDomestico"/>
+                                <camel:to uri="direct:adaptador-local-payment-execute"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoServicioEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoServicioEmpresarial/il:cancelarPagoDomestico
+                                </camel:xpath>
+                                <camel:log message="cancelarPagoDomestico"/>
+                                <camel:to uri="direct:adaptador-local-payment-cancel"/>
+                            </camel:split>
+
+                        </camel:when>
+                    </camel:split>
+
+                </camel:when>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero/il:tipo = 'ELECTRONIC_PAYMENT'
+                    </camel:xpath>
+                    <camel:log message="ELECTRONIC PAYMENT"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero/il:eventoServicioEmpresarial
+                        </camel:xpath>
+                        <camel:log message="eventoServicioEmpresarial"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoServicioEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="eventoAdicion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoServicioEmpresarial/il:ejecutarPagoElectronico
+                                </camel:xpath>
+
+                                <camel:setProperty propertyName="bankCode">
+                                    <camel:xpath>//il:ejecutarPagoElectronico/il:codigoBancoDestino/text()
+                                    </camel:xpath>
+                                </camel:setProperty>
+
+                                <camel:choice>
+                                    <camel:when>
+                                        <camel:simple>
+                                            ${exchangeProperty[bankCode]} &lt; 51
+                                        </camel:simple>
+                                        <camel:log message="Banco Nacional"/>
+                                        <camel:to uri="direct:adaptador-ach-national-execute"/>
+                                    </camel:when>
+                                    <camel:when>
+                                        <camel:simple>
+                                            ${exchangeProperty[bankCode]} &gt; 50
+                                        </camel:simple>
+                                        <camel:log message="Banco Internacional"/>
+                                        <camel:to uri="direct:adaptador-swift-international-execute"/>
+                                    </camel:when>
+                                </camel:choice>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoServicioEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoServicioEmpresarial/il:cancelarPagoElectronico
+                                </camel:xpath>
+                                <camel:log message="cancelarPagoElectronico"/>
+
+                                <camel:setProperty propertyName="bankCode">
+                                    <camel:xpath>il:cancelarPagoElectronico/il:codigoBancoDestino/text()
+                                    </camel:xpath>
+                                </camel:setProperty>
+                                <camel:choice>
+                                    <camel:when>
+                                        <camel:simple>
+                                            ${exchangeProperty[bankCode]} &lt; 51
+                                        </camel:simple>
+                                        <camel:log message="Banco Nacional"/>
+                                        <camel:to uri="direct:adaptador-ach-national-execute"/>
+                                    </camel:when>
+                                    <camel:when>
+                                        <camel:simple>
+                                            ${exchangeProperty[bankCode]} &gt; 50
+                                        </camel:simple>
+                                        <camel:log message="Banco Internacional"/>
+                                        <camel:to uri="direct:adaptador-swift-international-execute"/>
+                                    </camel:when>
+                                </camel:choice>
+
+                            </camel:split>
+
+                        </camel:when>
+                    </camel:split>
+
+                </camel:when>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero/il:tipo = 'ACCOUNT_TO_ACCOUNT_PAYMENT'
+                    </camel:xpath>
+                    <camel:log message="ACCOUNT_TO_ACCOUNT_PAYMENT"/>
+                    <camel:split>
+                        <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero/il:eventoServicioEmpresarial
+                        </camel:xpath>
+                        <camel:log message="enterpriseServicesDomainEvents"/>
+                        <camel:when>
+                            <camel:xpath>/il:eventoServicioEmpresarial/il:eventoAdicion
+                            </camel:xpath>
+                            <camel:log message="addDomainEvent"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoServicioEmpresarial/il:ejecutarPagoCuentaACuenta
+                                </camel:xpath>
+                                <camel:log message="ejecutarPagoCuentaACuenta"/>
+                                <camel:to uri="direct:adaptador-local-payment-execute"/>
+                            </camel:split>
+
+                            <camel:when>
+                                <camel:simple>${exchangeProperty[createCustomer]} != ''</camel:simple>
+                                <camel:log message="Hay que crear customer"/>
+                                <camel:to uri="direct:adaptador-customer-info-add"/>
+                            </camel:when>
+                        </camel:when>
+                        <camel:when>
+                            <camel:xpath>/il:eventoServicioEmpresarial/il:eventoCancelacion
+                            </camel:xpath>
+                            <camel:log message="eventoCancelacion"/>
+                            <camel:split>
+                                <camel:xpath>/il:eventoServicioEmpresarial/il:cancelarPagoCuentaACuenta
+                                </camel:xpath>
+                                <camel:log message="cancelarPagoCuentaACuenta"/>
+                                <camel:to uri="direct:adaptador-local-payment-cancel"/>
+                            </camel:split>
+
+                        </camel:when>
+                    </camel:split>
+
+                </camel:when>
+            </camel:choice>
+
+
+        </camel:route>
+
+    </camel:routeContext>
+
+</beans>

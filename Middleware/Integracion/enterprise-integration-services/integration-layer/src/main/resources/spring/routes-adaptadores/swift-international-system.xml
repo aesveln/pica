@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- CANONICAL ADAPTER -->
+    <!-- ================================================================= -->
+
+    <bean id="transformSwift" class="co.edu.javeriana.middleware.beans.TransformSwift"/>
+
+
+    <camel:routeContext id="adaptadores-swift-international-context">
+
+        <camel:route id="adaptador-swift-international-route-execute">
+            <camel:from uri="direct:adaptador-swift-international-execute"/>
+            <camel:log message="Llamado a swift-international execute."/>
+            <camel:to uri="bean:transformSwift?method=trnsformToJsonSWIFT"/>
+
+
+            <camel:setHeader headerName="CamelHttpMethod">
+                <camel:constant>POST</camel:constant>
+            </camel:setHeader>
+
+            <camel:to uri="http4://localhost:8081/SWIFTPayment/"/>
+
+            <camel:log message="Respuesta SwIFT add: ${body}"/>
+        </camel:route>
+
+
+        <camel:route id="adaptador-swift-international-route-cancel">
+            <camel:from uri="direct:adaptador-swift-international-cancel"/>
+            <camel:log message="Llamado a swift-international cancel."/>
+            <camel:to uri="bean:transformSwift?method=trnsformToJsonSWIFT"/>
+
+
+            <camel:setHeader headerName="CamelHttpMethod">
+                <camel:constant>POST</camel:constant>
+            </camel:setHeader>
+
+            <camel:to uri="http4://localhost:8081/SWIFTPayment/"/>
+
+            <camel:log message="Respuesta SwIFT cancel: ${body}"/>
+
+        </camel:route>
+
+
+    </camel:routeContext>
+
+</beans>

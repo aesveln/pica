@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:il="http://aesveln.com.co/transfor/il/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- INTEGRATION AND COMPOSITION -->
+    <!-- ================================================================= -->
+
+    <camel:routeContext id="composiciones-taller-context">
+
+        <camel:route id="composicion-taller">
+            <camel:from uri="direct:composicion-taller"/>
+            <camel:log message="Recibiendo objectoAccionFinanciera"/>
+            <camel:setProperty propertyName="createCustomer">
+                <camel:xpath >//il:objectoAccionFinanciera/il:eventoAccionFinanciera/il:adicionarUsusarioEvento</camel:xpath>
+            </camel:setProperty>
+            <camel:choice>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:servicioFinanciero</camel:xpath>
+                    <camel:log message="Servicio financiero"/>
+                    <camel:to uri="direct:finantial-service-taller"/>
+
+                </camel:when>
+            </camel:choice>
+            <camel:choice>
+                <camel:when>
+                    <camel:xpath>//il:objectoAccionFinanciera/il:productoFinanciero</camel:xpath>
+                    <camel:log message="Producto financiero"/>
+                    <camel:to uri="direct:finantial-product-taller"/>
+                </camel:when>
+            </camel:choice>
+        </camel:route>
+
+    </camel:routeContext>
+
+</beans>

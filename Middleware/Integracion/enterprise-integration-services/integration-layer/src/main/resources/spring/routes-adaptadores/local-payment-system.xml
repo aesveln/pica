@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:camel="http://camel.apache.org/schema/spring"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+	<!-- ================================================================= -->
+	<!-- CANONICAL ADAPTER -->
+	<!-- ================================================================= -->
+
+
+	<camel:routeContext id="adaptadores-local-payment-context">
+
+		<camel:route id="adaptador-local-payment-route-execute">
+			<camel:from uri="direct:adaptador-local-payment-execute" />
+			<camel:log message="Llamado a local-payment execute. ${body} " />
+			<camel:to uri="xslt:spring/routes-adaptadores/xslt/transform-local-payment.xsl" />
+			<camel:log message="Llamado a local-payment transform. ${body}" />
+			<camel:to uri="cxf:bean:localPaymentSOAP?dataFormat=PAYLOAD" />
+			<camel:log message="Respuesta de local-payment execute. ${body}" />
+
+		</camel:route>
+
+		<camel:route id="adaptador-local-payment-route-cancel">
+			<camel:from uri="direct:adaptador-local-payment-cancel" />
+			<camel:log message="Llamado a local-payment cancel." />
+			<camel:to uri="xslt:spring/routes-adaptadores/xslt/transform-local-payment.xsl" />
+			<camel:log message="Llamado a local-payment transform. ${body}" />
+			<camel:to uri="cxf:bean:localPaymentSOAP?dataFormat=PAYLOAD" />
+			<camel:log message="Respuesta de local-payment cancel. ${body}" />
+
+		</camel:route>
+
+
+	</camel:routeContext>
+
+</beans>

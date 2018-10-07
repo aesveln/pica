@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:camel="http://camel.apache.org/schema/spring"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+	<!-- ================================================================= -->
+	<!-- CANONICAL ADAPTER -->
+	<!-- ================================================================= -->
+	<bean id="ToolBoxCards" class="co.edu.javeriana.middleware.beans.ToolBoxCards"/>
+
+	<camel:routeContext id="adaptadores-toolbox-cards-context">
+
+		<camel:route id="adaptador-toolbox-cards-route-add">
+			<camel:from uri="direct:adaptador-toolbox-cards-add" />
+			<camel:log message="Llamado a toolbox-cards add." />
+			<camel:to uri="bean:ToolBoxCards?method=crearArchivoLF"/>
+            <camel:to uri="file:/home/narfco/toolbox/?fileName=ArchivoLF-ADD-${date:now:yyyyMMddSSS}.out"/>
+            <camel:log message="Linea escrita en toolbox: ${body}" />
+
+		</camel:route>
+
+		<camel:route id="adaptador-toolbox-cards-route-cancel">
+			<camel:from uri="direct:adaptador-toolbox-cards-cancel" />
+			<camel:log message="Llamado a toolbox-cards cancel." />
+			<camel:to uri="bean:ToolBoxCards?method=crearArchivoLF"/>
+            <camel:to uri="file:/home/narfco/toolbox/?fileName=ArchivoLF-CANCEL-${date:now:yyyyMMddSSS}.out"/>
+            <camel:log message="Linea escrita en toolbox: ${body}" />
+		</camel:route>
+
+
+	</camel:routeContext>
+
+</beans>
