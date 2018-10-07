@@ -2,35 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7cf9139-d854-41fd-b53f-d156c4fb7a00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../security-api/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/conf/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/model/admcyo/CustomerLoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/src/main/java/com/security/app/infraestructure/OracleConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/META-INF/maven/com.tb.security.content/security-api/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/META-INF/maven/com.tb.security.content/security-api/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/infraestructure/JwtApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/infraestructure/JwtApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/infraestructure/OracleConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/infraestructure/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/infraestructure/SwaggerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/models/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/models/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/models/UserRegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/models/UserRegisterRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/models/UserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/models/UserRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../security-api/target/classes/com/security/app/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../compile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/conf/JwtApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/conf/JwtApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/controller/admcyo/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/controller/admcyo/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/dao/admcyo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/dao/admcyo/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/dto/admcyo/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/dto/admcyo/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/entity/admcyo/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/entity/admcyo/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/model/admcyo/CustomerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/model/admcyo/CustomerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/model/admcyo/CustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/model/admcyo/CustomerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,36 +107,39 @@
     <session id="445338043">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="11" />
-          <entry key="properties" value="3" />
+          <entry key="java" value="12" />
+          <entry key="properties" value="4" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="12" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="3" />
+          <entry key="Properties" value="4" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="915" />
+          <entry key="properties" value="17" />
           <entry key="sql" value="74" />
           <entry key="txt" value="15" />
         </counts>
@@ -168,6 +148,7 @@
         <counts>
           <entry key="JAVA" value="915" />
           <entry key="PLAIN_TEXT" value="15" />
+          <entry key="Properties" value="17" />
           <entry key="Scratch" value="74" />
         </counts>
       </usages-collector>
@@ -179,98 +160,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/conf/WebConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/service/ProductService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/ApplicationB2CProducts.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/conf/SwaggerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dao/admpro/ProductRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/entity/admpro/Spectacle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/entity/admpro/City.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/model/admpro/ProductRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-              <folding>
-                <element signature="e#1150#1151#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -389,10 +283,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="25" />
+    <option name="y" value="27" />
     <option name="width" value="1920" />
-    <option name="height" value="1055" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -416,6 +309,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -439,56 +334,12 @@
               <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-              <item name="admpro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -565,7 +416,6 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="Docker.Dockerfile" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -609,11 +459,14 @@
       <workItem from="1538176669695" duration="4466000" />
       <workItem from="1538245096019" duration="8942000" />
       <workItem from="1538440149336" duration="11000" />
+      <workItem from="1538530441264" duration="2251000" />
+      <workItem from="1538574811381" duration="1192000" />
+      <workItem from="1538604251289" duration="2129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101016000" />
+    <option name="totallyTimeSpent" value="106588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -625,10 +478,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28708646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21291356" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -641,7 +493,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4994664" weight="0.3275862" />
-      <window_info anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.43609023" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="1.0" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32914287" />
@@ -941,14 +793,8 @@
           <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -956,6 +802,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/co/com/toures/b2c/products/ApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -996,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/model/admpro/ProductRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
+        <state relative-caret-position="623">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="e#1150#1151#0" expanded="true" />
@@ -1006,8 +866,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="45">
+          <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
         </state>
       </provider>
     </entry>
