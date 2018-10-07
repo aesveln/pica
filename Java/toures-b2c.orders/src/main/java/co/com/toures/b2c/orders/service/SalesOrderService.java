@@ -128,12 +128,12 @@ public class SalesOrderService {
 		return salesSoap.getRespuestaServicio(id);
 	}
 	
-	public void crearsaleOrder (int idsale, long price, String comments, int customerid)
+	public void crearsaleOrder (int orderid, long price, String comments, int customerid)
 	{
 		String error ="";
 		try
 		{
-			salesRepository.createSaleOrder(idsale, price,  comments, customerid);	
+			salesRepository.createSaleOrder(orderid , price,  comments, customerid);	
 		}catch(Exception e)
 		{
 			error = e.getMessage();
@@ -159,5 +159,18 @@ public class SalesOrderService {
 		
 	}
 	
+	public int saleCreada ()
+	{
+		String error ="";
+		int sale = 0;
+		try {
+			sale = salesRepository.findlastSale();
+		}catch(Exception e)
+		{
+			error = e.getMessage();
+		}
+		
+		return sale;
+	}
 	
 }

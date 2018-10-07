@@ -19,6 +19,8 @@ public class SalesOrder {
 	
 	@Id
     @Basic(optional = false)
+	@SequenceGenerator(name="sales_seq", sequenceName="sales_seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sales_seq")
     @Column(name = "ID_SALES")
     private BigDecimal idSales;
     @Column(name = "ORDER_DATE")

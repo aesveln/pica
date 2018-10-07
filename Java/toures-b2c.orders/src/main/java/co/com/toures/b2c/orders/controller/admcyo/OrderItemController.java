@@ -46,8 +46,10 @@ public class OrderItemController {
 		int idSaleCreada;
 		try {
 			
-			orderService.crearOrden(orderRequest.getProduct_cod(), orderRequest.getProduct_name(), orderRequest.getPrice(), orderRequest.getQuantity(), orderRequest.getOrder_id() );
-			salesService.crearsaleOrder(orderRequest.getOrder_id(), orderRequest.getPrice(), comment, orderRequest.getIdcliente());
+		
+			salesService.crearsaleOrder(orderRequest.getOrder_id(),orderRequest.getPrice(), comment, orderRequest.getIdcliente());
+			idSaleCreada = salesService.saleCreada();
+			orderService.crearOrden(orderRequest.getProduct_cod(), orderRequest.getProduct_name(), orderRequest.getPrice(), orderRequest.getQuantity(), idSaleCreada);
 			//SalesOrderDTO sale = salesService.findLastCreated(orderRequest.getPrice(), comment, orderRequest.getIdcliente());
 			
 			

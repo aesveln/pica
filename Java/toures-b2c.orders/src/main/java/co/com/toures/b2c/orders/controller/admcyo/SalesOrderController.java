@@ -70,7 +70,7 @@ public class SalesOrderController {
 		return ResponseEntity.ok(response);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value =  "/salesorder/cancelSaleOrder/{idsale}", produces = "application/json")
+	@RequestMapping(method = RequestMethod.GET, value =  "/salesorder/cancelSaleOrder/{idsale}", produces = "application/json")
 	@ApiOperation("cancel a sale")
 	public ResponseEntity cancelSale  (@PathVariable (value="idsale") int idsale)
 	{

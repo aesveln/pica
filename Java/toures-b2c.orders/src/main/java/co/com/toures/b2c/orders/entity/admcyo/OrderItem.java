@@ -17,6 +17,8 @@ public class OrderItem {
 
 	@Id
     @Basic(optional = false)
+	@SequenceGenerator(name="orders_seq", sequenceName="orders_seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="orders_seq")
     @Column(name = "ID")
     private int id;
     @Column(name = "PRODUCT_COD")

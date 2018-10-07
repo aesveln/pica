@@ -33,7 +33,7 @@ public class OrderItemService {
 		String error="";
 		try
 		{
-			orderItemRepository.crearOrden(productcod, productname, price, quantity, idsale);
+			orderItemRepository.crearOrden(productcod, productname, price, quantity);
 		}catch (Exception e)
 		{
 			error = e.getMessage();
