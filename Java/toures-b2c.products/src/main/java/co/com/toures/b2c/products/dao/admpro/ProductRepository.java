@@ -43,5 +43,6 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
             nativeQuery = true)
     Page<Product> findAllLodgingByRangeDate(Pageable pageable, @Param("arrivalDate") Date arrivalDate,@Param("departureDate") Date departureDate);
 
+    Product findByCod (String cod);
 
 }

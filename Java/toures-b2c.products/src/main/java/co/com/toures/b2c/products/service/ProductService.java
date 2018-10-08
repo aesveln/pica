@@ -169,7 +169,7 @@ public class ProductService {
 
         Pageable pageable;
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Date depart_date = dateFormat.parse(productRequest.getDepartureDate() );
+        Date depart_date = dateFormat.parse(productRequest.getDepartureDate());
         Date return_date = dateFormat.parse(productRequest.getReturn_date());
 
         if (productRequest.getSortBy().equals("") || productRequest.getSortBy().isEmpty()) {
@@ -179,7 +179,7 @@ public class ProductService {
             Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
             pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
         }
-        Page<Product> productos = productRepository.findAllTransporByRangeDate(pageable, new java.sql.Date(depart_date.getTime()),new java.sql.Date(return_date.getTime()));
+        Page<Product> productos = productRepository.findAllTransporByRangeDate(pageable, new java.sql.Date(depart_date.getTime()), new java.sql.Date(return_date.getTime()));
 
         Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
             @Override
@@ -209,7 +209,7 @@ public class ProductService {
             Sort sort = Sort.by(Sort.Direction.ASC, sortBy);
             pageable = PageRequest.of(productRequest.getPageNumber(), productRequest.getPageSize(), sort);
         }
-        Page<Product> productos = productRepository.findAllLodgingByRangeDate(pageable, new java.sql.Date(arrivalDate.getTime()),new java.sql.Date(departureDate.getTime()));
+        Page<Product> productos = productRepository.findAllLodgingByRangeDate(pageable, new java.sql.Date(arrivalDate.getTime()), new java.sql.Date(departureDate.getTime()));
 
         Page<ProductDTO> productosDTO = productos.map(new Function<Product, ProductDTO>() {
             @Override
@@ -222,5 +222,14 @@ public class ProductService {
         });
 
         return productosDTO;
+    }
+
+
+    public ProductDTO findProductDetail(String codeProduct) {
+
+        Product producto = productRepository.findByCod(codeProduct);
+
+        ProductDTO productDTO = modelMapper.map(producto, ProductDTO.class);
+        return productDTO;
     }
 }

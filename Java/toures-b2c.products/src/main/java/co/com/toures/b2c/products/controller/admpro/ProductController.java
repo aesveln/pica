@@ -1,5 +1,6 @@
 package co.com.toures.b2c.products.controller.admpro;
 
+import co.com.toures.b2c.products.dto.admpro.ProductDTO;
 import co.com.toures.b2c.products.model.admpro.ProductRequest;
 import co.com.toures.b2c.products.model.admpro.ProductResponse;
 import co.com.toures.b2c.products.service.ProductService;
@@ -7,10 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Api(description = "Set of endpoints for Retrieving Products.")
@@ -118,6 +116,19 @@ public class ProductController {
         } catch (Exception e) {
             System.out.println(e);
             return ResponseEntity.badRequest().body(null);
+        }
+
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/api/products/productDetails/{codeProduct}")
+    @ApiOperation("Return detailed product")
+    public ProductDTO findProductDetail(@PathVariable String codeProduct) {
+        try {
+
+            return productService.findProductDetail(codeProduct);
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
         }
 
     }

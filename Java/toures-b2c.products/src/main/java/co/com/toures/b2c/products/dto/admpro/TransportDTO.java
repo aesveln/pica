@@ -1,7 +1,11 @@
 package co.com.toures.b2c.products.dto.admpro;
 
 import co.com.toures.b2c.products.entity.admpro.City;
+import co.com.toures.b2c.products.utils.JsonDateSerializer;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 import java.util.List;
@@ -42,6 +46,7 @@ public class TransportDTO {
         this.id = id;
     }
 
+    @JsonSerialize(using = JsonDateSerializer.class)
     public Date getDepartDate() {
         return departDate;
     }
@@ -50,6 +55,7 @@ public class TransportDTO {
         this.departDate = departDate;
     }
 
+    @JsonSerialize(using= JsonDateSerializer.class)
     public Date getReturnDate() {
         return returnDate;
     }

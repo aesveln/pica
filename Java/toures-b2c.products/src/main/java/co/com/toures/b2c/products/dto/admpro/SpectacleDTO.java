@@ -1,14 +1,16 @@
 package co.com.toures.b2c.products.dto.admpro;
 
 
+import co.com.toures.b2c.products.utils.JsonDateSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.sql.Date;
 import java.util.List;
 
 
 public class SpectacleDTO {
-	
+
     private Integer id;
     private String type;
     private Date spectacleDate;
@@ -45,6 +47,7 @@ public class SpectacleDTO {
         this.type = type;
     }
 
+    @JsonSerialize(using = JsonDateSerializer.class)
     public Date getSpectacleDate() {
         return spectacleDate;
     }
@@ -68,7 +71,8 @@ public class SpectacleDTO {
     public void setProductList(List<ProductDTO> productList) {
         this.productList = productList;
     }
-//
+
+    //
     public CityDTO getCity() {
         return city;
     }
