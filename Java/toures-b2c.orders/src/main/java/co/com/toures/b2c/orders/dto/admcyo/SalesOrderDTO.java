@@ -11,10 +11,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import co.com.toures.b2c.orders.utils.JsonDateSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import co.com.toures.b2c.orders.entity.admcyo.Customer;
 import co.com.toures.b2c.orders.entity.admcyo.OrderItem;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
 public class SalesOrderDTO {
@@ -25,6 +27,7 @@ public class SalesOrderDTO {
     private Long price;
     private String statusOrder;
     private String comments;
+    @JsonIgnore
     private CustomerDTO customerId;
     private List<OrderItemDTO> orderItemList;
     
@@ -57,6 +60,7 @@ public class SalesOrderDTO {
 	public void setIdSales(BigDecimal idSales) {
 		this.idSales = idSales;
 	}
+	@JsonSerialize(using = JsonDateSerializer.class)
 	public Date getOrderDate() {
 		return orderDate;
 	}

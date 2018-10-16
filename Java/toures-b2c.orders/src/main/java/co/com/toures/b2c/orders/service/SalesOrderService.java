@@ -1,33 +1,24 @@
 package co.com.toures.b2c.orders.service;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.function.Function;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import co.com.toures.b2c.orders.dao.admcyo.OrderItemRepository;
 import co.com.toures.b2c.orders.dao.admcyo.SalesOrderRepository;
-import co.com.toures.b2c.orders.dto.admcyo.CustomerDTO;
 import co.com.toures.b2c.orders.dto.admcyo.OrderItemDTO;
 import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.entity.admcyo.OrderItem;
 import co.com.toures.b2c.orders.entity.admcyo.SalesOrder;
-import co.com.toures.b2c.orders.model.admcyo.SalesOrderRequest;
 
 @Service
 public class SalesOrderService {
@@ -172,5 +163,13 @@ public class SalesOrderService {
 		
 		return sale;
 	}
-	
+
+
+	public SalesOrderDTO findDetailSalesOrder(BigDecimal idorder) {
+
+		SalesOrder salesOrder = salesRepository.findByIdSales(idorder);  ;
+
+		SalesOrderDTO salesOrderDTO = modelmapper.map(salesOrder, SalesOrderDTO.class);
+		return salesOrderDTO;
+	}
 }

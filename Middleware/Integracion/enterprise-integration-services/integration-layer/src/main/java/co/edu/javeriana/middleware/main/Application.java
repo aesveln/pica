@@ -34,14 +34,6 @@ import org.springframework.context.annotation.ImportResource;
 public class Application {
 
 	@Bean
-	public ServletRegistrationBean cxfServlet() {
-		ServletRegistrationBean bean = new ServletRegistrationBean(new CXFServlet(), "/cxf/*");
-		bean.setLoadOnStartup(1);
-		bean.setName("CXFServlet");
-		return bean;
-	}
-
-	@Bean
 	public ServletRegistrationBean camelServlet() {
 		ServletRegistrationBean bean = new ServletRegistrationBean(new CamelServlet(), "/camel/*");
 		bean.setLoadOnStartup(2);
