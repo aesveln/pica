@@ -23,6 +23,22 @@
   height: calc(320px);
 }
 
+.carouselDetail-size{
+  height: calc(120px);
+}
+
+.carouselDetail-inner{
+  height: calc(120px);
+}
+
+.carouselDetails-indicators{
+  height: calc(120px);
+}
+
+.itemDetail img{
+  height: calc(120px);
+}
+
 .botonF1{
   width:62px;
   height:62px;

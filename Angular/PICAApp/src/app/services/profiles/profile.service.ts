@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Md5 } from 'ts-md5';
 import { UpdateUserRequest } from '../../model/Request/updateUserRequest';
+import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { UpdateUserRequest } from '../../model/Request/updateUserRequest';
 export class ProfileService {
   [x: string]: any;
   updateUserRequest:UpdateUserRequest;
-  private readonly API_URL = 'http://192.168.1.103:8080/api/users';
+  private readonly API_URL = UrlSchemas.UrlUsers + 'api/users';
   
   constructor(private http: HttpClient) { }
   updateCreate(id,firstName, lastName, documentType, document, 

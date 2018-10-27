@@ -16,6 +16,8 @@ import { Query_string } from '../../model/Request/ElasticSearch/query_string';
 import { Query } from '../../model/Request/ElasticSearch/query';
 import { ElasticResponse } from '../../model/Response/elasticResponse';
 import { forEach } from '@angular/router/src/utils/collection';
+import { OrderCreated } from '../../model/Request/orderRequest';
+import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 
 @Component({
   selector: 'app-home',
@@ -42,7 +44,7 @@ export class HomeComponent implements OnInit {
   elastiSer: ElasticRequest;
   query_strings:Query_string;
   query:Query;
-
+  urlServerImage:string;
   elasticResponse:ElasticResponse;
 
   private subscription: Subscription;
@@ -60,6 +62,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     
+    this.urlServerImage = UrlSchemas.UrlFileServer;
+
     this.jwt =  JSON.parse(localStorage.getItem('userToken'));
     
     // if(this.jwt == null){
@@ -134,8 +138,32 @@ export class HomeComponent implements OnInit {
   }
   
   CreateOrden(carrito){
+    debugger;
+    var order = new OrderCreated()
     var key = localStorage.getItem('userToken');
     
+    order.idcliente = this.user.idCustomer;
+    order.odrder_id = 80000 + Math.random()*100;
+    order.price = carrito[0].precio;
+    order.produco_cod = carrito[0].codigo;
+    order.product_name = carrito[0].titulo;
+    order.quantity = carrito[0].quantity;
+
+    this.productService.createOrders(order).subscribe(
+      (data)=> {
+      //  console.log(JSON.stringify(data));
+       this.productsList = data.productos;
+       this.listsProd = this.productsList.content;
+       if (this.listsProd.length > 0) {
+        this.viewCatalog = true;
+      } else {
+        this.viewCatalog = false;
+      }
+      },
+      error => {
+        console.log(error);
+      }
+    )
     if(key == null){
       this.router.navigate(['/login']);
     }

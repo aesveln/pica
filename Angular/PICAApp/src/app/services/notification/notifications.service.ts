@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationsService {
   variable: any;
-  private readonly API_URL = 'http://192.168.1.102:8080/salesorder';
+  private readonly API_URL = UrlSchemas.UrlOrder + 'salesorder';
+  
   constructor(private http: HttpClient) { }
 
   getAllOrders(userId:number): Observable<any> {
@@ -29,4 +31,6 @@ export class NotificationsService {
       });
     return this.variable;
    }
+
+   
 }

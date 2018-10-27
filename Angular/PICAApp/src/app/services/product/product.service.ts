@@ -5,6 +5,7 @@ import { Producto } from '../../model/product';
 import { ProductoRequest } from '../../model/Request/ProductRequest';
 import { productos } from '../../model/Pages/productos';
 import { debug } from 'util';
+import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 
 @Injectable()
 export class ProductService {
@@ -12,8 +13,9 @@ export class ProductService {
   productList:any;
   productListAux:any;
   private productos: Array<Producto> = [];
-  private readonly API_URL = 'http://192.168.1.103:8081/api/products';
-  private readonly _imageServer = '35.235.105.138:8181'
+  private readonly API_URL = UrlSchemas.UrlProducts + 'api/products';
+  private readonly API_URLo = UrlSchemas.UrlOrder + 'orderitem';
+  private readonly _imageServer = UrlSchemas.UrlFileServer;
   private subject: BehaviorSubject<Producto[]> = new BehaviorSubject([]);
   private itemsCarrito: Producto[] = [];
 
@@ -89,6 +91,19 @@ export class ProductService {
 
   getTotal(producto:Array<Producto>): number{
 
-    return this.itemsCarrito.reduce((total, producto: Producto) => { return total + (producto.quantity * producto.precio); }, 0);
+    return this.itemsCarrito.reduce(
+      (total, producto: Producto) => { 
+        return total + (producto.quantity * producto.precio); 
+      }, 0);
   }
+  createOrders(saleId): Observable<any> {
+    this.variable = this.http.post(
+      this.API_URLo + '/createOrder/',
+      JSON.stringify(saleId), 
+      {
+      headers: new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      });
+    return this.variable;
+   }
 }

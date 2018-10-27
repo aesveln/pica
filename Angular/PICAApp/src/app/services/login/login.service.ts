@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { UserRequest } from '../../model/Request/userRequest';
 import {Md5} from 'ts-md5/dist/md5';
 import { updateUserRequest } from '../../model/Request/createUserRequest';
+import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { updateUserRequest } from '../../model/Request/createUserRequest';
 export class LoginService {
   updateUser:updateUserRequest;
   userRequest: UserRequest;
-  private readonly API_URL = 'http://192.168.1.103:8080/api/users';
+  private readonly API_URL = UrlSchemas.UrlUsers + 'api/users';
   constructor(private http: HttpClient) {}
 
   userAuthentication(userName, password): Observable<any> {

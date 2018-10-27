@@ -8,9 +8,11 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { AdminComponent } from './components/admin/admin.component';
 import { CoWorkerComponent } from './components/co-worker/co-worker.component';
 import { UsersComponent } from './components/users/users.component';
+import { DetailComponent } from './components/detail/detail/detail.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent},
+    { path: 'detail', component: DetailComponent},
     { path: 'home', component: HomeComponent},
     { path: 'menu', component: MenuComponent},
     { path: 'full-calendar', component: CalendarComponent},

@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ElasticRequest } from '../../model/Request/ElasticSearch/elasticRequest';
 import { Observable } from 'rxjs';
+import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WelcomeService {
-  private readonly API_URL = 'http://192.168.1.103:9200/productos/producto';
+  private readonly API_URL = UrlSchemas.UrlElastic + '/productos/producto';
   variable: any;
   constructor(private http: HttpClient) { }
 

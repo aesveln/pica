@@ -26,6 +26,7 @@ import { CatalogComponent } from './components/catalog/catalog.component';
 import { ProductService} from './services/product/product.service';
 import { LoginService } from './services/login/login.service';
 import { ProfileService } from './services/profiles/profile.service';
+import { DetailComponent } from './components/detail/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ProfileService } from './services/profiles/profile.service';
     RolesComponent,
     ShoppingcartComponent,
     CatalogComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
