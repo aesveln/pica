@@ -13,8 +13,7 @@
 
     <context:property-placeholder location="classpath:integration-layer-configuration.properties"/>
 
-    <context:component-scan base-package="co.edu.javeriana.foundation.middleware.context"/>
-    <context:component-scan base-package="co.edu.javeriana.middleware.composition.controllers"/>
+    <context:component-scan base-package="co.com.touresbalon.middleware.context"/>
 
 
     <!-- ================================================================= -->
@@ -27,36 +26,28 @@
     <!-- ================================================================= -->
 
 
+    <!--Routes Services-->
+    <import resource="routes-services/products-routes.xml"/>
+
+
+    <!--Routes compositions-->
+    <import resource="routes-composicion/products-composition.xml"/>
+
+    <!--Routes adapters-->
+    <import resource="routes-adaptadores/products-system.xml"/>
 
     <!-- ================================================================= -->
     <!-- MAIN CAMEL CONTEXT -->
     <!-- ================================================================= -->
 
-    <camel:camelContext id="taller-camel-context">
+    <camel:camelContext id="toures-balon-integracion-context">
 
+
+        <camel:routeContextRef ref="products-integration-composition-context"/>
+        <camel:routeContextRef ref="adaptadores-productos-context"/>
+        <camel:restContextRef ref="products-integration-rest"/>
         <camel:restConfiguration component="restlet" port="9091"/>
 
-        <camel:rest path="/say">
-            <camel:get uri="/hello">
-                <camel:to uri="direct:hello"/>
-            </camel:get>
-            <camel:get uri="/bye">
-                <camel:to uri="direct:bye"/>
-            </camel:get>
-        </camel:rest>
-
-        <camel:route>
-            <camel:from uri="direct:hello"/>
-            <camel:transform>
-                <camel:constant>Hello World</camel:constant>
-            </camel:transform>
-        </camel:route>
-        <camel:route>
-            <camel:from uri="direct:bye"/>
-            <camel:transform>
-                <camel:constant>Bye World</camel:constant>
-            </camel:transform>
-        </camel:route>
 
     </camel:camelContext>
 

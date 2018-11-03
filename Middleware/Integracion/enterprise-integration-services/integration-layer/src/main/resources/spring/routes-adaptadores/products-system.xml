@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- CANONICAL ADAPTER -->
+    <!-- ================================================================= -->
+
+    <camel:routeContext id="adaptadores-productos-context">
+
+        <camel:route id="adaptador-productos-route">
+            <camel:from uri="direct:obtenerTodosEspectaculosAdapter"/>
+            <camel:setHeader headerName="CamelHttpMethod">
+                <camel:constant>POST</camel:constant>
+            </camel:setHeader>
+            <camel:log message="Antes de llamar : ${body}"/>
+            <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllSpectacleProducts/"/>
+            <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
+
+        </camel:route>
+
+
+    </camel:routeContext>
+
+</beans>

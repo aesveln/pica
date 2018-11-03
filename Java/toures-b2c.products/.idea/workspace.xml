@@ -2,39 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7cf9139-d854-41fd-b53f-d156c4fb7a00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/utils/JsonDateSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/controller/admcyo/SalesOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/controller/admcyo/SalesOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/dao/admcyo/SalesOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/dao/admcyo/SalesOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/dto/admcyo/SalesOrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/dto/admcyo/SalesOrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/service/ConfigurationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/service/ConfigurationClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/service/SalesOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/java/co/com/toures/b2c/orders/service/SalesOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.orders/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/com/touresbalon/middleware/context/ContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/products-system.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-composicion/products-composition.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-services/products-routes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/beans/BusinessRules.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/beans/ToolBoxCards.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/beans/TransformSwift.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/beans/WizzardLoanPlatform.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/main/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/main/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/composition/controllers/ComposicionPocSmsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/edu/javeriana/middleware/main/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/com/touresbalon/middleware/main/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/camel-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/camel-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/connectors/soap-cxf-connector-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/ach-national-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/atp-cards-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/customer-info-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/local-payment-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/stratus-accounts-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/swift-international-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/toolbox-cards-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/wizard-loans-system.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/xslt/enterpriseOperationEventObjectTransform.xsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/xslt/transform-local-payment.xsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-integracion-composicion/composiciones.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-integracion-composicion/finantial-product.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-integracion-composicion/finantial-service.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-protocolo/protocolos.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,15 +47,15 @@
     <session id="1191872418">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="33" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.29" value="2" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.29" value="3" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="1" />
@@ -83,8 +64,9 @@
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.83" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -92,40 +74,40 @@
           <entry key="Dockerfile" value="1" />
           <entry key="cmd" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="130" />
+          <entry key="java" value="132" />
           <entry key="mvnw" value="2" />
-          <entry key="properties" value="7" />
+          <entry key="properties" value="8" />
           <entry key="sql" value="1" />
-          <entry key="xml" value="6" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Dockerfile" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="130" />
+          <entry key="JAVA" value="132" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Properties" value="7" />
+          <entry key="Properties" value="8" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="6" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="135" />
-          <entry key="java" value="2393" />
-          <entry key="properties" value="23" />
+          <entry key="java" value="2407" />
+          <entry key="properties" value="32" />
           <entry key="sql" value="153" />
-          <entry key="xml" value="80" />
+          <entry key="xml" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dockerfile" value="135" />
-          <entry key="JAVA" value="2393" />
-          <entry key="Properties" value="23" />
+          <entry key="JAVA" value="2407" />
+          <entry key="Properties" value="32" />
           <entry key="Scratch" value="153" />
-          <entry key="XML" value="80" />
+          <entry key="XML" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -136,18 +118,19 @@
     <session id="445338043">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="4" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -190,20 +173,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="65" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/ProductDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+              <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -211,39 +185,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+            <state relative-caret-position="285">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/SpectacleDTO.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+            <state relative-caret-position="1290">
+              <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/model/admpro/ProductRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1477#1478#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1200#1201#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/service/ProductService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3150">
-              <caret line="227" column="16" selection-start-line="227" selection-start-column="16" selection-end-line="227" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/entity/admpro/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -309,7 +274,6 @@
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dao/admpro/CityRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/service/CityService.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/CityController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e1208a0e-6ea8-4916-890c-b7c3e273f01f/console.sql" />
@@ -317,13 +281,14 @@
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/model/admpro/ProductRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/conf/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/conf/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dao/admpro/ProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/utils/JsonDateSerializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/SpectacleDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/TransportDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/LodgingDTO.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
@@ -363,9 +328,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1919" />
-    <option name="y" value="28" />
-    <option name="width" value="1922" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -390,6 +354,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -429,13 +394,21 @@
               <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="admpro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,7 +422,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="database.data.extractors.current.id" value="JSON-Groovy.json.groovy" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Software/TallerPICARendimiento/performance-workshop/universal-bank-performance-workshop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -512,7 +485,6 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="Docker.Dockerfile" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -569,11 +541,19 @@
       <workItem from="1539538777637" duration="78000" />
       <workItem from="1539539308698" duration="34000" />
       <workItem from="1539658040851" duration="1286000" />
+      <workItem from="1539731965571" duration="2485000" />
+      <workItem from="1539814792019" duration="1897000" />
+      <workItem from="1539832922575" duration="31000" />
+      <workItem from="1540063224498" duration="3033000" />
+      <workItem from="1540145347533" duration="2366000" />
+      <workItem from="1540595912793" duration="1557000" />
+      <workItem from="1540650387061" duration="24000" />
+      <workItem from="1540650443655" duration="229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114334000" />
+    <option name="totallyTimeSpent" value="125956000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -585,10 +565,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="28" width="1922" height="1053" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="26" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2379936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26093918" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -601,7 +580,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4994664" weight="0.3275862" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.36422414" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.34159482" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32914287" />
@@ -611,7 +590,7 @@
       <window_info anchor="bottom" id="Docker" order="15" weight="0.3287827" />
       <window_info anchor="bottom" id="Database Console" order="16" visible="true" weight="0.32915717" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.24919957" />
+      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.24866596" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.15368196" />
       <window_info anchor="right" id="Bean Validation" order="4" weight="0.32977587" />
@@ -853,13 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/ApplicationB2CProducts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -888,13 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/model/admpro/ProductRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/CityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -913,9 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-          <folding>
-            <element signature="e#1569#1570#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -940,24 +902,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="65" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/ProductDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -977,11 +925,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/dto/admpro/SpectacleDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+        <state relative-caret-position="735">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/model/admpro/ProductRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
           </folding>
         </state>
       </provider>

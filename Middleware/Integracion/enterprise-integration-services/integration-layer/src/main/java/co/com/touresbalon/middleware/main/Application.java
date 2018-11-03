@@ -13,10 +13,9 @@
  *  implied.  See the License for the specific language governing
  *  permissions and limitations under the License.
  */
-package co.edu.javeriana.middleware.main;
+package co.com.touresbalon.middleware.main;
 
 import org.apache.camel.http.common.CamelServlet;
-import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration;
