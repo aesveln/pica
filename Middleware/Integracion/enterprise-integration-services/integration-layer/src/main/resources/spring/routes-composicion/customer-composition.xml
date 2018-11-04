@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- PROTOCOL EXPOSITION FOR REMOTE SERVICES -->
+    <!-- ================================================================= -->
+    <camel:routeContext id="customer-integration-composition-context">
+
+        <camel:route id="login">
+
+            <camel:from uri="direct:composition-users-login"/>
+            <camel:log message="Recepcion peticion de login : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-users-login"/>
+
+        </camel:route>
+
+        <camel:route id="createUser">
+
+            <camel:from uri="direct:composition-users-create"/>
+            <camel:log message="Recepcion peticion de login : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-users-create"/>
+
+        </camel:route>
+
+
+        <camel:route id="updateCustomer">
+
+            <camel:from uri="direct:composition-users-updateCustomer"/>
+            <camel:log message="Recepcion peticion de login : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-users-updateCustomer"/>
+
+        </camel:route>
+
+
+    </camel:routeContext>
+
+
+</beans>

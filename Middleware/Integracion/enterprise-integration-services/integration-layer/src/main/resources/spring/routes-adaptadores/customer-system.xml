@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- CANONICAL ADAPTER -->
+    <!-- ================================================================= -->
+
+    <camel:routeContext id="adaptadores-usuarios-context">
+
+        <camel:route id="adaptador-users-login">
+            <camel:from uri="direct:adapter-users-login"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8081/api/users/login/"/>
+                <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+        <camel:route id="adaptador-users-create">
+            <camel:from uri="direct:adapter-users-create"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8081/api/users/createCustomer/"/>
+                <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-users-updateCustomer">
+            <camel:from uri="direct:adapter-users-updateCustomer"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8081/api/users/updateCustomer/"/>
+                <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+    </camel:routeContext>
+
+</beans>

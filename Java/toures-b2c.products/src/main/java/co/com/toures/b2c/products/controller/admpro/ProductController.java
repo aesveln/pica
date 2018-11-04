@@ -7,8 +7,11 @@ import co.com.toures.b2c.products.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.ws.rs.core.Response;
 
 @RestController
 @Api(description = "Set of endpoints for Retrieving Products.")

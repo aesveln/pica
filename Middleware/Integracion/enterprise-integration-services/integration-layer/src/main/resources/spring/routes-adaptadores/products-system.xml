@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- CANONICAL ADAPTER -->
+    <!-- ================================================================= -->
+
+    <camel:routeContext id="adaptadores-productos-context">
+
+        <camel:route id="adaptador-productos-obtenerTodosEspectaculosAdapter">
+            <camel:from uri="direct:adapter-obtenerTodosEspectaculosAdapter"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllSpectacleProducts/"/>
+                <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerTodasLasReservas">
+            <camel:from uri="direct:adapter-obtenerTodasLasReservas"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllLodgingProducts/"/>
+                <camel:log message="Respuesta obtenerTodasLasReservas: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerEspectaculosFecha">
+            <camel:from uri="direct:adapter-obtenerEspectaculosFecha"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllSpectacleByDate/"/>
+                <camel:log message="Respuesta obtenerEspectaculosFecha: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerReservasRango">
+            <camel:from uri="direct:adapter-obtenerReservasRango"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllLodgingByRangeDate/"/>
+                <camel:log message="Respuesta obtenerReservasRango: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerTransporteRango">
+            <camel:from uri="direct:adapter-obtenerTransporteRango"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllTransporByRangeDate/"/>
+                <camel:log message="Respuesta obtenerTransporteRango: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerTodosTransporte">
+            <camel:from uri="direct:adapter-obtenerTodosTransporte"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllTransportProducts/"/>
+                <camel:log message="Respuesta obtenerTodosTransporte: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerTodosProductos">
+            <camel:from uri="direct:adapter-obtenerTodosProductos"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>POST</camel:constant>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/getAll/"/>
+                <camel:log message="Respuesta obtenerTodosProductos: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+
+        <camel:route id="adaptador-productos-obtenerDetalleProducto">
+            <camel:from uri="direct:adapter-obtenerDetalleProducto"/>
+            <camel:doTry>
+                <camel:setHeader headerName="CamelHttpMethod">
+                    <camel:constant>GET</camel:constant>
+                </camel:setHeader>
+                <camel:setHeader headerName="CamelHttpPath">
+                    <camel:simple>${header.codeProduct}</camel:simple>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${header.codeProduct}"/>
+                <camel:log
+                        message="netty4-http:http://localhost:8080/api/products/productDetails/${header.codeProduct}"/>
+                <camel:to uri="netty4-http:http://localhost:8080/api/products/productDetails/"/>
+                <camel:log message="Respuesta obtenerDetalleProducto: ${body}"/>
+                <camel:doCatch>
+                    <camel:exception>java.lang.Exception</camel:exception>
+                    <camel:log message="Sistema no disponible"/>
+                    <camel:setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
+                        <camel:constant>503</camel:constant>
+                    </camel:setHeader>
+                </camel:doCatch>
+
+            </camel:doTry>
+        </camel:route>
+    </camel:routeContext>
+
+</beans>

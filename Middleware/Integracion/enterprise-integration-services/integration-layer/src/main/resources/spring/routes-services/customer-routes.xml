@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- PROTOCOL EXPOSITION FOR REMOTE SERVICES -->
+    <!-- ================================================================= -->
+    <camel:restContext id="customer-integration-rest">
+
+
+        <camel:rest path="/users" enableCORS="true">
+
+            <camel:post uri="/login">
+            <camel:to uri="direct:composition-users-login"/>
+            </camel:post>
+            <camel:post uri="/createCustomer">
+            <camel:to uri="direct:composition-users-create"/>
+            </camel:post>
+            <camel:post uri="/updateCustomer">
+                <camel:to uri="direct:composition-users-updateCustomer"/>
+            </camel:post>
+            <!--<camel:post uri="/findAllLodgingByRangeDate">-->
+            <!--<camel:to uri="direct:composition-obtenerReservasRango"/>-->
+            <!--</camel:post>-->
+            <!--<camel:post uri="/findAllTransporByRangeDate">-->
+            <!--<camel:to uri="direct:composition-obtenerTransporteRango"/>-->
+            <!--</camel:post>-->
+            <!--<camel:post uri="/findAllTransportProducts">-->
+            <!--<camel:to uri="direct:composition-obtenerTodosTransporte"/>-->
+            <!--</camel:post>-->
+            <!--<camel:post uri="/getAll">-->
+            <!--<camel:to uri="direct:composition-obtenerTodosProductos"/>-->
+            <!--</camel:post>-->
+
+        </camel:rest>
+
+
+    </camel:restContext>
+
+
+</beans>

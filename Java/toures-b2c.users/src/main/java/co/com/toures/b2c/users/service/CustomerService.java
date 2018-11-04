@@ -48,8 +48,9 @@ public class CustomerService {
         Object a = customerRepository.save(cust);
 
         System.out.println(a);
-
-        return new CustomerResponse();
+        CustomerResponse cr = new CustomerResponse();
+        cr.setCreado(true);
+        return cr;
     }
 
     public Object updateCustomer(CustomerRequest customerRequest) {
@@ -68,7 +69,9 @@ public class CustomerService {
 
         customerRepository.save(cust);
 
-        return new CustomerResponse();
+        CustomerResponse cr = new CustomerResponse();
+        cr.setCreado(true);
+        return cr;
     }
     
     public double getDescuento (String categoria)

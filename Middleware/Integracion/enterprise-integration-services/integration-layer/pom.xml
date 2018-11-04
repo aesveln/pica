@@ -156,11 +156,6 @@
             <version>2.5</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-http4</artifactId>
-            <version>2.22.1</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -172,6 +167,11 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-restlet</artifactId>
             <version>2.22.1</version> <!-- use the same version as your Camel core version -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-netty4-http</artifactId>
+            <version>2.22.1</version>
         </dependency>
 
     </dependencies>

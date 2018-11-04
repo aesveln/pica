@@ -3,7 +3,9 @@ package co.com.toures.b2c.users.controller.admcyo;
 
 import co.com.toures.b2c.users.model.admcyo.CustomerLoginRequest;
 import co.com.toures.b2c.users.model.admcyo.CustomerRequest;
+import co.com.toures.b2c.users.model.admcyo.CustomerResponse;
 import co.com.toures.b2c.users.service.CustomerService;
+import org.hibernate.exception.ConstraintViolationException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,8 +45,10 @@ public class CustomerController {
 
         try {
             return customerService.createCustomer(customerRequest);
+        } catch (ConstraintViolationException e) {
+            return new CustomerResponse();
         } catch (Exception e) {
-            return "";
+            return new CustomerResponse();
         }
     }
 
@@ -54,7 +58,7 @@ public class CustomerController {
         try {
             return customerService.updateCustomer(customerRequest);
         } catch (Exception e) {
-            return "";
+            return new CustomerResponse();
         }
     }
 }
