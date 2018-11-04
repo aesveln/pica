@@ -18,6 +18,9 @@ public class CustomerService {
 
     @Autowired
     CustomerRepository customerRepository;
+    
+    @Autowired
+    CustomerClient customerclient = new CustomerClient();
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -27,8 +30,11 @@ public class CustomerService {
         Customer cust = customerRepository.findByEmail(customerLoginRequest.getCorreo());
         CustomerDTO customerDTO = modelMapper.map(cust, CustomerDTO.class);
         boolean status = false;
+        double descuento;
         if (customerDTO.getPass().toLowerCase().equals(customerLoginRequest.getPassword().toLowerCase())) {
             status = true;
+            descuento = getDescuento(customerDTO.getCategory());
+            
         }
 
         return co.com.toures.b2c.users.conf.JwtApplication.JwtToken(status, "asd", customerDTO);
@@ -64,4 +70,9 @@ public class CustomerService {
 
         return new CustomerResponse();
     }
+    
+    public double getDescuento (String categoria)
+	{
+		return customerclient.getRespuestaServicio(categoria);
+	}
 }

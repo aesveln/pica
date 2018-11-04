@@ -129,6 +129,32 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+         	<plugin>
+		    <groupId>org.jvnet.jaxb2.maven2</groupId>
+		    <artifactId>maven-jaxb2-plugin</artifactId>
+<!--  		    <version>0.13.1</version>  -->
+			<version>0.8.1</version>
+		    <executions>
+		        <execution>
+		            <goals>
+		                <goal>generate</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+		    <configuration>
+		       <schemaLanguage>WSDL</schemaLanguage>
+        <generatePackage>co.com.toures.b2c.motorReglas.wsdl</generatePackage>
+        <schemas>
+            <schema>
+                <url>http://localhost:4413/openl-tablets-ws-5.18.3/datasource/MotorReglas?wsdl</url>
+            </schema>
+        </schemas>
+		    </configuration>
+		</plugin>
         </plugins>
     </build>
 
