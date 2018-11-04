@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- PROTOCOL EXPOSITION FOR REMOTE SERVICES -->
+    <!-- ================================================================= -->
+    <camel:restContext id="orders-integration-rest">
+
+
+        <camel:rest path="/orders" enableCORS="true">
+
+            <camel:post uri="/crearOrden">
+            <camel:to uri="direct:composition-orders-crearOrden"/>
+            </camel:post>
+            <camel:post uri="/cancelarOrden">
+            <camel:to uri="direct:composition-orders-cancelarOrden"/>
+            </camel:post>
+            <camel:post uri="/salesByEstatus">
+                <camel:to uri="direct:composition-orders-updateCustomer"/>
+            </camel:post>
+            <camel:post uri="salesByOrder">
+           	 <camel:to uri="direct:composition-orders-salesByOrder"/>
+            </camel:post>
+            <camel:post uri="/salesOpen">
+            <camel:to uri="direct:composition-orders-salesOpen"/>
+            </camel:post>
+            <camel:post uri="/topProductos">
+            <camel:to uri="direct:composition-orders-topProductos"/>
+            </camel:post>
+            <!--<camel:post uri="/getAll">-->
+            <!--<camel:to uri="direct:composition-obtenerTodosProductos"/>-->
+            <!--</camel:post>-->
+
+        </camel:rest>
+
+
+    </camel:restContext>
+
+
+</beans>
