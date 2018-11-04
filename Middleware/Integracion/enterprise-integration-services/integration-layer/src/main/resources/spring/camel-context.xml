@@ -28,13 +28,16 @@
 
     <!--Routes Services-->
     <import resource="routes-services/products-routes.xml"/>
+    <import resource="routes-services/customer-routes.xml"/>
 
 
     <!--Routes compositions-->
     <import resource="routes-composicion/products-composition.xml"/>
+    <import resource="routes-composicion/customer-composition.xml"/>
 
     <!--Routes adapters-->
     <import resource="routes-adaptadores/products-system.xml"/>
+    <import resource="routes-adaptadores/customer-system.xml"/>
 
     <!-- ================================================================= -->
     <!-- MAIN CAMEL CONTEXT -->
@@ -45,8 +48,21 @@
 
         <camel:routeContextRef ref="products-integration-composition-context"/>
         <camel:routeContextRef ref="adaptadores-productos-context"/>
+
+
+        <camel:routeContextRef ref="customer-integration-composition-context"/>
+        <camel:routeContextRef ref="adaptadores-usuarios-context"/>
+
+
+        <camel:restContextRef ref="customer-integration-rest"/>
         <camel:restContextRef ref="products-integration-rest"/>
-        <camel:restConfiguration component="restlet" port="9091"/>
+
+        <camel:restConfiguration component="restlet" port="9091">
+            <camel:corsHeaders key="Access-Control-Allow-Origin" value="*"/>
+            <camel:corsHeaders key="Access-Control-Allow-Headers"
+                               value="Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"/>
+            <camel:corsHeaders key="Access-Control-Allow-Methods" value="GET,PUT,POST,DELETE,OPTIONS"/>
+        </camel:restConfiguration>
 
 
     </camel:camelContext>

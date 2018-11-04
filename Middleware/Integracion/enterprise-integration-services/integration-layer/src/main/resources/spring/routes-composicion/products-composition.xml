@@ -16,14 +16,77 @@
     <!-- ================================================================= -->
     <camel:routeContext id="products-integration-composition-context">
 
-        <camel:route id="products-integration-composition-route">
+        <camel:route id="obtenerTodosEspectaculos">
 
-            <camel:from uri="direct:obtenerTodosEspectaculos"/>
+            <camel:from uri="direct:composition-obtenerTodosEspectaculos"/>
             <camel:log message="Recepcion peticion de obtener todos los espectaculos : ${body}"/>
             <!--Aca se deberia llamar transformaciones-->
-            <camel:to uri="direct:obtenerTodosEspectaculosAdapter"/>
+            <camel:to uri="direct:adapter-obtenerTodosEspectaculosAdapter"/>
+
         </camel:route>
 
+        <camel:route id="obtenerTodasLasReservas">
+
+            <camel:from uri="direct:composition-obtenerTodasLasReservas"/>
+            <camel:log message="Recepcion peticion de obtener todas las reservas: ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerTodosEspectaculosAdapter"/>
+
+        </camel:route>
+
+        <camel:route id="obtenerEspectaculosFecha">
+
+            <camel:from uri="direct:composition-obtenerEspectaculosFecha"/>
+            <camel:log message="Recepcion peticion de obtenerEspectaculosFecha : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerEspectaculosFecha"/>
+
+        </camel:route>
+
+        <camel:route id="obtenerReservasRango">
+
+            <camel:from uri="direct:composition-obtenerReservasRango"/>
+            <camel:log message="Recepcion peticion de obtenerReservasRango : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerReservasRango"/>
+
+        </camel:route>
+
+        <camel:route id="obtenerTransporteRango">
+
+            <camel:from uri="direct:composition-obtenerTransporteRango"/>
+            <camel:log message="Recepcion peticion de obtenerTransporteRango : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerTransporteRango"/>
+
+        </camel:route>
+
+        <camel:route id="obtenerTodosTransporte">
+
+            <camel:from uri="direct:composition-obtenerTodosTransporte"/>
+            <camel:log message="Recepcion peticion de obtenerTodosTransporte : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerTodosTransporte"/>
+
+        </camel:route>
+
+        <camel:route id="obtenerTodosProductos">
+
+            <camel:from uri="direct:composition-obtenerTodosProductos"/>
+            <camel:log message="Recepcion peticion de obtenerTodosProductos : ${body}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerTodosProductos"/>
+
+        </camel:route>
+
+        <camel:route id="obtenerDetalleProducto">
+
+            <camel:from uri="direct:composition-obtenerDetalleProducto"/>
+            <camel:log message="Recepcion peticion de obtenerDetalleProducto : ${header.codeProduct}"/>
+            <!--Aca se deberia llamar transformaciones-->
+            <camel:to uri="direct:adapter-obtenerDetalleProducto"/>
+
+        </camel:route>
 
     </camel:routeContext>
 

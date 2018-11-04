@@ -37,6 +37,7 @@ public class Application {
 		ServletRegistrationBean bean = new ServletRegistrationBean(new CamelServlet(), "/camel/*");
 		bean.setLoadOnStartup(2);
 		bean.setName("CamelServlet");
+
 		return bean;
 	}
 
