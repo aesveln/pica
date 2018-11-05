@@ -8,6 +8,9 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
 	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
+    <bean id="properties" class="org.apache.camel.component.properties.PropertiesComponent">
+        <property name="location" value="classpath:integration-layer-configuration.properties"/>
+    </bean>
 
     <!-- ================================================================= -->
     <!-- CANONICAL ADAPTER -->
@@ -22,7 +25,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8081/api/users/login/"/>
+                <camel:to uri="netty4-http:http://{{services.java.users}}/api/users/login/"/>
                 <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -41,7 +44,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8081/api/users/createCustomer/"/>
+                <camel:to uri="netty4-http:http://{{services.java.users}}/api/users/createCustomer/"/>
                 <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -61,7 +64,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8081/api/users/updateCustomer/"/>
+                <camel:to uri="netty4-http:http://{{services.java.users}}/api/users/updateCustomer/"/>
                 <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>

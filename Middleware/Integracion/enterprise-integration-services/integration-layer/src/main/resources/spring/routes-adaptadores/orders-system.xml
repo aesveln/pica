@@ -8,6 +8,9 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
 	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
+    <bean id="properties" class="org.apache.camel.component.properties.PropertiesComponent">
+        <property name="location" value="classpath:integration-layer-configuration.properties"/>
+    </bean>
 
     <!-- ================================================================= -->
     <!-- CANONICAL ADAPTER -->
@@ -22,7 +25,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8082/api/orderitem/createOrder/"/>
+                <camel:to uri="netty4-http:http://{{services.java.orders}}/api/orderitem/createOrder/"/>
                 <camel:log message="Respuesta crear orden add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -41,7 +44,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8082/api/salesorder/cancelSaleOrder/"/>
+                <camel:to uri="netty4-http:http://{{services.java.orders}}/api/salesorder/cancelSaleOrder/"/>
                 <camel:log message="Respuesta cancelar ordenes add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -61,7 +64,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8082/api/salesorder/salesOrderStatus/"/>
+                <camel:to uri="netty4-http:http://{{services.java.orders}}/api/salesorder/salesOrderStatus/"/>
                 <camel:log message="Respuesta obtener ordenes por status add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -73,8 +76,8 @@
 
             </camel:doTry>
         </camel:route>
-        
-        
+
+
         <camel:route id="adaptador-orders-salesOpen">
             <camel:from uri="direct:adapter-salesOpen"/>
             <camel:doTry>
@@ -99,7 +102,7 @@
 
             </camel:doTry>
         </camel:route>
-        
+
         <camel:route id="adaptador-orders-topProducto">
             <camel:from uri="direct:adapter-topProducto"/>
             <camel:doTry>
