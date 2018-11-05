@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7cf9139-d854-41fd-b53f-d156c4fb7a00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/customer-system.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-composicion/customer-composition.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-services/customer-routes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/controller/admcyo/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/controller/admcyo/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../toures-b2c.users/src/main/java/co/com/toures/b2c/users/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/com/touresbalon/middleware/main/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/java/co/com/touresbalon/middleware/main/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/camel-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/camel-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/products-system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-adaptadores/products-system.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-composicion/products-composition.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-composicion/products-composition.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-services/products-routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Middleware/Integracion/enterprise-integration-services/integration-layer/src/main/resources/spring/routes-services/products-routes.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,7 +107,7 @@
     <session id="445338043">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="1" />
@@ -184,7 +175,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
-              <caret line="118" column="31" lean-forward="true" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+              <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -387,19 +378,34 @@
         <subPane>
           <expand>
             <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toures-b2c.products" type="b2602c69:ProjectViewProjectNode" />
               <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toures-b2c.products" type="b2602c69:ProjectViewProjectNode" />
               <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="toures-b2c.users" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toures-b2c.products" type="b2602c69:ProjectViewProjectNode" />
               <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="toures-b2c.products" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="toures-b2c.products" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toures-b2c.products" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -421,9 +427,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../toures-b2c.users" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Diff &amp; Merge" />
   </component>
@@ -545,12 +551,12 @@
       <workItem from="1540595912793" duration="1557000" />
       <workItem from="1540650387061" duration="24000" />
       <workItem from="1540650443655" duration="229000" />
-      <workItem from="1541274779334" duration="8448000" />
+      <workItem from="1541274779334" duration="8548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134404000" />
+    <option name="totallyTimeSpent" value="134504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -564,7 +570,7 @@
   <component name="ToolWindowManager">
     <frame x="1440" y="26" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19690502" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19690502" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -577,7 +583,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4994664" weight="0.3275862" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.28556034" />
+      <window_info anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.28556034" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32914287" />
@@ -955,7 +961,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/co/com/toures/b2c/products/controller/admpro/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="118" column="31" lean-forward="true" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
         </state>
       </provider>
     </entry>

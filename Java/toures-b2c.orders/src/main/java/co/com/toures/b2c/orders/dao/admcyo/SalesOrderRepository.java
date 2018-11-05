@@ -41,7 +41,7 @@ public interface SalesOrderRepository extends CrudRepository<SalesOrder, Integer
 	@Query(value="select * from sales_order where id_sales = ? ", nativeQuery = true)
 	SalesOrder findSale(int idsale);
 	
-	@Query(value="select max_pk   from ( select a.*, max(id_sales) over () as max_pk  from sales_order ) where id_sales = max_pk", nativeQuery = true)
+	@Query(value="select max_pk + 1   from ( select a.*, max(id_sales) over () as max_pk  from sales_order a ) where id_sales = max_pk", nativeQuery = true)
 	int findlastSale();
 
 
