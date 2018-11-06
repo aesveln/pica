@@ -38,12 +38,15 @@
             </camel:doTry>
         </camel:route>
         <camel:route id="adaptador-orders-cancelarOrdenes">
-            <camel:from uri="direct:adapter-orders-cancelSale"/>
+            <camel:from uri="direct:adapter-orders-cancelarOrdenes"/>
             <camel:doTry>
                 <camel:setHeader headerName="CamelHttpMethod">
                     <camel:constant>GET</camel:constant>
                 </camel:setHeader>
-                <camel:log message="Antes de llamar : ${body}"/>
+                <camel:setHeader headerName="CamelHttpPath">
+                    <camel:simple>${header.idOrder}</camel:simple>
+                </camel:setHeader>
+                <camel:log message="Antes de llamar : ${header.idOrder}"/>
                 <camel:to uri="netty4-http:http://{{services.java.orders}}/salesorder/cancelSaleOrder/"/>
                 <camel:log message="Respuesta cancelar ordenes add: ${body}"/>
                 <camel:doCatch>
@@ -79,18 +82,16 @@
 
 
         <camel:route id="adaptador-orders-salesOpen">
-            <camel:from uri="direct:adapter-salesOpen"/>
+            <camel:from uri="direct:adapter-orders-salesOpen"/>
             <camel:doTry>
                 <camel:setHeader headerName="CamelHttpMethod">
                     <camel:constant>GET</camel:constant>
                 </camel:setHeader>
                 <camel:setHeader headerName="CamelHttpPath">
-                    <camel:simple>${header.codeProduct}</camel:simple>
+                    <camel:simple>${header.idCustomer}</camel:simple>
                 </camel:setHeader>
-                <camel:log message="Antes de llamar : ${header.codeProduct}"/>
-                <camel:log
-                        message="netty4-http:http://salesorder/salesorderOpen/${header.codeProduct}"/>
-                <camel:to uri="netty4-http:http://salesorder/salesorderOpen/"/>
+                <camel:log message="Antes de llamar : ${header.idCustomer}"/>
+                <camel:to uri="netty4-http:http://{{services.java.orders}}/salesorder/salesorderOpen/"/>
                 <camel:log message="Respuesta ordenes abiertas ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -104,7 +105,7 @@
         </camel:route>
 
         <camel:route id="adaptador-orders-topProducto">
-            <camel:from uri="direct:adapter-topProducto"/>
+            <camel:from uri="direct:adapter-orders-topProductos"/>
             <camel:doTry>
                 <camel:setHeader headerName="CamelHttpMethod">
                     <camel:constant>GET</camel:constant>
@@ -114,8 +115,8 @@
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${header.codeProduct}"/>
                 <camel:log
-                        message="netty4-http:http://product/top-product/${header.codeProduct}"/>
-                <camel:to uri="netty4-http:http://product/top-product/"/>
+                        message="netty4-http:http://{{services.java.orders}}/product/top-product/${header.codeProduct}"/>
+                <camel:to uri="netty4-http:http://{{services.java.orders}}/product/top-product/"/>
                 <camel:log message="Respuesta top productos ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>

@@ -80,7 +80,19 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-broker -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+            <version>5.15.7</version>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
 
 
         <dependency>
@@ -114,7 +126,7 @@
         <generatePackage>co.com.toures.b2c.orders.wsdl</generatePackage>
         <schemas>
             <schema>
-                <url>http://localhost:8088/mockServiceAmerican?WSDL</url>
+                <url>http://192.168.1.100:8088/mockServiceAmerican?WSDL</url>
             </schema>
         </schemas>
 		    </configuration>

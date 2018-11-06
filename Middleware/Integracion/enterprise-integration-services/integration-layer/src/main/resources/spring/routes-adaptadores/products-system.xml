@@ -8,7 +8,9 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
 	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-
+    <bean id="properties" class="org.apache.camel.component.properties.PropertiesComponent">
+        <property name="location" value="classpath:integration-layer-configuration.properties"/>
+    </bean>
     <!-- ================================================================= -->
     <!-- CANONICAL ADAPTER -->
     <!-- ================================================================= -->
@@ -22,7 +24,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllSpectacleProducts/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/findAllSpectacleProducts/"/>
                 <camel:log message="Respuesta obtener productos espectaculos add: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -42,7 +44,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllLodgingProducts/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/findAllLodgingProducts/"/>
                 <camel:log message="Respuesta obtenerTodasLasReservas: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -62,7 +64,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllSpectacleByDate/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/findAllSpectacleByDate/"/>
                 <camel:log message="Respuesta obtenerEspectaculosFecha: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -82,7 +84,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllLodgingByRangeDate/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/findAllLodgingByRangeDate/"/>
                 <camel:log message="Respuesta obtenerReservasRango: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -102,7 +104,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllTransporByRangeDate/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/findAllTransporByRangeDate/"/>
                 <camel:log message="Respuesta obtenerTransporteRango: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -122,7 +124,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/findAllTransportProducts/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/findAllTransportProducts/"/>
                 <camel:log message="Respuesta obtenerTodosTransporte: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -142,7 +144,7 @@
                     <camel:constant>POST</camel:constant>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${body}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/getAll/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/getAll/"/>
                 <camel:log message="Respuesta obtenerTodosProductos: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>
@@ -165,9 +167,7 @@
                     <camel:simple>${header.codeProduct}</camel:simple>
                 </camel:setHeader>
                 <camel:log message="Antes de llamar : ${header.codeProduct}"/>
-                <camel:log
-                        message="netty4-http:http://localhost:8080/api/products/productDetails/${header.codeProduct}"/>
-                <camel:to uri="netty4-http:http://localhost:8080/api/products/productDetails/"/>
+                <camel:to uri="netty4-http:http://{{services.java.producs}}/api/products/productDetails/"/>
                 <camel:log message="Respuesta obtenerDetalleProducto: ${body}"/>
                 <camel:doCatch>
                     <camel:exception>java.lang.Exception</camel:exception>

@@ -25,9 +25,9 @@ public class SalesOrderClient extends WebServiceGatewaySupport{
 			 webServiceTemplate.setMarshaller(marshaller);
 			 webServiceTemplate.setUnmarshaller(marshaller);
 			 response = (String) getWebServiceTemplate()
-						.marshalSendAndReceive("http://localhost:8088/mockServiceAmerican?WSDL", id,
+						.marshalSendAndReceive("http://192.168.1.100:8088/mockServiceAmerican?WSDL", id,
 								new SoapActionCallback(
-										"http://localhost:8088/mockServiceAvianca"));
+										"http://192.168.1.100:8088/mockServiceAvianca"));
 			
 		} catch (Exception e) {
 			

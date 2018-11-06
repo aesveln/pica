@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 
+import co.com.toures.b2c.orders.service.QueueContabilidadService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +31,12 @@ public class SalesOrderController {
     @Autowired
     private SalesOrderService salesService;
 
+
     ModelMapper modelMapper = new ModelMapper();
 
 
-    static final String URL_HOTELES = "http://localhost:8087/HotelDann";
-    static final String URL_EVENTO = "http://localhost:8087/TuBoleta";
+    static final String URL_HOTELES = "http://192.168.1.100:8087/HotelDann";
+    static final String URL_EVENTO = "http://192.168.1.100:8087/TuBoleta";
 
     @RequestMapping(method = RequestMethod.POST, value = "/salesorder/salesOrderStatus", produces = "application/json")
     @ApiOperation("Return all sales by status")
@@ -97,6 +99,7 @@ public class SalesOrderController {
                 ret = "La orden no puede ser cancelada";
             } else {
                 ret = "Orden cancelada";
+
             }
 
 

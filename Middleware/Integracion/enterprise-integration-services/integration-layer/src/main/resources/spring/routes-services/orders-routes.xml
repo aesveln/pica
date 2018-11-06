@@ -20,26 +20,24 @@
         <camel:rest path="/orders" enableCORS="true">
 
             <camel:post uri="/crearOrden">
-            <camel:to uri="direct:composition-orders-crearOrden"/>
+                <camel:to uri="direct:composition-orders-crearOrden"/>
             </camel:post>
-            <camel:post uri="/cancelarOrden">
-            <camel:to uri="direct:composition-orders-cancelarOrden"/>
-            </camel:post>
+            <camel:get uri="/cancelarOrden/{idOrder}">
+                <camel:to uri="direct:composition-orders-cancelarOrden"/>
+            </camel:get>
             <camel:post uri="/salesByEstatus">
                 <camel:to uri="direct:composition-orders-updateCustomer"/>
             </camel:post>
-            <camel:post uri="salesByOrder">
-           	 <camel:to uri="direct:composition-orders-salesByOrder"/>
-            </camel:post>
-            <camel:post uri="/salesOpen">
-            <camel:to uri="direct:composition-orders-salesOpen"/>
-            </camel:post>
-            <camel:post uri="/topProductos">
-            <camel:to uri="direct:composition-orders-topProductos"/>
-            </camel:post>
-            <!--<camel:post uri="/getAll">-->
-            <!--<camel:to uri="direct:composition-obtenerTodosProductos"/>-->
+            <!--<camel:post uri="/salesByOrder">-->
+            <!--<camel:to uri="direct:composition-orders-salesByOrder"/>-->
             <!--</camel:post>-->
+            <camel:get uri="/salesOpen/{idCustomer}">
+                <camel:to uri="direct:composition-orders-salesOpen"/>
+            </camel:get>
+            <camel:get uri="/topProductos/{codeProduct}">
+                <camel:to uri="direct:composition-orders-topProductos"/>
+            </camel:get>
+
 
         </camel:rest>
 
