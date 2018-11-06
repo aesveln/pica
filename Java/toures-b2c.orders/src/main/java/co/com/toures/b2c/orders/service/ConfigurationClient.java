@@ -15,8 +15,7 @@ public class ConfigurationClient {
 		marshaller.setContextPath("co.com.toures.b2c.orders.wsdl");
 		return marshaller;
 	}
-
-
+	
 	public SalesOrderClient salesOrderClient(Jaxb2Marshaller marshaller) {
 		SalesOrderClient client = new SalesOrderClient();
 		client.setDefaultUri("http://localhost:8088/Creation");
