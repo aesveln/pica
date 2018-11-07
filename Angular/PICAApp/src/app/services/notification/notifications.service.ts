@@ -8,13 +8,13 @@ import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 })
 export class NotificationsService {
   variable: any;
-  private readonly API_URL = UrlSchemas.UrlOrder + 'salesorder';
+  private readonly API_URL = UrlSchemas.UrlOrder + 'orders';
   
   constructor(private http: HttpClient) { }
 
   getAllOrders(userId:number): Observable<any> {
     this.variable = this.http.get(
-      this.API_URL + '/salesorderOpen/'+userId, 
+      this.API_URL + '/salesOpen/'+userId, 
       {
       headers: new HttpHeaders()
       .set('Content-Type', 'application/json')
@@ -24,7 +24,7 @@ export class NotificationsService {
    
    deleteOrders(saleId:number): Observable<any> {
     this.variable = this.http.get(
-      this.API_URL + '/cancelSaleOrder/'+saleId, 
+      this.API_URL + '/cancelarOrden/'+saleId, 
       {
       headers: new HttpHeaders()
       .set('Content-Type', 'application/json')

@@ -1,4 +1,6 @@
 <div class="container">
+    <div class="alert alert-success" *ngIf="Success">Guardado con exito...</div>
+    <div class="alert alert-danger" *ngIf="Fail">Ups.. Algo Fallo...</div>
 <ul class="list-group">
   <li class="list-group-item " *ngIf="isLogged">
         <div class="card-body">
@@ -166,7 +168,7 @@
                       <li class="list-group-item col-md-4" style="height: 250px; position: relative;" *ngFor="let prod of listsProd" >
                           <!-- <div class="w3-card-4" style="width:100%;"> -->
                             <header class="w3-container w3-blue">
-                              <a class="custom-ref" data-toggle="modal" data-target="#myModalDetails" rel="noopener noreferrer" style="color:white;">
+                              <a class="custom-ref" data-toggle="modal" data-target="#myModalDetails" rel="noopener noreferrer" (click) = "getTopProducts(prod.cod,prod.name,prod.cost,prod.description,prod.imageRef)" style="color:white;">
                                 <h6>{{prod.name}}</h6>
                               </a>
                             </header>
@@ -210,34 +212,36 @@
         <!-- <app-catalog #child1></app-catalog> -->
     </div>
 </li>
+<br/>
+<br/>
+<br/>
 </ul>
-<br>
+<br/>
 </div>
-<br>
+<br/>
 
 
 <div class="modal fade" id="myModalDetails" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="background-color: grey;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="text-align:center;">Detalles de Productos</h4>
+        <h4 class="modal-title" style="text-align:center; color: white;">Detalles de Productos</h4>
       </div>
       <div class="modal-body">
-          <h6>prod.name</h6>
+          <h6>{{detailItemSelected.name}}</h6>
           <div class="w3-container" style="height: 130px;">
             <table>
                   <tr>
-                    <td style="align-content: center;"><img src="" style="height:100px; width:120px;"/></td>
-                    <td><h6>&nbsp;</h6></td>
-                    <td><h6>prod.description</h6></td>
+                    <td style="align-content: center;" style="width: 130px;"><img src="{{urlServerImage}}{{detailItemSelected.imageRef}}" style="height:100px; width:120px;"/></td>
+                    <td style="align-content: center;" style="width: 130px;"><h6>{{detailItemSelected.description}}</h6></td>
                   </tr>
                   <tr>
                     <td>
-                      Precio:
+                      Precio:{{detailItemSelected.cost}}
                     </td>
                     <td>
-                      Codigo:
+                      Codigo:{{detailItemSelected.cod}}
                     </td>
                   </tr>
                   <tr>
@@ -247,19 +251,20 @@
           </div>
             <br/>
             <br/>
-            <h6>Productos Relacionados</h6>
-          <div class="carousel-size" style="height:200px; background-color: whitesmoke;">
-                <div id="myCarouselDetail" class="carousel slide" style="height:200px;" data-ride="carousel">
-                 
+          <div *ngIf="listsTop.length > 0" class="carousel-size" style="height:200px; background-color: whitesmoke;">
+           <h6>Productos Relacionados</h6>
+            <div id="myCarouselDetail" class="carousel slide" style="height:200px;" data-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="item active" style="text-align:center;">
-                      <h6>prod.Nombre</h6>
-                      <img src="../../../assets/images/img_mountains_wide.jpg" alt="Los Angeles" style="width:50%; height: calc(120px); margin-left: auto; margin-right: auto;">
-                      <h6>prod.Codigo</h6>
+                    <div *ngFor="let item of listsTop; index as i" [ngClass]="i === 0 ? 'item active' : 'item'" style="text-align:center;">
+                      <h6>{{item.name}}</h6>
+                      <img src="{{urlServerImage}}{{item.imageRef}}" alt="Los Angeles" 
+                      style="width:50%; height: calc(120px); margin-left: auto; margin-right: auto;"
+                      (click) = "getTopProducts(item.cod,item.name,item.cost,item.description,item.imageRef)">
+                      <h6>{{item.cod}}</h6>
+                      <h6 style="display: none;">{{item.cost}}</h6>
+                      <h6 style="display: none;">{{item.description}}</h6>
                     </div>
                   </div>
-              
-                  <!-- Left and right controls -->
                   <a class="left carousel-control" href="#myCarouselDetail" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
@@ -273,4 +278,5 @@
       </div>
       </div>
     </div>
-</div>
+<br/>
+  </div>

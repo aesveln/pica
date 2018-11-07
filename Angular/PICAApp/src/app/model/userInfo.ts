@@ -9,4 +9,5 @@ export class UserInfo {
     lastName: string
     phoneNumber: string
     sub: string
+    descuento: number
 }

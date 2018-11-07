@@ -9,6 +9,7 @@ import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 })
 export class WelcomeService {
   private readonly API_URL = UrlSchemas.UrlElastic + '/productos/producto';
+  private readonly API_URL_Top = UrlSchemas.UrlOrder + 'orders';
   variable: any;
   constructor(private http: HttpClient) { }
 
@@ -22,4 +23,15 @@ export class WelcomeService {
       });
     return this.variable;
    }
+   
+   topProducts(topProduct): Observable<any> {
+    this.variable = this.http.get(
+      this.API_URL_Top + '/topProductos/'+topProduct, 
+      {
+      headers: new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      });
+    return this.variable;
+   }
+
 }
