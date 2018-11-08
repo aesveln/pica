@@ -120,7 +120,11 @@
             <artifactId>javax.json-api</artifactId>
             <version>1.1.2</version>
         </dependency>
-
+         <dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-support</artifactId>
+            <version>2.1.4.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -128,16 +132,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            </plugin>            
          	<plugin>
 		    <groupId>org.jvnet.jaxb2.maven2</groupId>
 		    <artifactId>maven-jaxb2-plugin</artifactId>
-<!--  		    <version>0.13.1</version>  -->
-			<version>0.8.1</version>
+ 	  		<version>0.8.1</version>
 		    <executions>
 		        <execution>
 		            <goals>
@@ -147,11 +146,22 @@
 		    </executions>
 		    <configuration>
 		       <schemaLanguage>WSDL</schemaLanguage>
-        <generatePackage>co.com.toures.b2c.motorReglas.wsdl</generatePackage>
-        <schemas>
-            <schema>
-                <url>http://localhost:4413/openl-tablets-ws-5.18.3/datasource/MotorReglas?wsdl</url>
-            </schema>
+		       <schemaDirectory>src/main/resources</schemaDirectory>
+		       <generateDirectory>src/main/java</generateDirectory>
+        	  <generatePackage>validarTarjeta.wsdl</generatePackage>
+		      <schemas>
+		          <schema>
+		             <url>http://localhost:7101/soa-infra/services/default/ValidacionTarjetaCredito/bpelvalidartc_client_ep?WSDL</url>
+		          </schema>            
+<!-- 		      </schemas>		    -->
+<!-- 		       <schemaLanguage>WSDL</schemaLanguage> -->
+<!-- 		       <schemaDirectory>src/main/resources</schemaDirectory> -->
+<!-- 		       <generateDirectory>src/main/java</generateDirectory> -->
+<!-- 		       <generatePackage>hello.Wsdl</generatePackage> -->
+<!--         <schemas> -->
+<!--             <schema> -->
+<!--                 <url>http://localhost:4413/openl-tablets-ws-5.18.3/datasource/MotorReglas?wsdl</url> -->
+<!--             </schema>             -->
         </schemas>
 		    </configuration>
 		</plugin>

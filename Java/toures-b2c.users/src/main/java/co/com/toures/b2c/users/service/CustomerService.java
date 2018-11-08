@@ -21,11 +21,11 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
     
-//    @Autowired
-//    CustomerClient customerclient = new CustomerClient();
-//    
-//    @Autowired
-//    BpelClient bpel = new BpelClient();
+    @Autowired
+    CustomerClient customerclient = new CustomerClient();
+    
+    @Autowired
+    BpelClient bpel = new BpelClient();
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -53,18 +53,14 @@ public class CustomerService {
             	descuento = 0.35;
             }
             
+            
           
-            tarjetaValida = validatc(customerDTO.getCreditcard_number());
+            tarjetaValida = bpel.getConnection(customerDTO.getCreditcard_number());
            
-            if(tarjetaValida) {
-            	valida="Tarjeta Valida";
-            }else {
-            	valida="Tarjeta NO Valida";
-            }
             
         }
 
-        return co.com.toures.b2c.users.conf.JwtApplication.JwtToken(status, "asd", customerDTO, descuento, valida);
+        return co.com.toures.b2c.users.conf.JwtApplication.JwtToken(status, "asd", customerDTO, descuento, tarjetaValida);
     }
 
     public CustomerResponse createCustomer(CustomerRequest customerRequest) {

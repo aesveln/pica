@@ -19,7 +19,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
  */
 public class JwtApplication {
 
-    public static String JwtToken(boolean status, String obj, CustomerDTO customerDTO)
+    public static String JwtToken(boolean status, String obj, CustomerDTO customerDTO, double descuento, boolean tcValida)
     {
         if(status)
         {
@@ -39,6 +39,8 @@ public class JwtApplication {
                     .claim("phoneNumber", customerDTO.getPhoneNumber())
                     .claim("idCustomer", customerDTO.getIdCustomer())
                     .claim("category", customerDTO.getCategory())
+                    .claim("descuento", descuento)
+                    .claim("tcValida", tcValida)
                     .setIssuedAt(new Date(times))
                     .setExpiration(new Date(times+900000))
                     .compact();

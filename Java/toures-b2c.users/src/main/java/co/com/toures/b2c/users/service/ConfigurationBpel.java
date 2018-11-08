@@ -1,26 +1,25 @@
 package co.com.toures.b2c.users.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.ws.transport.http.HttpsUrlConnectionMessageSender;
 
 @Configuration
-public class ConfigurationCustomer {
-	
+public class ConfigurationBpel {
 	
 	
 	@Bean
 	public Jaxb2Marshaller marshaller() {
 		final Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-		marshaller.setContextPaths("hello.Wsdl");
+		marshaller.setContextPaths("validarTarjeta.wsdl");
 		return marshaller;
 	}
+
 	
-	
-	public CustomerClient customerConfClient(Jaxb2Marshaller marshaller) {
-		CustomerClient client = new CustomerClient();
+	public BpelClient clientSoap(final Jaxb2Marshaller marshaller) throws Exception {
+		final BpelClient client = new BpelClient();
+
 		client.setDefaultUri("");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
@@ -37,7 +36,8 @@ public class ConfigurationCustomer {
 		client.setMessageSender(messageSender);
 
 		return client;
-
 	}
 
+
 }
+
