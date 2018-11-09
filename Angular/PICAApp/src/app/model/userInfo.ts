@@ -10,4 +10,5 @@ export class UserInfo {
     phoneNumber: string
     sub: string
     descuento: number
+    tcValida: boolean
 }

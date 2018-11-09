@@ -51,10 +51,13 @@ export class HomeComponent implements OnInit {
   detailItemSelected: DtoProduct;
   Success: boolean;
   Fail: boolean;
-
+  userLoginToDiscount: any;
   private subscription: Subscription;
   private total: any;
+  private totalDesc: any;
+  private descuento:any;
   isLogged = false;
+
   constructor(
     private productService: ProductService,
     private router:Router,
@@ -69,7 +72,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     
     this.urlServerImage = UrlSchemas.UrlFileServer;
-
+    this.userLoginToDiscount = false;
     this.jwt =  JSON.parse(localStorage.getItem('userToken'));
     this.Success = false;
     this.Fail = false;
@@ -128,9 +131,16 @@ export class HomeComponent implements OnInit {
     this.showVar = !this.showVar;
     this.showMePartially = !this.showMePartially;
     var shopping = JSON.parse(localStorage.getItem('ShoppingCar'));
+    var user = this.getDecodedAccessToken(this.jwt.token);
+    var discount = user.descuento;
     this.productService.getCarrito().subscribe(data => {
       this.carrito = data
       this.total = this.productService.getTotal(this.carrito);
+      if(user != null){
+        this.userLoginToDiscount = true;
+        this.totalDesc = this.total * (1 - discount);
+        this.descuento = discount * 100;
+      }
       },error => alert(error));
   }
 
@@ -158,6 +168,7 @@ debugger;
       discount = user.descuento;
     }
     else{
+     
       this.router.navigate(['/login']);
     }
 
@@ -171,6 +182,12 @@ debugger;
     this.productService.createOrders(order).subscribe(
       (data)=> {
         debugger;
+        if(user.tcValida){
+          alert('Tarjeta valida, Su orden a sido creada exitosamente!!!!!');
+        }
+        else{
+          alert('Tarjeta invalida!!!!!');
+        }
         this.Success = true;
        this.productsList = data.productos;
        this.listsProd = this.productsList.content;
@@ -182,6 +199,9 @@ debugger;
       }
       },
       error => {
+        if(error.status === 503){
+          alert('Servicio no disponible, intente mas tarde....')
+        }
         console.log(error);
       }
     )

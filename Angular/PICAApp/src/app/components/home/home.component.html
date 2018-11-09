@@ -141,11 +141,24 @@
                               <td style="width:20px;">&nbsp;<a form="form2" (click)="removeProducto(item.titulo,item.codigo,item.precio,item.quantity)" class="glyphicon glyphicon-minus" style="color:rgb(201, 50, 50);"> </a></td>
                             </tr>      
                           </tbody>
+                          <hr>
                           <tfoot>
                               <tr class="carrito-total">
-                                <td colspan="2"></td>
+                                <td colspan="2">Total: $</td>
                                 <td>
-                                  Total: $ {{total}}
+                                   {{total}}
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">desc:</td>
+                                <td *ngIf="userLoginToDiscount">
+                                    {{descuento}} %
+                                 </td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">Total desc: $</td>
+                                <td *ngIf="userLoginToDiscount">
+                                  {{totalDesc}}
                                 </td>
                               </tr>
                           </tfoot>
@@ -222,7 +235,7 @@
 
 
 <div class="modal fade" id="myModalDetails" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog">
       <div class="modal-content">
       <div class="modal-header" style="background-color: grey;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -233,8 +246,8 @@
           <div class="w3-container" style="height: 130px;">
             <table>
                   <tr>
-                    <td style="align-content: center;" style="width: 130px;"><img src="{{urlServerImage}}{{detailItemSelected.imageRef}}" style="height:100px; width:120px;"/></td>
-                    <td style="align-content: center;" style="width: 130px;"><h6>{{detailItemSelected.description}}</h6></td>
+                    <td style="align-content: center;" style="width: 200px;"><img src="{{urlServerImage}}{{detailItemSelected.imageRef}}" style="height:100px; width:120px;"/></td>
+                    <td style="align-content: center;" style="width: 200px;"><h6>{{detailItemSelected.description}}</h6></td>
                   </tr>
                   <tr>
                     <td>

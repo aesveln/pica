@@ -97,6 +97,7 @@ export class ProductService {
       }, 0);
   }
   createOrders(saleId): Observable<any> {
+    debugger;
     this.variable = this.http.post(
       this.API_URLo + '/crearOrden',
       JSON.stringify(saleId), 
