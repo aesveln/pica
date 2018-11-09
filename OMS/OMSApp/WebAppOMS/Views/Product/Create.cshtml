@@ -1,0 +1,162 @@
+﻿@model WebAppOMS.Models.ProductViewModel
+
+<h4>ProductViewModel</h4>
+<hr />
+<div class="row">
+    <form>
+        <button class="accordion">Producto</button>
+        <div class="panel">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cod" class="control-label"></label> 
+                <input asp-for="Cod" class="form-control" />
+                <span asp-validation-for="Cod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label"></label>
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageRef" class="control-label"></label>
+                <input asp-for="ImageRef" class="form-control" />
+                <span asp-validation-for="ImageRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportType" class="control-label"></label>
+                <input asp-for="TransportType" class="form-control" />
+                <span asp-validation-for="TransportType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpectacleType" class="control-label"></label>
+                <input asp-for="SpectacleType" class="form-control" />
+                <span asp-validation-for="SpectacleType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingType" class="control-label"></label>
+                <input asp-for="LodgingType" class="form-control" />
+                <span asp-validation-for="LodgingType" class="text-danger"></span>
+            </div>
+
+        </div>
+        <button class="accordion">Alojamiento</button>
+        <div class="panel">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LodgingTypeNavigation.Id" class="control-label"></label>
+                <input asp-for="LodgingTypeNavigation.Id" class="form-control" />
+                <span asp-validation-for="LodgingTypeNavigation.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingTypeNavigation.ArrivalDate" class="control-label"></label>
+                <input asp-for="LodgingTypeNavigation.ArrivalDate" class="form-control" />
+                <span asp-validation-for="LodgingTypeNavigation.ArrivalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingTypeNavigation.DepartureDate" class="control-label"></label>
+                <input asp-for="LodgingTypeNavigation.DepartureDate" class="form-control" />
+                <span asp-validation-for="LodgingTypeNavigation.DepartureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingTypeNavigation.City" class="control-label"></label>
+                <input asp-for="LodgingTypeNavigation.City" class="form-control" />
+                <span asp-validation-for="LodgingTypeNavigation.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingTypeNavigation.NomEmp" class="control-label"></label>
+                <input asp-for="LodgingTypeNavigation.NomEmp" class="form-control" />
+                <span asp-validation-for="LodgingTypeNavigation.NomEmp" class="text-danger"></span>
+            </div>
+        </div>
+        <button class="accordion">Evento</button>
+        <div class="panel">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SpectacleTypeNavigation.Id" class="control-label"></label>
+                <input asp-for="SpectacleTypeNavigation.Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpectacleTypeNavigation.Type" class="control-label"></label>
+                <input asp-for="SpectacleTypeNavigation.Type" class="form-control" />
+                <span asp-validation-for="SpectacleTypeNavigation.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpectacleTypeNavigation.SpectacleDate" class="control-label"></label>
+                <input asp-for="SpectacleTypeNavigation.SpectacleDate" class="form-control" />
+                <span asp-validation-for="SpectacleTypeNavigation.SpectacleDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpectacleTypeNavigation.City" class="control-label"></label>
+                <input asp-for="SpectacleTypeNavigation.City" class="form-control" />
+                <span asp-validation-for="SpectacleTypeNavigation.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpectacleTypeNavigation.NomEmp" class="control-label"></label>
+                <input asp-for="SpectacleTypeNavigation.NomEmp" class="form-control" />
+                <span asp-validation-for="SpectacleTypeNavigation.NomEmp" class="text-danger"></span>
+            </div>
+        </div>
+        <button class="accordion">Transporte</button>
+        <div class="panel">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.Id" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.Id" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.SourceCity" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.SourceCity" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.SourceCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.TargetCity" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.TargetCity" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.TargetCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.DepartDate" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.DepartDate" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.DepartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.ReturnDate" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.ReturnDate" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.ReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.NomEmp" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.NomEmp" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.NomEmp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportTypeNavigation.TipoTrans" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation.TipoTrans" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation.TipoTrans" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Guardar" asp-action="CreateProduct" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

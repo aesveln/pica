@@ -1,0 +1,17 @@
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\bin\Debug\netstandard2.0\OMS.CrossCutting.Security.deps.json
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\bin\Debug\netstandard2.0\OMS.CrossCutting.Security.dll
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\bin\Debug\netstandard2.0\OMS.CrossCutting.Security.pdb
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.csproj.CoreCompileInputs.cache
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.AssemblyInfoInputs.cache
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.AssemblyInfo.cs
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.dll
+C:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.pdb
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\bin\Debug\netstandard2.0\OMS.CrossCutting.Security.deps.json
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\bin\Debug\netstandard2.0\OMS.CrossCutting.Security.dll
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\bin\Debug\netstandard2.0\OMS.CrossCutting.Security.pdb
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.csprojAssemblyReference.cache
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.csproj.CoreCompileInputs.cache
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.AssemblyInfoInputs.cache
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.AssemblyInfo.cs
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.dll
+D:\Users\javier\source\repos\OMSApp\OMS.CrossCutting.Security\obj\Debug\netstandard2.0\OMS.CrossCutting.Security.pdb
