@@ -28,18 +28,7 @@
             <camel:post uri="/updateCustomer">
                 <camel:to uri="direct:composition-users-updateCustomer"/>
             </camel:post>
-            <!--<camel:post uri="/findAllLodgingByRangeDate">-->
-            <!--<camel:to uri="direct:composition-obtenerReservasRango"/>-->
-            <!--</camel:post>-->
-            <!--<camel:post uri="/findAllTransporByRangeDate">-->
-            <!--<camel:to uri="direct:composition-obtenerTransporteRango"/>-->
-            <!--</camel:post>-->
-            <!--<camel:post uri="/findAllTransportProducts">-->
-            <!--<camel:to uri="direct:composition-obtenerTodosTransporte"/>-->
-            <!--</camel:post>-->
-            <!--<camel:post uri="/getAll">-->
-            <!--<camel:to uri="direct:composition-obtenerTodosProductos"/>-->
-            <!--</camel:post>-->
+
 
         </camel:rest>
 
