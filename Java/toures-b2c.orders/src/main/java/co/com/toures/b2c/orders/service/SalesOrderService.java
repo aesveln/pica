@@ -20,6 +20,8 @@ import co.com.toures.b2c.orders.dto.admcyo.SalesOrderDTO;
 import co.com.toures.b2c.orders.entity.admcyo.OrderItem;
 import co.com.toures.b2c.orders.entity.admcyo.SalesOrder;
 
+import javax.jms.JMSException;
+
 @Service
 public class SalesOrderService {
 	
@@ -31,6 +33,9 @@ public class SalesOrderService {
 	SalesOrderClient salesSoap = new SalesOrderClient();
 	@Autowired
 	OrderItemRepository orderItemRepository;
+
+	@Autowired
+	private QueueContabilidadService queueContabilidadService;
 	
 	
 	
@@ -80,8 +85,7 @@ public class SalesOrderService {
 		return salesDTOList;
 	}
 	
-	public int  cancelSales(int saleRequest)
-	{
+	public int  cancelSales(int saleRequest) throws JMSException {
 		SalesOrder sale = salesRepository.findSale(saleRequest);
 		SalesOrderDTO dto = new SalesOrderDTO();
 		modelmapper.map(sale, dto);
@@ -90,7 +94,10 @@ public class SalesOrderService {
 		{
 			return 0;
 		}else {
-			return salesRepository.cancelSaleOrder(dto.getIdSales().intValue());
+
+			int ret =  salesRepository.cancelSaleOrder(dto.getIdSales().intValue());
+			queueContabilidadService.publicarMensajeFacturaCancelacion(dto);
+			return ret;
 		}
 		
 		

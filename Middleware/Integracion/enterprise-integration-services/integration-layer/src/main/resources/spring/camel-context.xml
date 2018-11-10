@@ -20,11 +20,18 @@
     <!-- CONNECTORS CONFIGURATION -->
     <!-- ================================================================= -->
 
+    <import resource="connectors/amq-connector-config.xml"/>
 
     <!-- ================================================================= -->
     <!-- EXTERNAL ROUTES -->
     <!-- ================================================================= -->
 
+
+    <!--Integration routes-->
+
+    <import resource="integration-routes/integration-contabilidad-routes.xml"/>
+    <import resource="routes-adaptadores/cancel-database-system.xml"/>
+    <import resource="routes-adaptadores/erp-system.xml"/>
 
     <!--Routes Services-->
     <import resource="routes-services/products-routes.xml"/>
@@ -48,6 +55,10 @@
 
     <camel:camelContext id="toures-balon-integracion-context">
 
+
+        <camel:routeContextRef ref="integration-contabilidad-routes"/>
+        <camel:routeContextRef ref="adaptadores-cancel-database-context"/>
+        <camel:routeContextRef ref="adaptadores-cola-erp-context"/>
 
         <camel:routeContextRef ref="products-integration-composition-context"/>
         <camel:routeContextRef ref="adaptadores-productos-context"/>

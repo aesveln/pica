@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+    <!-- ================================================================= -->
+    <!-- CANONICAL ADAPTER -->
+    <!-- ================================================================= -->
+
+
+    <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
+        <!-- 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> -->
+        <property name="URL" value="jdbc:oracle:thin:@35.235.105.138:1521:xe"/>
+        <property name="user" value="ADMCYO"/>
+        <property name="password" value="touresUser.*"/>
+    </bean>
+
+    <camel:routeContext id="adaptadores-cancel-database-context">
+
+        <camel:route id="adaptador-cancel-database">
+            <camel:from uri="direct:adaptador-cancel-database-register"/>
+            <camel:log message="Llamado a cancel-database-register."/>
+            <camel:log message="sql:insert into CANCELACIONES (ID_CANCELACION, NUMERODOCUMENTO, REFERENCIA, MONTO, FECHA) values
+            				(CANCEL_SEQ.nextval,  :#numeroDcumento, :#referencia, :#monto, :#fecha)"/>
+
+            <camel:to uri="sql:insert into CANCELACIONES (ID_CANCELACION, NUMERODOCUMENTO, REFERENCIA, MONTO, FECHA) values
+            				(CANCEL_SEQ.nextval,  :#numeroDcumento, :#referencia, :#monto, :#fecha)"/>
+        </camel:route>
+
+
+    </camel:routeContext>
+
+</beans>
