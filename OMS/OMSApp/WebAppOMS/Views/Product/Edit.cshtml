@@ -1,0 +1,90 @@
+﻿@model OMSApp.DAL.DatabaseSql.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cod" class="control-label"></label>
+                <input asp-for="Cod" class="form-control" />
+                <span asp-validation-for="Cod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label"></label>
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageRef" class="control-label"></label>
+                <input asp-for="ImageRef" class="form-control" />
+                <span asp-validation-for="ImageRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportType" class="control-label"></label>
+                <input asp-for="TransportType" class="form-control" />
+                <span asp-validation-for="TransportType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpectacleType" class="control-label"></label>
+                <input asp-for="SpectacleType" class="form-control" />
+                <span asp-validation-for="SpectacleType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingType" class="control-label"></label>
+                <input asp-for="LodgingType" class="form-control" />
+                <span asp-validation-for="LodgingType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductType" class="control-label"></label>
+                <input asp-for="ProductType" class="form-control" />
+                <span asp-validation-for="ProductType" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none">
+                <label asp-for="SpectacleTypeNavigation" class="control-label"></label>
+                <input asp-for="SpectacleTypeNavigation" class="form-control" />
+                <span asp-validation-for="SpectacleTypeNavigation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none">
+                <label asp-for="LodgingTypeNavigation" class="control-label"></label>
+                <input asp-for="LodgingTypeNavigation" class="form-control" />
+                <span asp-validation-for="LodgingTypeNavigation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none">
+                <label asp-for="TransportTypeNavigation" class="control-label"></label>
+                <input asp-for="TransportTypeNavigation" class="form-control" />
+                <span asp-validation-for="TransportTypeNavigation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

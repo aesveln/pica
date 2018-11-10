@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  omsapp:
+    image: omsapp
+    build:
+      context: .
+      dockerfile: OMSApp/Dockerfile
