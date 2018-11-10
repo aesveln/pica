@@ -1,0 +1,11 @@
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\bin\Debug\netcoreapp2.1\OMSApp.DAL.deps.json
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\bin\Debug\netcoreapp2.1\OMSApp.DAL.runtimeconfig.json
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\bin\Debug\netcoreapp2.1\OMSApp.DAL.runtimeconfig.dev.json
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\bin\Debug\netcoreapp2.1\OMSApp.DAL.dll
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\bin\Debug\netcoreapp2.1\OMSApp.DAL.pdb
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\obj\Debug\netcoreapp2.1\OMSApp.DAL.csprojAssemblyReference.cache
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\obj\Debug\netcoreapp2.1\OMSApp.DAL.csproj.CoreCompileInputs.cache
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\obj\Debug\netcoreapp2.1\OMSApp.DAL.AssemblyInfoInputs.cache
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\obj\Debug\netcoreapp2.1\OMSApp.DAL.AssemblyInfo.cs
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\obj\Debug\netcoreapp2.1\OMSApp.DAL.dll
+C:\Pica\pica\OMS\OMSApp\OMSApp.DAL\obj\Debug\netcoreapp2.1\OMSApp.DAL.pdb

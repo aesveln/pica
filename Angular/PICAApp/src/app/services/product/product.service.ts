@@ -13,8 +13,8 @@ export class ProductService {
   productList:any;
   productListAux:any;
   private productos: Array<Producto> = [];
-  private readonly API_URL = UrlSchemas.UrlProducts + 'api/products';
-  private readonly API_URLo = UrlSchemas.UrlOrder + 'orderitem';
+  private readonly API_URL = UrlSchemas.UrlProducts + 'products';
+  private readonly API_URLo = UrlSchemas.UrlOrder + 'orders';
   private readonly _imageServer = UrlSchemas.UrlFileServer;
   private subject: BehaviorSubject<Producto[]> = new BehaviorSubject([]);
   private itemsCarrito: Producto[] = [];
@@ -97,8 +97,9 @@ export class ProductService {
       }, 0);
   }
   createOrders(saleId): Observable<any> {
+    debugger;
     this.variable = this.http.post(
-      this.API_URLo + '/createOrder/',
+      this.API_URLo + '/crearOrden',
       JSON.stringify(saleId), 
       {
       headers: new HttpHeaders()

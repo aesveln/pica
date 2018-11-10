@@ -26,26 +26,25 @@ export class NotificationsComponent implements OnInit {
   ngOnInit() { 
     this.orderItems = new Array<Sales>();
     this.jwt = new JWT();
-    debugger;
     this.jwt.token = localStorage.getItem('userToken');
     if(this.jwt != null && this.jwt.token != "null")
     {
-      debugger;
       this.getDecodedAccessToken(this.jwt.token)
-      this.notificationServices.getAllOrders(this.user.idCustomer)
-      .subscribe(data => {
-        debugger;
-        this.orderItems = data.sales;
-      },error => alert(error));
+      this.getOrderList();
     }
-   
   }
 
+getOrderList(){
+  this.notificationServices.getAllOrders(this.user.idCustomer)
+      .subscribe(data => {
+        this.orderItems = data.sales;
+      },error => alert(error));
+}
+
 removeOrder(idSales){
-  debugger;
   this.notificationServices.deleteOrders(idSales)
       .subscribe(data => {
-        debugger;
+        this.getOrderList();
       },error => alert(error));
 }
 

@@ -126,7 +126,7 @@
         <generatePackage>co.com.toures.b2c.orders.wsdl</generatePackage>
         <schemas>
             <schema>
-                <url>http://localhost:8088/mockServiceAmerican?WSDL</url>
+                <url>http://192.168.1.100:8088/mockServiceAmerican?WSDL</url>
             </schema>
         </schemas>
 		    </configuration>

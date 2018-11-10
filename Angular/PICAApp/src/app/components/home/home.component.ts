@@ -18,6 +18,7 @@ import { ElasticResponse } from '../../model/Response/elasticResponse';
 import { forEach } from '@angular/router/src/utils/collection';
 import { OrderCreated } from '../../model/Request/orderRequest';
 import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
+import { HelperUserInfo } from 'src/app/Tools/Token/helperUserInfo';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
   productsList: productos;
   showMePartially = false;
   listsProd: Array<DtoProduct> = [];
+  listsTop: Array<DtoProduct> = [];
   showVar = false;
   isAddComplete=false;
   isRemoveComplete = false;
@@ -46,10 +48,16 @@ export class HomeComponent implements OnInit {
   query:Query;
   urlServerImage:string;
   elasticResponse:ElasticResponse;
-
+  detailItemSelected: DtoProduct;
+  Success: boolean;
+  Fail: boolean;
+  userLoginToDiscount: any;
   private subscription: Subscription;
   private total: any;
+  private totalDesc: any;
+  private descuento:any;
   isLogged = false;
+
   constructor(
     private productService: ProductService,
     private router:Router,
@@ -58,14 +66,16 @@ export class HomeComponent implements OnInit {
     this.items = [
       {name:  '../../../assets/images/img_mountains_wide.jpg'}
     ];
+    this.detailItemSelected = new DtoProduct();
   }
 
   ngOnInit() {
     
     this.urlServerImage = UrlSchemas.UrlFileServer;
-
+    this.userLoginToDiscount = false;
     this.jwt =  JSON.parse(localStorage.getItem('userToken'));
-    
+    this.Success = false;
+    this.Fail = false;
     // if(this.jwt == null){
     //   this.router.navigate(['/login']);
     // }
@@ -121,9 +131,16 @@ export class HomeComponent implements OnInit {
     this.showVar = !this.showVar;
     this.showMePartially = !this.showMePartially;
     var shopping = JSON.parse(localStorage.getItem('ShoppingCar'));
+    var user = this.getDecodedAccessToken(this.jwt.token);
+    var discount = user.descuento;
     this.productService.getCarrito().subscribe(data => {
       this.carrito = data
       this.total = this.productService.getTotal(this.carrito);
+      if(user != null){
+        this.userLoginToDiscount = true;
+        this.totalDesc = this.total * (1 - discount);
+        this.descuento = discount * 100;
+      }
       },error => alert(error));
   }
 
@@ -138,35 +155,57 @@ export class HomeComponent implements OnInit {
   }
   
   CreateOrden(carrito){
-    debugger;
+    this.Success = false;
+    this.Fail = false;
     var order = new OrderCreated()
-    var key = localStorage.getItem('userToken');
-    
+debugger;
+    var discount = 0;
+    this.jwt = new JWT();
+    this.jwt.token = localStorage.getItem('userToken');
+    if(this.jwt.token != null && this.jwt.token != "null")
+    {
+      var user = this.getDecodedAccessToken(this.jwt.token);
+      discount = user.descuento;
+    }
+    else{
+     
+      this.router.navigate(['/login']);
+    }
+
     order.idcliente = this.user.idCustomer;
     order.odrder_id = 80000 + Math.random()*100;
-    order.price = carrito[0].precio;
+    order.price = carrito[0].precio *(1 - discount);
     order.produco_cod = carrito[0].codigo;
     order.product_name = carrito[0].titulo;
     order.quantity = carrito[0].quantity;
 
     this.productService.createOrders(order).subscribe(
       (data)=> {
-      //  console.log(JSON.stringify(data));
+        debugger;
+        if(user.tcValida){
+          alert('Tarjeta valida, Su orden a sido creada exitosamente!!!!!');
+        }
+        else{
+          alert('Tarjeta invalida!!!!!');
+        }
+        this.Success = true;
        this.productsList = data.productos;
        this.listsProd = this.productsList.content;
        if (this.listsProd.length > 0) {
         this.viewCatalog = true;
       } else {
         this.viewCatalog = false;
+        this.Fail = true;
       }
       },
       error => {
+        if(error.status === 503){
+          alert('Servicio no disponible, intente mas tarde....')
+        }
         console.log(error);
       }
     )
-    if(key == null){
-      this.router.navigate(['/login']);
-    }
+    
     
     let carritoArray = carrito;
   }
@@ -179,6 +218,48 @@ export class HomeComponent implements OnInit {
     this.prod.quantity = quantity;
     this.productService.removeCarrito(this.prod);
     this.isAddComplete=true;
+  }
+
+  getTopProducts(codProduct,name,cost,description,imageRef) {
+    this.detailItemSelected = new DtoProduct();
+    this.detailItemSelected.cod = codProduct;
+    this.detailItemSelected.name = name;
+    this.detailItemSelected.cost = cost;
+    this.detailItemSelected.description = description;
+    this.detailItemSelected.imageRef = imageRef;
+
+    this.listsTop = new Array<DtoProduct>();
+    this.welcomeService.topProducts(codProduct).subscribe(data => {
+        let count = 0;
+        for (let variableHits of data) {
+          let dtProducts = new DtoProduct();
+  
+          this.elastiSer =new ElasticRequest();
+          this.query_strings = new Query_string();
+          this.query = new Query();
+  
+          this.elastiSer.query = this.query;
+          this.elastiSer.from = 0;
+          this.elastiSer.size = 21;
+          this.query.query_string = this.query_strings;
+          this.query_strings.query = '*'+variableHits+'*';
+          this.query_strings.fields = ["cod"]
+  
+          this.welcomeService.elasticSearch(this.elastiSer).subscribe(dataItem => {
+            var response = dataItem;
+            dtProducts.cod = response.hits.hits[0]._source.cod;
+            dtProducts.cost = response.hits.hits[0]._source.cost;
+            dtProducts.id = response.hits.hits[0]._source._id;
+            dtProducts.imageRef = response.hits.hits[0]._source.image_ref;
+            dtProducts.name = response.hits.hits[0]._source.name; 
+            dtProducts.description = response.hits.hits[0]._source.description; 
+            this.listsTop[count] = dtProducts;
+            count++;
+            },error => alert(error));
+        }
+      },error => alert(error));
+
+     
   }
 
   getEventsFilter(){
@@ -219,6 +300,8 @@ export class HomeComponent implements OnInit {
         // Other functions
         const expirationDate = helper.getTokenExpirationDate(token);
         const isExpired = helper.isTokenExpired(token);
+
+        return this.user;
       }
 
 }

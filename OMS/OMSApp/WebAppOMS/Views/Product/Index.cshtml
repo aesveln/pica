@@ -1,0 +1,153 @@
+﻿@using OMSApp.DAL.DatabaseSql
+@model IEnumerable<OMSApp.DAL.DatabaseSql.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de Productos</h2>
+
+<p>
+    <a asp-action="Create">Agregar Producto</a>
+</p>
+<div style="margin-left: 0px;">
+    <p>
+        Pagina 1 de 50000
+        <input type="number" class="form-control" style="width: 80px;" min="1" />
+    </p> 
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageRef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransportType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpectacleType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LodgingType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductType)
+            </th>
+            <th style="display: none">
+                @Html.DisplayNameFor(model => model.LodgingTypeNavigation)
+            </th>
+            <th style="display: none">
+                @Html.DisplayNameFor(model => model.SpectacleTypeNavigation)
+            </th>
+            <th style="display: none">
+                @Html.DisplayNameFor(model => model.TransportTypeNavigation)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageRef)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransportType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpectacleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LodgingType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+            <td style="display: none">
+                @Html.DisplayFor(modelItem => item.LodgingTypeNavigation)
+            </td>
+            <td style="display: none">
+                @Html.DisplayFor(modelItem => item.SpectacleTypeNavigation)
+            </td>
+            <td style="display: none">
+                @Html.DisplayFor(modelItem => item.TransportTypeNavigation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit",
+                    new Product
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        SpectacleType = item.SpectacleType,
+                        TransportType = item.TransportType,
+                        Description = item.Description,
+                        ProductType = item.ProductType,
+                        Cost = item.Cost,
+                        LodgingType = item.LodgingType,
+                        ImageRef = item.ImageRef,
+                        Cod = item.Cod,
+                        SpectacleTypeNavigation = item.SpectacleTypeNavigation,
+                        LodgingTypeNavigation = item.LodgingTypeNavigation,
+                        Campaign = item.Campaign,
+                        TransportTypeNavigation = item.TransportTypeNavigation,
+                    }) |
+                @Html.ActionLink("Delete", "Delete",
+                    new Product
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        SpectacleType = item.SpectacleType,
+                        TransportType = item.TransportType,
+                        Description = item.Description,
+                        ProductType = item.ProductType,
+                        Cost = item.Cost,
+                        LodgingType = item.LodgingType,
+                        ImageRef = item.ImageRef,
+                        Cod = item.Cod,
+                        SpectacleTypeNavigation = item.SpectacleTypeNavigation,
+                        LodgingTypeNavigation = item.LodgingTypeNavigation,
+                        Campaign = item.Campaign,
+                        TransportTypeNavigation = item.TransportTypeNavigation
+                    })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div style="margin-left: 0px;">
+    <p>
+        Pagina 1 de 50000
+        <input type="number" class="form-control" style="width: 80px;" min="1" />
+    </p>
+</div>

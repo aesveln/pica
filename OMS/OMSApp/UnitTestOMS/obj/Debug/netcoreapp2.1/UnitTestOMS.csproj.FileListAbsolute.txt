@@ -1,0 +1,8 @@
+C:\Pica\OMSApp\UnitTestOMS\bin\Debug\netcoreapp2.1\UnitTestOMS.deps.json
+C:\Pica\OMSApp\UnitTestOMS\bin\Debug\netcoreapp2.1\UnitTestOMS.runtimeconfig.json
+C:\Pica\OMSApp\UnitTestOMS\bin\Debug\netcoreapp2.1\UnitTestOMS.runtimeconfig.dev.json
+C:\Pica\OMSApp\UnitTestOMS\bin\Debug\netcoreapp2.1\UnitTestOMS.dll
+C:\Pica\OMSApp\UnitTestOMS\obj\Debug\netcoreapp2.1\UnitTestOMS.csprojAssemblyReference.cache
+C:\Pica\OMSApp\UnitTestOMS\obj\Debug\netcoreapp2.1\UnitTestOMS.csproj.CoreCompileInputs.cache
+C:\Pica\OMSApp\UnitTestOMS\obj\Debug\netcoreapp2.1\UnitTestOMS.AssemblyInfoInputs.cache
+C:\Pica\OMSApp\UnitTestOMS\obj\Debug\netcoreapp2.1\UnitTestOMS.AssemblyInfo.cs

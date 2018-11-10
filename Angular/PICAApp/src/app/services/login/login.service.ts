@@ -12,7 +12,7 @@ import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 export class LoginService {
   updateUser:updateUserRequest;
   userRequest: UserRequest;
-  private readonly API_URL = UrlSchemas.UrlUsers + 'api/users';
+  private readonly API_URL = UrlSchemas.UrlUsers + 'users';
   constructor(private http: HttpClient) {}
 
   userAuthentication(userName, password): Observable<any> {

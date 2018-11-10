@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Se cancela reserva del cliente: 549150083
+=======
+Se cancela reserva del cliente: 549149979
+>>>>>>> f07450516cf4ad65dfb91049fe61f8aa581de89a

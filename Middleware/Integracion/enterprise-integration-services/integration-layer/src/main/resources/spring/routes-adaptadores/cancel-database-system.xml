@@ -16,7 +16,11 @@
 
     <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
         <!-- 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> -->
+<<<<<<< HEAD
         <property name="URL" value="jdbc:oracle:thin:@35.235.105.138:1521:xe"/>
+=======
+        <property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+>>>>>>> f07450516cf4ad65dfb91049fe61f8aa581de89a
         <property name="user" value="ADMCYO"/>
         <property name="password" value="touresUser.*"/>
     </bean>

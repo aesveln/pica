@@ -11,7 +11,7 @@ import { UrlSchemas } from 'src/app/Tools/Url/UrlSchema';
 export class ProfileService {
   [x: string]: any;
   updateUserRequest:UpdateUserRequest;
-  private readonly API_URL = UrlSchemas.UrlUsers + 'api/users';
+  private readonly API_URL = UrlSchemas.UrlUsers + 'users';
   
   constructor(private http: HttpClient) { }
   updateCreate(id,firstName, lastName, documentType, document, 
