@@ -1,6 +1,8 @@
 package co.com.toures.b2c.products.controller.admpro;
 
+import co.com.toures.b2c.products.dto.admpro.CampaignDTO;
 import co.com.toures.b2c.products.dto.admpro.ProductDTO;
+import co.com.toures.b2c.products.entity.admpro.Campaign;
 import co.com.toures.b2c.products.model.admpro.ProductRequest;
 import co.com.toures.b2c.products.model.admpro.ProductResponse;
 import co.com.toures.b2c.products.service.ProductService;
@@ -12,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @RestController
 @Api(description = "Set of endpoints for Retrieving Products.")
@@ -129,6 +132,19 @@ public class ProductController {
         try {
 
             return productService.findProductDetail(codeProduct);
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/api/products/campaigns")
+    @ApiOperation("Return campaigns product")
+    public List<CampaignDTO> findCampaigns() {
+        try {
+
+            return productService.findCampaigns();
         } catch (Exception e) {
             System.out.println(e);
             return null;

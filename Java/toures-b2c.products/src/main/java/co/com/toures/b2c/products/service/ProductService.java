@@ -1,10 +1,15 @@
 package co.com.toures.b2c.products.service;
 
 
+import co.com.toures.b2c.products.dao.admpro.CampaignRepository;
 import co.com.toures.b2c.products.dao.admpro.ProductRepository;
+import co.com.toures.b2c.products.dto.admpro.CampaignDTO;
 import co.com.toures.b2c.products.dto.admpro.ProductDTO;
+import co.com.toures.b2c.products.entity.admpro.Campaign;
 import co.com.toures.b2c.products.entity.admpro.Product;
 import co.com.toures.b2c.products.model.admpro.ProductRequest;
+import co.com.toures.b2c.products.utils.ObjectMapperUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.modelmapper.Converters;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +22,10 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.function.Function;
 
 @Service
@@ -26,6 +34,9 @@ public class ProductService {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    CampaignRepository campaignRepository;
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -231,5 +242,16 @@ public class ProductService {
 
         ProductDTO productDTO = modelMapper.map(producto, ProductDTO.class);
         return productDTO;
+    }
+
+    public List<CampaignDTO> findCampaigns() {
+
+
+        java.sql.Date ahora = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        List<Campaign> campaigns = (List<Campaign>) campaignRepository.findAllByFromDateBeforeAndToDateAfter(ahora, ahora);
+        List<CampaignDTO> campanias = ObjectMapperUtils.mapAll(campaigns,CampaignDTO.class);
+
+        return campanias;
+
     }
 }

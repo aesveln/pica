@@ -26,7 +26,7 @@
 
         <camel:route id="move-files-folder">
             <camel:from
-                    uri="file:/home/narfco/Software/contabilidad/?scheduler=spring&amp;scheduler.cron=0+0/1+*+*+*+?"/>
+                    uri="file:/home/narfco/Software/contabilidad/?scheduler=spring&amp;scheduler.cron=0+0/5+*+*+*+?"/>
             <!--1 minuto-->
             <!--<camel:from uri="file:/home/narfco/Software/contabilidad/?scheduler=spring&amp;scheduler.cron=0+30+1+?+*+*+*" />-->
             <camel:log message="Dispara movimiento de archivos"></camel:log>
